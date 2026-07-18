@@ -83,18 +83,22 @@ state wholesale, never merge.
 - `clock` — the game clock as of the last event that carried one, or `null` if none has
   arrived yet for this fixture.
   - `running` — whether the clock is currently ticking.
-  - `seconds` — **counts down** from the period's full allocation (e.g. a 45-minute
-    half starts at `2700` and decreases). It can go **negative** once the period runs
-    into stoppage time.
+  - `seconds` — **counts UP within the current period, from 0**. (CORRECTED 2026-07-18
+    against the live World Cup feed: at ~4 minutes into a live match, `seconds` read
+    `247`. The Fusion Scores PDF describes a countdown clock — the live TxLINE feed
+    does the opposite. Trust this, it was measured, not read.)
   - `statusId` — the game-phase `StatusId` in effect when this clock reading was taken
     (see the Game Phase Encoding table in `docs/txline/scores/soccer-feed.md`; `2` =
     H1, `4` = H2, etc).
   - The backend does not compute a display minute — derive it on the frontend:
-    - H1: `minute = ceil((2700 - seconds) / 60)`
-    - H2: `minute = 45 + ceil((2700 - seconds) / 60)`
-    - A negative `seconds` value means the derived minute has gone past the period's
-      allocation — render it as stoppage time (e.g. `45+2'`) rather than continuing to
-      increment the base minute.
+    - H1 (`statusId` 2): `minute = min(45, ceil(seconds / 60))`; if
+      `seconds > 2700`, render stoppage time (`45+X'` where `X = ceil((seconds - 2700) / 60)`).
+    - H2 (`statusId` 4): `minute = min(90, 45 + ceil(seconds / 60))`; if
+      `seconds > 2700`, render `90+X'` similarly.
+    - Extra time periods (`statusId` 7/9): same pattern over a 15-minute (900s) period,
+      based at 90' and 105'.
+    - Between periods (`running: false` at HT etc.), show the period label (`HT`)
+      rather than a minute.
 
 ### `fixture_list`
 
