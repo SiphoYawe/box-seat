@@ -49,7 +49,7 @@ story shown. Viewers never touch a wallet.
 JWT renewal and a watchdog; automatic full re-subscription after persistent auth
 failure; restart state-rebuild from the event log; malformed feed events and malformed
 WS clients are isolated, never fatal; attestation is non-blocking by design. The
-reducer has 22 unit tests; finish detection accepts both documented TxLINE finish
+reducer/moderation suites total 55+ unit tests; finish detection accepts both documented TxLINE finish
 signals (`game_finalised` and terminal StatusIds) after we found the two TxODDS schema
 sources disagree.
 
