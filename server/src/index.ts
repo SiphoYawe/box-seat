@@ -234,7 +234,8 @@ async function main() {
   const attested = new Set<number>();
 
   const broadcaster = new Broadcaster(
-    Number(process.env.WS_PORT),
+    // Cloud hosts (Railway) inject PORT; local dev uses WS_PORT from .env.
+    Number(process.env.PORT ?? process.env.WS_PORT),
     (ws, fixtureId) => {
       // Contract: finished fixtures get full history as replay chunks, then current state.
       const events = readEventLog(db, fixtureId);
