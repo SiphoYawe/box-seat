@@ -16,6 +16,13 @@ export interface FixtureListEntry {
   startTime: number | null;
   statusId: number;
   score: { participant1: number; participant2: number };
+  /**
+   * Server-computed classification — the frontend must use this verbatim and
+   * never derive live/finished from startTime or statusId itself.
+   */
+  phase: "upcoming" | "live" | "finished";
+  /** False when we hold no event data for the fixture (score unknown — hide it). */
+  hasData: boolean;
 }
 
 export type ServerMessage =

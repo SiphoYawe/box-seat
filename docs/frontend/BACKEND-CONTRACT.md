@@ -170,3 +170,15 @@ as the numeric side identifiers (`1`/`2`) used throughout `score`, `pressure`, a
 to resolve names. Badges and brand colors are **not** provided by TxLINE at all — the
 frontend owns a static lookup table for badges/colors (see the design doc's open item
 for the expected shape of that table).
+
+## fixture_list: phase and hasData (added 2026-07-18)
+
+Each `fixture_list` entry now carries two additional fields the frontend MUST obey:
+
+- `phase`: `"upcoming" | "live" | "finished"` — the server-computed classification.
+  **Never derive live/finished on the frontend from `startTime` or `statusId`** — the
+  server accounts for cases the frontend cannot (e.g. matches that ended before our
+  data capture window began).
+- `hasData`: boolean — `false` means the backend holds no event data for this fixture:
+  its `score` is meaningless (do not display it — show the card as "FT" without a
+  score, or greyed/non-clickable), and subscribing will yield no replay.

@@ -11,6 +11,7 @@ import {
 import { backfillFixture } from "./txline/backfill.js";
 import { reduce } from "./reducer/reducer.js";
 import {
+  FINISHED_STATUS_IDS,
   initialMatchState,
   isTerminalEvent,
   type MatchState,
@@ -44,8 +45,29 @@ function buildFixtureList(
   db: Database.Database,
   matchStates: Map<number, MatchState>
 ): FixtureListEntry[] {
+  const now = Date.now();
   return listFixtures(db).map((f) => {
     const state = matchStates.get(f.fixtureId);
+    const statusId = state?.statusId ?? 1;
+    const hasData = state !== undefined && state.lastSeq > 0;
+
+    // Single source of truth for the frontend's live/finished classification.
+    // A fixture with no event data whose kickoff is >3h past is
+    // finished-unknown (predates our capture/backfill window) — it must never
+    // leak into "live".
+    let phase: FixtureListEntry["phase"];
+    if (FINISHED_STATUS_IDS.has(statusId)) {
+      phase = "finished";
+    } else if (f.startTime !== null && f.startTime > now) {
+      phase = "upcoming";
+    } else if (hasData) {
+      phase = "live";
+    } else if (f.startTime !== null && now - f.startTime > 3 * 60 * 60 * 1000) {
+      phase = "finished";
+    } else {
+      phase = "upcoming";
+    }
+
     return {
       fixtureId: f.fixtureId,
       participant1: f.participant1,
@@ -54,8 +76,10 @@ function buildFixtureList(
       participant2Id: f.participant2Id,
       competition: f.competition,
       startTime: f.startTime,
-      statusId: state?.statusId ?? 1,
+      statusId,
       score: state?.score ?? { participant1: 0, participant2: 0 },
+      phase,
+      hasData,
     };
   });
 }
