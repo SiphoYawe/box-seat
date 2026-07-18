@@ -38,6 +38,16 @@ export interface FixturePlayerEntry {
 
 export type AttestationCluster = "mainnet-beta" | "devnet";
 
+/** One accepted, moderated X post in a `chatter` message — see docs/frontend/BACKEND-CONTRACT.md. */
+export interface ChatterPost {
+  id: string;
+  author: string;
+  handle: string;
+  text: string;
+  ts: number;
+  likes: number;
+}
+
 export type ServerMessage =
   | { type: "state"; state: MatchState }
   | { type: "keyMoment"; fixtureId: number; moment: MatchState["keyMoments"][number] }
@@ -50,7 +60,8 @@ export type ServerMessage =
       txSig: string;
       cluster: AttestationCluster;
       status: "confirmed" | "pending";
-    };
+    }
+  | { type: "chatter"; fixtureId: number; posts: ChatterPost[] };
 
 export type SubscribeHandler = (ws: WebSocket, fixtureId: number) => void;
 
@@ -164,6 +175,43 @@ export class Broadcaster {
       status: "confirmed",
     };
     ws.send(JSON.stringify(payload));
+  }
+
+  /**
+   * Sends the current cached chatter for one fixture to one client, on
+   * subscribe. Callers are expected to skip calling this entirely when there
+   * is no cached entry (or it has zero posts) — graceful absence, no message
+   * sent (see docs/frontend/BACKEND-CONTRACT.md).
+   */
+  sendChatter(ws: WebSocket, fixtureId: number, posts: ChatterPost[]): void {
+    if (ws.readyState !== ws.OPEN) return;
+    const payload: ServerMessage = { type: "chatter", fixtureId, posts };
+    ws.send(JSON.stringify(payload));
+  }
+
+  /** Broadcast an updated chatter list to every client subscribed to this fixture only. */
+  broadcastChatter(fixtureId: number, posts: ChatterPost[]): void {
+    const payload: ServerMessage = { type: "chatter", fixtureId, posts };
+    const json = JSON.stringify(payload);
+    for (const [ws, subs] of this.subscriptions) {
+      if (subs.has(fixtureId) && ws.readyState === ws.OPEN) {
+        ws.send(json);
+      }
+    }
+  }
+
+  /**
+   * All fixtureIds with at least one active subscriber across every
+   * connected client — used by the chatter poller to know what's worth
+   * polling (only fixtures with a subscriber, further filtered to "live" by
+   * the caller).
+   */
+  subscribedFixtureIds(): Set<number> {
+    const ids = new Set<number>();
+    for (const subs of this.subscriptions.values()) {
+      for (const id of subs) ids.add(id);
+    }
+    return ids;
   }
 
   private sendFixtureList(ws: WebSocket): void {

@@ -291,3 +291,80 @@ happens once per fixture the moment its state first reaches a terminal status
 already-terminal fixture that's missing a persisted attestation row (e.g. finalised
 before this feature existed). A confirmed attestation, once persisted, never changes —
 there's no "re-attest" or update path.
+
+## New WS message: `chatter` (added 2026-07-18)
+
+A collapsible "Match chatter" panel shows recent X (Twitter) posts about a fixture. The
+frontend must **never** call X directly — this message is a moderated, cached,
+server-side proxy. Sent once per `subscribe` (after whatever `fixture_players`/
+`attestation` that subscribe already triggers — order doesn't matter), and again to
+that fixture's subscribers whenever the cached list changes (compared by newest post
+id).
+
+```json
+{
+  "type": "chatter",
+  "fixtureId": 18222446,
+  "posts": [
+    {
+      "id": "1234567890",
+      "author": "Display Name",
+      "handle": "user",
+      "text": "verbatim post text",
+      "ts": 1784400000000,
+      "likes": 42
+    }
+  ]
+}
+```
+
+- `id` — the X post's id (string).
+- `author` — the poster's display name.
+- `handle` — the poster's `@handle`, without the `@`.
+- `text` — the post's text, verbatim except for a hard 280-char cap (see moderation
+  guarantees below). No link unfurling, no formatting changes.
+- `ts` — epoch milliseconds the post was created.
+- `likes` — like count at fetch time (a snapshot, not live-updating per post).
+
+At most ~10 posts, newest first.
+
+### Graceful absence — this message may simply never arrive
+
+Treat absence as "hide the chatter panel entirely," not as a loading/error state. All of
+the following are normal, expected reasons no `chatter` message ever shows up for a
+fixture:
+
+- The backend has no X API credential configured (`X_BEARER_TOKEN` unset) — the entire
+  chatter subsystem is dormant for the whole process; no fixture ever gets a `chatter`
+  message.
+- The fixture hasn't reached `phase: "live"` yet (see `fixture_list`) — only live
+  fixtures are polled. A finished fixture still serves whatever was cached while it was
+  live (no fresh polling), and an upcoming fixture has never been polled at all.
+- No X post about the fixture has passed moderation yet (see below) — an empty/absent
+  cache is not an error.
+
+Once a `chatter` message does arrive for a fixture, expect further ones as the cached
+list changes (new posts pass moderation), but there's no guaranteed cadence — the
+backend polls a shared loop on the order of ~90s per live, subscribed fixture, and backs
+off further (or stops permanently for the process) under X API rate limits or auth
+failures. The frontend should not infer anything from a gap between `chatter` messages.
+
+### Moderation guarantees
+
+Every post in a `chatter` message has already passed server-side moderation before the
+frontend ever sees it:
+
+- **No URLs** — posts containing a link (any `http` substring or a `t.co` shortener) are
+  dropped entirely, not stripped. No link unfurling, ever.
+- **No media** — posts with an image/video/GIF/poll attachment are dropped entirely.
+  `chatter` posts are text-only; there is no image or avatar field anywhere in the
+  payload, and there never will be (read-only, text-only, forever).
+- **English only** — posts are kept only when the X API's `lang` field is exactly `en`;
+  anything else (including missing `lang`) is dropped.
+- **Blocklist-filtered** — posts matching an inline profanity/slur blocklist
+  (substring-matched, erring toward over-dropping) are dropped entirely.
+- **Text is capped at 280 characters**, verbatim (no truncation ellipsis, no
+  reformatting) — a hard slice, not a moderation drop.
+
+This is a read-only proxy: the backend never posts, likes, retweets, or performs any
+write action against X, now or in any planned future change.

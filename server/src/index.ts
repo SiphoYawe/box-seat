@@ -27,6 +27,11 @@ import { listFixturePlayers, updatePlayerGoals, upsertLineupPlayers } from "./st
 import { getAttestation, upsertAttestation } from "./store/attestations.js";
 import { Broadcaster, type AttestationCluster, type FixtureListEntry } from "./ws/server.js";
 import { attestMatch } from "./solana/attestation.js";
+import {
+  startChatter,
+  getCachedChatter,
+  type LiveSubscribedFixture,
+} from "./chatter/xChatter.js";
 import type Database from "better-sqlite3";
 
 const REPLAY_CHUNK_SIZE = 500;
@@ -49,6 +54,32 @@ function isFinalised(events: RawScoreEvent[]): boolean {
 
 function foldState(fixtureId: number, events: RawScoreEvent[]): MatchState {
   return events.reduce(reduce, initialMatchState(fixtureId));
+}
+
+/**
+ * Fixtures worth polling X chatter for: currently subscribed AND live. Team
+ * names come from persisted fixture metadata — a fixture whose names aren't
+ * known yet (rare) is skipped rather than queried with a blank name.
+ */
+function liveSubscribedFixtures(
+  db: Database.Database,
+  matchStates: Map<number, MatchState>,
+  broadcaster: Broadcaster
+): LiveSubscribedFixture[] {
+  const subscribedIds = broadcaster.subscribedFixtureIds();
+  if (subscribedIds.size === 0) return [];
+  const out: LiveSubscribedFixture[] = [];
+  for (const entry of buildFixtureList(db, matchStates)) {
+    if (!subscribedIds.has(entry.fixtureId)) continue;
+    if (entry.phase !== "live") continue;
+    if (!entry.participant1 || !entry.participant2) continue;
+    out.push({
+      fixtureId: entry.fixtureId,
+      team1: entry.participant1,
+      team2: entry.participant2,
+    });
+  }
+  return out;
 }
 
 /** Joins persisted fixture metadata with whatever live state we know, for the `fixture_list` WS message. */
@@ -252,6 +283,14 @@ async function main() {
           attestation.txSig,
           attestation.cluster as AttestationCluster
         );
+      }
+
+      // Chatter: graceful absence — nothing sent when there's no cache entry
+      // yet (no token, fixture never live/subscribed long enough to poll, or
+      // every fetched post got moderated out).
+      const chatter = getCachedChatter(db, fixtureId);
+      if (chatter && chatter.posts.length > 0) {
+        broadcaster.sendChatter(ws, fixtureId, chatter.posts);
       }
     }
   );
@@ -460,8 +499,18 @@ async function main() {
     }
   }, STREAM_WATCHDOG_MS);
 
+  // Token-gated: dormant (one log line, no polling) unless X_BEARER_TOKEN is set.
+  const chatterHandle = startChatter({
+    db,
+    broadcaster,
+    getLiveSubscribedFixtures: () => liveSubscribedFixtures(db, matchStates, broadcaster),
+  });
+
   const shutdown = () => {
     console.log("[Shutdown] Closing...");
+    try {
+      chatterHandle.stop();
+    } catch {}
     try {
       stream.close();
     } catch {}
