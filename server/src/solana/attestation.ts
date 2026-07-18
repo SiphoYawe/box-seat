@@ -39,23 +39,49 @@ export async function attestMatch(
       data: Buffer.from(memo, "utf8"),
     });
 
-    const tx = new Transaction().add(instruction);
-    const latestBlockhash = await connection.getLatestBlockhash("confirmed");
-    tx.recentBlockhash = latestBlockhash.blockhash;
-    tx.feePayer = serviceWallet.publicKey;
-    tx.sign(serviceWallet);
+    // The public mainnet RPC regularly drops fee-less transactions until the
+    // blockhash expires (bit us live on the France-England FT attestation).
+    // Same treatment as the subscribe flow: priority fee + fresh blockhash
+    // per attempt.
+    const SEND_ATTEMPTS = 3;
+    for (let attempt = 1; attempt <= SEND_ATTEMPTS; attempt++) {
+      const tx = new Transaction().add(
+        anchor.web3.ComputeBudgetProgram.setComputeUnitPrice({
+          microLamports: 100_000,
+        }),
+        instruction
+      );
+      const latestBlockhash = await connection.getLatestBlockhash("confirmed");
+      tx.recentBlockhash = latestBlockhash.blockhash;
+      tx.feePayer = serviceWallet.publicKey;
+      tx.sign(serviceWallet);
 
-    const sig = await connection.sendRawTransaction(tx.serialize());
-    await connection.confirmTransaction(
-      {
-        signature: sig,
-        blockhash: latestBlockhash.blockhash,
-        lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
-      },
-      "confirmed"
-    );
-    console.log(`[Attestation] Fixture ${state.fixtureId} attested: ${sig}`);
-    return sig;
+      try {
+        const sig = await connection.sendRawTransaction(tx.serialize());
+        await connection.confirmTransaction(
+          {
+            signature: sig,
+            blockhash: latestBlockhash.blockhash,
+            lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
+          },
+          "confirmed"
+        );
+        console.log(`[Attestation] Fixture ${state.fixtureId} attested: ${sig}`);
+        return sig;
+      } catch (err) {
+        const isExpiry =
+          (err as Error)?.name === "TransactionExpiredBlockheightExceededError" ||
+          String((err as Error)?.message ?? "").includes("block height exceeded");
+        if (isExpiry && attempt < SEND_ATTEMPTS) {
+          console.warn(
+            `[Attestation] Fixture ${state.fixtureId}: tx expired unconfirmed (attempt ${attempt}/${SEND_ATTEMPTS}) — retrying with fresh blockhash...`
+          );
+          continue;
+        }
+        throw err;
+      }
+    }
+    return null;
   } catch (err) {
     console.error(
       `[Attestation] Failed for fixture ${state.fixtureId} (non-fatal):`,
