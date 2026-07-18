@@ -1,0 +1,34 @@
+{
+  "name": "box-seat-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "0.32.1",
+    "@solana/spl-token": "^0.4.12",
+    "@solana/web3.js": "^1.91.9",
+    "axios": "^1.12.0",
+    "better-sqlite3": "^11.3.0",
+    "dotenv": "^16.4.7",
+    "eventsource": "^4.0.0",
+    "tweetnacl": "^1.0.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.13.4",
+    "@types/ws": "^8.5.12",
+    "tsx": "^4.19.1",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.5"
+  }
+}
