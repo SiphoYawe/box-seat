@@ -6,21 +6,17 @@ you come back. Items are ordered by urgency.
 
 ## 🔴 Needed soon (blocks parts of the build)
 
-- [ ] **Fund the service wallet** — send **~0.02 SOL** (mainnet) to
-  `3ZaqDgaLBcfZQKzMxFt1N8wPVcV76PzQTPrjcyapvop1`
-  Covers: token-account rent + TxLINE `subscribe` tx + post-match attestations.
-  The backend is now FULLY BUILT and verified offline — this is the only thing
-  standing between it and live World Cup data. Once funded, tell me (or any
-  session) to "run the live TxLINE verification" — the checklist is:
-  (1) start the server (`cd server && npm run dev`) and confirm the on-chain
-  subscribe + activation succeeds, (2) confirm real scores events flow during a
-  covered live fixture, (3) let one covered match run to full time and confirm
-  BOTH that replay chunks arrive for it afterwards AND that the attestation
-  lands on-chain (printed explorer signature). Step 3 matters extra: TxLINE's
-  docs and the underlying Fusion schema disagree on how "match finished" is
-  signaled (action=game_finalised/statusId=100 vs. status/StatusId 5|10|13) —
-  the backend accepts either, but which one the live feed actually sends should
-  be confirmed against a real match, not assumed.
+- [x] **Fund the service wallet** — done 2026-07-18 (0.05 SOL).
+- [x] **Live TxLINE auth + stream** — done 2026-07-18 ~14:30: on-chain subscribe
+  landed (after adding priority-fee + blockhash-retry — first attempt expired on
+  the public RPC), activation succeeded, real-time scores stream open, backend
+  running live on mainnet. Session token persisted — restarts won't re-pay.
+- [ ] **Capture one real match to full time** (backend does this automatically
+  while running — just keep it running during today's/tomorrow's covered
+  fixtures). Confirms: real events flow, which finish signal the live feed
+  actually sends (docs disagree; we accept both), replay chunks for a real
+  match, and the first real on-chain attestation (watch for the printed
+  explorer signature). I'm monitoring the server logs and will report.
 
 - [ ] **Kick off Kimi K3 on the frontend** — the build spec is ready:
   `docs/frontend/KIMI-BUILD-SPEC.md` (self-contained; tells Kimi what else to read).
