@@ -13,6 +13,18 @@ export function openDb(path: string): Database.Database {
       PRIMARY KEY (fixture_id, seq)
     );
     CREATE INDEX IF NOT EXISTS idx_events_fixture ON events(fixture_id, seq);
+
+    CREATE TABLE IF NOT EXISTS fixtures (
+      fixture_id INTEGER PRIMARY KEY,
+      participant1 TEXT,
+      participant1_id INTEGER,
+      participant2 TEXT,
+      participant2_id INTEGER,
+      competition TEXT,
+      competition_id INTEGER,
+      start_time INTEGER,
+      raw TEXT NOT NULL
+    );
   `);
   return db;
 }

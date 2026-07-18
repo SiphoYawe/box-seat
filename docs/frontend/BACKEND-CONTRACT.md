@@ -47,16 +47,24 @@ state wholesale, never merge.
       "participant2": { "defensive": 5, "middle": 4, "attacking": 2 }
     },
     "keyMoments": [
-      { "type": "goal", "participant": 1, "ts": 1721300123456, "seq": 42 }
+      { "type": "goal", "participant": 1, "ts": 1721300123456, "seq": 42, "id": 241 }
     ],
     "lastTs": 1721300456789,
-    "lastSeq": 118
+    "lastSeq": 118,
+    "clock": { "running": true, "seconds": 1523, "statusId": 4 }
   }
 }
 ```
 
 **Field semantics:**
 
+- `score` — **authoritative**, taken directly from TxLINE's `Score` field on the
+  triggering action (a running total, not derived by counting `goal` events). TxLINE
+  sends several messages per real goal (unconfirmed, then one or more
+  confirm/amend updates, all sharing the same action `id`) — the backend applies the
+  `Score` field outright rather than incrementing per message, so the frontend never
+  needs to dedupe goals itself. Only if a `goal` event arrives with no `Score` field at
+  all (a malformed/legacy frame) does the backend fall back to a one-time increment.
 - `momentum` — a number in `[-1, +1]`. Negative favors participant2, positive favors
   participant1. 0 is neutral.
 - `pressure.participantN.{defensive,middle,attacking}` — unbounded, accumulating
@@ -67,6 +75,58 @@ state wholesale, never merge.
   one). Detect newly arrived moments by watching for a change in array length (or
   tracking the highest `seq` already handled) and trigger the full-screen takeover for
   `goal`, `red_card`, and `var_overturned` types.
+  - `keyMoments[].id` — the TxLINE action id the moment was derived from, when the
+    source event carried one. The backend already dedupes repeated messages for the
+    same action id (a moment is appended, and its momentum boost applied, at most
+    once per id) — this field is exposed mainly for correlating a moment back to the
+    raw event log, not something the frontend needs to dedupe again.
+- `clock` — the game clock as of the last event that carried one, or `null` if none has
+  arrived yet for this fixture.
+  - `running` — whether the clock is currently ticking.
+  - `seconds` — **counts down** from the period's full allocation (e.g. a 45-minute
+    half starts at `2700` and decreases). It can go **negative** once the period runs
+    into stoppage time.
+  - `statusId` — the game-phase `StatusId` in effect when this clock reading was taken
+    (see the Game Phase Encoding table in `docs/txline/scores/soccer-feed.md`; `2` =
+    H1, `4` = H2, etc).
+  - The backend does not compute a display minute — derive it on the frontend:
+    - H1: `minute = ceil((2700 - seconds) / 60)`
+    - H2: `minute = 45 + ceil((2700 - seconds) / 60)`
+    - A negative `seconds` value means the derived minute has gone past the period's
+      allocation — render it as stoppage time (e.g. `45+2'`) rather than continuing to
+      increment the base minute.
+
+### `fixture_list`
+
+Sent to every client immediately on connect, and rebroadcast to all connected clients
+whenever the list changes: a new fixture is discovered (via live `FixtureInfo` or the
+startup snapshot seed), or a fixture's state transitions to a terminal status. This is
+the backend's only source of fixture metadata — team names, competition, and start
+time — and of the match list for a "browse fixtures" screen.
+
+```json
+{
+  "type": "fixture_list",
+  "fixtures": [
+    {
+      "fixtureId": 18241006,
+      "participant1": "England",
+      "participant1Id": 4433,
+      "participant2": "Argentina",
+      "participant2Id": 38298,
+      "competition": "World Cup",
+      "startTime": 1752606000000,
+      "statusId": 5,
+      "score": { "participant1": 2, "participant2": 1 }
+    }
+  ]
+}
+```
+
+`statusId`/`score` are joined in from the backend's in-memory match state when known;
+for a fixture with no live/replayed state yet, they default to `statusId: 1` (not
+started) and `score: { "participant1": 0, "participant2": 0 }`. `startTime` is epoch
+milliseconds, or `null` if TxLINE hasn't reported one yet.
 
 ### `replay_chunk`
 
@@ -103,8 +163,10 @@ event.
 
 ## Team Metadata
 
-Team names arrive via TxLINE fixture data (`participant1`/`participant2` on
-`MatchState` correspond to the fixture's two competing teams), not via this WebSocket
-contract. Badges and brand colors are **not** provided by TxLINE at all — the frontend
-owns a static lookup table for badges/colors (see the design doc's open item for the
-expected shape of that table).
+Team names, competition, and start time arrive via the `fixture_list` message (see
+above) — `MatchState` itself carries no team names, only `participant1`/`participant2`
+as the numeric side identifiers (`1`/`2`) used throughout `score`, `pressure`, and
+`keyMoments`. Join `fixture_list`'s `fixtureId` against a subscribed match's `state`
+to resolve names. Badges and brand colors are **not** provided by TxLINE at all — the
+frontend owns a static lookup table for badges/colors (see the design doc's open item
+for the expected shape of that table).

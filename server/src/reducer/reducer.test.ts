@@ -60,20 +60,65 @@ describe("reduce", () => {
     expect(next.pressure.participant2.attacking).toBe(0);
   });
 
-  it("records a goal as a key moment and updates the score", () => {
+  it("records a goal as a key moment and takes the score from the Score field, not from counting", () => {
     const state = initialMatchState(1);
     const next = reduce(
       state,
-      event({ action: "goal", participant: 1, seq: 5, ts: 5000 })
+      event({
+        action: "goal",
+        participant: 1,
+        seq: 5,
+        ts: 5000,
+        id: 100,
+        score: { participant1: 2, participant2: 0 },
+      })
     );
-    expect(next.score.participant1).toBe(1);
+    // The Score field is a running total, not a delta — score comes from it
+    // outright (2-0), regardless of the prior state having 0 goals.
+    expect(next.score).toEqual({ participant1: 2, participant2: 0 });
     expect(next.keyMoments).toHaveLength(1);
     expect(next.keyMoments[0]).toMatchObject({
       type: "goal",
       participant: 1,
       seq: 5,
       ts: 5000,
+      id: 100,
     });
+  });
+
+  it("falls back to incrementing the score when a goal event carries neither Score nor Id (malformed frame)", () => {
+    const state = initialMatchState(1);
+    const next = reduce(
+      state,
+      event({ action: "goal", participant: 2, seq: 7, ts: 7000 })
+    );
+    expect(next.score).toEqual({ participant1: 0, participant2: 1 });
+    expect(next.keyMoments).toHaveLength(1);
+  });
+
+  it("dedupes repeated goal messages that share the same action Id — one keyMoment, authoritative score, momentum boosted once", () => {
+    const goalEvent = (seq: number, ts: number) =>
+      event({
+        action: "goal",
+        participant: 1,
+        id: 500,
+        seq,
+        ts,
+        score: { participant1: 1, participant2: 0 },
+      });
+
+    // Single-message baseline to compare momentum against.
+    const single = reduce(initialMatchState(1), goalEvent(10, 10_000));
+
+    // TxLINE style: unconfirmed -> confirmed -> amend, same action Id.
+    let deduped = initialMatchState(1);
+    deduped = reduce(deduped, goalEvent(10, 10_000));
+    deduped = reduce(deduped, goalEvent(11, 10_100));
+    deduped = reduce(deduped, goalEvent(12, 10_200));
+
+    expect(deduped.keyMoments).toHaveLength(1);
+    expect(deduped.score).toEqual({ participant1: 1, participant2: 0 });
+    expect(deduped.momentum).toBe(single.momentum);
   });
 
   it("records a red card as a key moment without changing score", () => {
@@ -217,6 +262,60 @@ describe("reduce", () => {
     );
     expect(next.pressure.participant2.defensive).toBeGreaterThan(0);
     expect(next.momentum).toBeLessThan(0);
+  });
+
+  it("dedupes repeated red_card messages sharing the same action Id", () => {
+    const redCardEvent = (seq: number) =>
+      event({ action: "red_card", participant: 2, id: 900, seq, ts: seq * 100 });
+    let state = initialMatchState(1);
+    state = reduce(state, redCardEvent(1));
+    const afterFirst = state.momentum;
+    state = reduce(state, redCardEvent(2));
+    state = reduce(state, redCardEvent(3));
+    expect(state.keyMoments).toHaveLength(1);
+    expect(state.momentum).toBe(afterFirst);
+  });
+
+  it("does not dedupe key moments when the event carries no Id (keeps current per-message behavior)", () => {
+    const state = initialMatchState(1);
+    const withTwoGoals = [1, 2].reduce(
+      (acc, seq) =>
+        reduce(
+          acc,
+          event({ action: "goal", participant: 1, seq, ts: seq * 100 })
+        ),
+      state
+    );
+    expect(withTwoGoals.keyMoments).toHaveLength(2);
+    expect(withTwoGoals.score.participant1).toBe(2);
+  });
+});
+
+describe("clock", () => {
+  it("is null before any clock-bearing event", () => {
+    expect(initialMatchState(1).clock).toBeNull();
+  });
+
+  it("updates from event.clock, carrying the event's statusId", () => {
+    const state = initialMatchState(1);
+    const next = reduce(
+      state,
+      event({
+        action: "status",
+        statusId: 4,
+        clock: { running: true, seconds: 1800 },
+      })
+    );
+    expect(next.clock).toEqual({ running: true, seconds: 1800, statusId: 4 });
+  });
+
+  it("leaves clock unchanged when a later event carries no clock", () => {
+    const withClock = reduce(
+      initialMatchState(1),
+      event({ clock: { running: true, seconds: 900 } })
+    );
+    const next = reduce(withClock, event({ action: "possession", participant: 1 }));
+    expect(next.clock).toEqual(withClock.clock);
   });
 });
 

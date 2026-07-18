@@ -5,10 +5,24 @@ export type ClientMessage =
   | { type: "subscribe"; fixtureId: number }
   | { type: "unsubscribe"; fixtureId: number };
 
+/** One row of the match list, joining fixture metadata with known live state. */
+export interface FixtureListEntry {
+  fixtureId: number;
+  participant1: string | null;
+  participant1Id: number | null;
+  participant2: string | null;
+  participant2Id: number | null;
+  competition: string | null;
+  startTime: number | null;
+  statusId: number;
+  score: { participant1: number; participant2: number };
+}
+
 export type ServerMessage =
   | { type: "state"; state: MatchState }
   | { type: "keyMoment"; fixtureId: number; moment: MatchState["keyMoments"][number] }
-  | { type: "replay_chunk"; fixtureId: number; events: unknown[]; done: boolean };
+  | { type: "replay_chunk"; fixtureId: number; events: unknown[]; done: boolean }
+  | { type: "fixture_list"; fixtures: FixtureListEntry[] };
 
 export type SubscribeHandler = (ws: WebSocket, fixtureId: number) => void;
 
@@ -16,12 +30,14 @@ export class Broadcaster {
   private wss: WebSocketServer;
   private subscriptions = new Map<WebSocket, Set<number>>();
   private onSubscribe?: SubscribeHandler;
+  private fixtureList: FixtureListEntry[] = [];
 
   constructor(port: number, onSubscribe?: SubscribeHandler) {
     this.onSubscribe = onSubscribe;
     this.wss = new WebSocketServer({ port });
     this.wss.on("connection", (ws) => {
       this.subscriptions.set(ws, new Set());
+      this.sendFixtureList(ws);
       ws.on("message", (raw) => this.handleMessage(ws, raw.toString()));
       ws.on("close", () => this.subscriptions.delete(ws));
       ws.on("error", (err) => {
@@ -81,6 +97,27 @@ export class Broadcaster {
     if (ws.readyState === ws.OPEN) {
       const payload: ServerMessage = { type: "state", state };
       ws.send(JSON.stringify(payload));
+    }
+  }
+
+  private sendFixtureList(ws: WebSocket): void {
+    if (ws.readyState !== ws.OPEN) return;
+    const payload: ServerMessage = { type: "fixture_list", fixtures: this.fixtureList };
+    ws.send(JSON.stringify(payload));
+  }
+
+  /**
+   * Updates the cached fixture list and pushes it to every connected client
+   * (not just subscribed ones — this is the match list, sent on connect and
+   * whenever it changes: a new fixture appears, or a fixture's state
+   * transitions to a terminal status).
+   */
+  broadcastFixtureList(fixtures: FixtureListEntry[]): void {
+    this.fixtureList = fixtures;
+    const payload: ServerMessage = { type: "fixture_list", fixtures };
+    const json = JSON.stringify(payload);
+    for (const [ws] of this.subscriptions) {
+      if (ws.readyState === ws.OPEN) ws.send(json);
     }
   }
 }

@@ -82,6 +82,16 @@ function applyPressure(
   };
 }
 
+/** True when `keyMoments` already has a moment of this type sharing `id`. */
+function alreadyRecorded(
+  keyMoments: KeyMoment[],
+  type: KeyMoment["type"],
+  id: number | undefined
+): boolean {
+  if (id === undefined) return false;
+  return keyMoments.some((m) => m.id === id && m.type === type);
+}
+
 export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
   let next: MatchState = {
     ...state,
@@ -89,6 +99,34 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
     lastTs: event.ts,
     lastSeq: event.seq,
   };
+
+  if (event.clock) {
+    next = {
+      ...next,
+      clock: {
+        running: event.clock.running,
+        seconds: event.clock.seconds,
+        statusId: next.statusId,
+      },
+    };
+  }
+
+  // Authoritative score: TxLINE's Score field is the running total, not a
+  // delta caused by this action, and is sent on every action that can modify
+  // the score-line (goal, score_adjustment, etc). Whenever present it
+  // replaces our derived score outright, superseding the goal-counting
+  // fallback below entirely — this is what prevents the same real goal
+  // (sent as several messages sharing one action Id) from being counted
+  // more than once.
+  if (event.score) {
+    next = {
+      ...next,
+      score: {
+        participant1: event.score.participant1,
+        participant2: event.score.participant2,
+      },
+    };
+  }
 
   const participant = event.participant;
   const danger = ACTION_TO_DANGER[event.action];
@@ -158,15 +196,30 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
     case "goal": {
       if (!participant) return next;
       const key = participant === 1 ? "participant1" : "participant2";
+
+      // Same real-world goal arriving again (unconfirmed -> confirmed ->
+      // amend, all sharing Update.Id): the authoritative score above has
+      // already been (re-)applied — don't append a second key moment or
+      // re-boost momentum for a goal we've already recorded.
+      if (alreadyRecorded(next.keyMoments, "goal", event.id)) {
+        return next;
+      }
+
       const moment: KeyMoment = {
         type: "goal",
         participant,
         ts: event.ts,
         seq: event.seq,
+        id: event.id,
       };
       next = {
         ...next,
-        score: { ...next.score, [key]: next.score[key] + 1 },
+        // Belt and braces: only fall back to counting when this message has
+        // no Score field at all (malformed/legacy frame). Normally the
+        // authoritative score above already set this.
+        score: event.score
+          ? next.score
+          : { ...next.score, [key]: next.score[key] + 1 },
         momentum: applyMomentum(next, participant, 1.5),
         keyMoments: [...next.keyMoments, moment],
       };
@@ -175,11 +228,17 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
 
     case "red_card": {
       if (!participant) return next;
+
+      if (alreadyRecorded(next.keyMoments, "red_card", event.id)) {
+        return next;
+      }
+
       const moment: KeyMoment = {
         type: "red_card",
         participant,
         ts: event.ts,
         seq: event.seq,
+        id: event.id,
       };
       next = {
         ...next,
@@ -194,11 +253,15 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
         | string
         | undefined;
       if (outcome === "Overturned" && participant) {
+        if (alreadyRecorded(next.keyMoments, "var_overturned", event.id)) {
+          return next;
+        }
         const moment: KeyMoment = {
           type: "var_overturned",
           participant,
           ts: event.ts,
           seq: event.seq,
+          id: event.id,
         };
         next = { ...next, keyMoments: [...next.keyMoments, moment] };
       }
