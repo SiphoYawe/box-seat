@@ -83,20 +83,20 @@ state wholesale, never merge.
 - `clock` — the game clock as of the last event that carried one, or `null` if none has
   arrived yet for this fixture.
   - `running` — whether the clock is currently ticking.
-  - `seconds` — **counts UP within the current period, from 0**. (CORRECTED 2026-07-18
-    against the live World Cup feed: at ~4 minutes into a live match, `seconds` read
-    `247`. The Fusion Scores PDF describes a countdown clock — the live TxLINE feed
-    does the opposite. Trust this, it was measured, not read.)
+  - `seconds` — **counts UP as CUMULATIVE MATCH TIME, from 0 at kickoff** — not
+    per-period. (CORRECTED TWICE against the live World Cup feed, final answer:
+    at ~4 min of H1 it read `247`; at the 73rd minute — deep into H2 — it read
+    `4402` (= 73.4 × 60). A per-period clock would have read ~1700 there. The
+    Fusion PDF's countdown description and our first per-period correction were
+    both wrong; this is measured across two periods of a live match.)
   - `statusId` — the game-phase `StatusId` in effect when this clock reading was taken
     (see the Game Phase Encoding table in `docs/txline/scores/soccer-feed.md`; `2` =
     H1, `4` = H2, etc).
   - The backend does not compute a display minute — derive it on the frontend:
-    - H1 (`statusId` 2): `minute = min(45, ceil(seconds / 60))`; if
-      `seconds > 2700`, render stoppage time (`45+X'` where `X = ceil((seconds - 2700) / 60)`).
-    - H2 (`statusId` 4): `minute = min(90, 45 + ceil(seconds / 60))`; if
-      `seconds > 2700`, render `90+X'` similarly.
-    - Extra time periods (`statusId` 7/9): same pattern over a 15-minute (900s) period,
-      based at 90' and 105'.
+    - `minute = ceil(seconds / 60)` — that's it, it's cumulative.
+    - Stoppage display: H1 (`statusId` 2) with `minute > 45` → render `45+X'`
+      (`X = minute - 45`); H2 (`statusId` 4) with `minute > 90` → `90+X'`;
+      ET1 (`7`) past 105 → `105+X'`; ET2 (`9`) past 120 → `120+X'`.
     - Between periods (`running: false` at HT etc.), show the period label (`HT`)
       rather than a minute.
 
@@ -144,6 +144,13 @@ fixture whose match has already reached `game_finalised`.
 The frontend accumulates chunks as they arrive and treats the sequence as complete
 once a chunk arrives with `done: true`. After that, it reconstructs the full state
 timeline from the accumulated raw events and can scrub freely through it.
+
+> **Reducer version note (2026-07-18, late):** `server/src/reducer/reducer.ts` gained an
+> `action_discarded` case — a disallowed goal (observed live: England had a goal
+> chalked off in France–England) now retracts its key moment by action id instead of
+> leaving a phantom beacon. **If the frontend ports the reducer for replay
+> reconstruction, re-copy `reducer.ts` now** — an old copy will show a goal takeover
+> in replays that the live view (correctly) never showed.
 
 ---
 

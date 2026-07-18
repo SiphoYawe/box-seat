@@ -226,6 +226,21 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
       return next;
     }
 
+    case "action_discarded": {
+      // The feed retracting a previously-sent action (e.g. a goal disallowed
+      // on review). event.id names the discarded action's id — remove any key
+      // moment derived from it so the frontend doesn't keep a phantom
+      // goal/card beacon. The record usually also carries the corrective
+      // authoritative Score, which was already applied above. Momentum is
+      // deliberately not rewound — it decays naturally.
+      if (event.id === undefined || event.id === null) return next;
+      const remaining = next.keyMoments.filter((m) => m.id !== event.id);
+      if (remaining.length !== next.keyMoments.length) {
+        next = { ...next, keyMoments: remaining };
+      }
+      return next;
+    }
+
     case "red_card": {
       if (!participant) return next;
 

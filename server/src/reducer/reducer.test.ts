@@ -344,3 +344,42 @@ describe("isTerminalEvent", () => {
     );
   });
 });
+
+describe("action_discarded", () => {
+  it("retracts a previously recorded goal moment by action id and applies the corrective score", () => {
+    let state = initialMatchState(1);
+    // Unconfirmed goal frame with no Score (fallback +1 path) — real pattern
+    // observed live in France-England (goal id 160, later discarded).
+    state = reduce(
+      state,
+      event({ action: "goal", participant: 2, id: 160, seq: 164, ts: 164000 })
+    );
+    expect(state.score.participant2).toBe(1);
+    expect(state.keyMoments).toHaveLength(1);
+
+    state = reduce(
+      state,
+      event({
+        action: "action_discarded",
+        id: 160,
+        seq: 166,
+        ts: 166000,
+        score: { participant1: 0, participant2: 0 },
+      })
+    );
+    expect(state.keyMoments).toHaveLength(0);
+    expect(state.score.participant2).toBe(0);
+  });
+
+  it("is a no-op when the discarded id matches no recorded moment or is absent", () => {
+    let state = reduce(
+      initialMatchState(1),
+      event({ action: "goal", participant: 1, id: 7, seq: 10, ts: 10000, score: { participant1: 1, participant2: 0 } })
+    );
+    const before = state;
+    state = reduce(state, event({ action: "action_discarded", id: 999, seq: 11, ts: 11000 }));
+    expect(state.keyMoments).toEqual(before.keyMoments);
+    state = reduce(state, event({ action: "action_discarded", seq: 12, ts: 12000 }));
+    expect(state.keyMoments).toEqual(before.keyMoments);
+  });
+});
