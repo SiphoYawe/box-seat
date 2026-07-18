@@ -1,5 +1,11 @@
 # Backend Task Prompt (hand to the backend engineer/agent)
 
+> **Status (2026-07-18, late):** tasks 1-3 are SHIPPED and verified live
+> (fixture_players: 54 rows for ARG-SUI; attestation: confirmed mainnet-beta
+> txSig reaching the frontend chip). Task 4 (X feed) is the only remaining
+> work - it now lives in `BACKEND-PROMPT-XFEED.md`; hand that file over
+> instead. The sections below stay as the design record for 1-3.
+
 You are working on the Box Seat backend (`server/` in this repo). The frontend
 is built and live; we now need three additions server-side. Read
 `docs/frontend/BACKEND-CONTRACT.md` first (it is the ground truth — update it
