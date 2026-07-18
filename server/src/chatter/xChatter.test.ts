@@ -9,10 +9,13 @@ import {
   pollFixtureOnce,
   pollAllOnce,
   startChatter,
+  buildApiFetcher,
+  resolveChatterBackend,
   type RawXPost,
   type PollContext,
   type ChatterBroadcaster,
-  type XFetcher,
+  type ChatterFetcher,
+  type FetchOutcome,
 } from "./xChatter.js";
 import type Database from "better-sqlite3";
 
@@ -126,15 +129,16 @@ function apiResponse(tweets: ApiTweetFixture[], users: { id: string; name: strin
   };
 }
 
-function fetcherQueue(...responses: Array<{ status: number; json: unknown }>): XFetcher {
+/** Queues `FetchOutcome`s for a fake `ChatterFetcher` — no network, no subprocess. */
+function outcomeQueue(...outcomes: FetchOutcome[]): ChatterFetcher {
   const fn = vi.fn();
-  for (const r of responses) {
-    fn.mockResolvedValueOnce({ status: r.status, json: async () => r.json });
+  for (const o of outcomes) {
+    fn.mockResolvedValueOnce(o);
   }
-  return fn as unknown as XFetcher;
+  return fn as unknown as ChatterFetcher;
 }
 
-function makeCtx(db: Database.Database, fetcher: XFetcher, broadcaster: ChatterBroadcaster): PollContext {
+function makeCtx(db: Database.Database, fetcher: ChatterFetcher, broadcaster: ChatterBroadcaster): PollContext {
   return { db, broadcaster, fetcher, disabled: false, pausedUntil: 0 };
 }
 
@@ -153,12 +157,9 @@ describe("pollFixtureOnce", () => {
   const fixture = { fixtureId: 42, team1: "Argentina", team2: "Switzerland" };
 
   it("caches accepted posts and broadcasts on first fetch", async () => {
-    const fetcher = fetcherQueue({
-      status: 200,
-      json: apiResponse(
-        [{ id: "100", text: "Huge win for Argentina!", author_id: "u1" }],
-        [{ id: "u1", name: "Fan One", username: "fanone" }]
-      ),
+    const fetcher = outcomeQueue({
+      kind: "ok",
+      posts: [rawPost({ id: "100", text: "Huge win for Argentina!", authorName: "Fan One", authorHandle: "fanone" })],
     });
     const ctx = makeCtx(db, fetcher, broadcaster);
 
@@ -173,9 +174,9 @@ describe("pollFixtureOnce", () => {
   });
 
   it("drops moderated-out posts entirely, leaving no cache and no broadcast", async () => {
-    const fetcher = fetcherQueue({
-      status: 200,
-      json: apiResponse([{ id: "101", text: "Check it out https://spam.example", author_id: "u1" }]),
+    const fetcher = outcomeQueue({
+      kind: "ok",
+      posts: [rawPost({ id: "101", text: "Check it out https://spam.example" })],
     });
     const ctx = makeCtx(db, fetcher, broadcaster);
 
@@ -186,14 +187,11 @@ describe("pollFixtureOnce", () => {
   });
 
   it("does not rebroadcast when the newest post id is unchanged", async () => {
-    const response = {
-      status: 200,
-      json: apiResponse(
-        [{ id: "200", text: "Same post both polls", author_id: "u1" }],
-        [{ id: "u1", name: "Fan", username: "fan" }]
-      ),
+    const outcome: FetchOutcome = {
+      kind: "ok",
+      posts: [rawPost({ id: "200", text: "Same post both polls", authorName: "Fan", authorHandle: "fan" })],
     };
-    const fetcher = fetcherQueue(response, response);
+    const fetcher = outcomeQueue(outcome, outcome);
     const ctx = makeCtx(db, fetcher, broadcaster);
 
     await pollFixtureOnce(ctx, fixture);
@@ -203,15 +201,9 @@ describe("pollFixtureOnce", () => {
   });
 
   it("rebroadcasts when the newest post id changes", async () => {
-    const fetcher = fetcherQueue(
-      {
-        status: 200,
-        json: apiResponse([{ id: "300", text: "First post", author_id: "u1", created_at: "2026-07-18T12:00:00.000Z" }]),
-      },
-      {
-        status: 200,
-        json: apiResponse([{ id: "301", text: "Newer post", author_id: "u1", created_at: "2026-07-18T12:05:00.000Z" }]),
-      }
+    const fetcher = outcomeQueue(
+      { kind: "ok", posts: [rawPost({ id: "300", text: "First post", createdAtMs: 1_000 })] },
+      { kind: "ok", posts: [rawPost({ id: "301", text: "Newer post", createdAtMs: 2_000 })] }
     );
     const ctx = makeCtx(db, fetcher, broadcaster);
 
@@ -224,7 +216,7 @@ describe("pollFixtureOnce", () => {
   });
 
   it("keeps the stale cache and does not throw when the fetch itself fails", async () => {
-    const fetcher: XFetcher = vi.fn().mockRejectedValueOnce(new Error("network down"));
+    const fetcher: ChatterFetcher = vi.fn().mockRejectedValueOnce(new Error("network down"));
     const ctx = makeCtx(db, fetcher, broadcaster);
 
     await expect(pollFixtureOnce(ctx, fixture)).resolves.toBeUndefined();
@@ -232,8 +224,8 @@ describe("pollFixtureOnce", () => {
     expect(broadcastChatter).not.toHaveBeenCalled();
   });
 
-  it("disables the poller for the process lifetime on a 401", async () => {
-    const fetcher = fetcherQueue({ status: 401, json: {} });
+  it("disables the poller for the process lifetime on an auth-error outcome", async () => {
+    const fetcher = outcomeQueue({ kind: "auth-error", detail: "X API returned 401" });
     const ctx = makeCtx(db, fetcher, broadcaster);
 
     await pollFixtureOnce(ctx, fixture);
@@ -242,14 +234,25 @@ describe("pollFixtureOnce", () => {
     expect(broadcastChatter).not.toHaveBeenCalled();
   });
 
-  it("backs off for 5 minutes on a 429", async () => {
-    const fetcher = fetcherQueue({ status: 429, json: {} });
+  it("backs off for 5 minutes on a rate-limited outcome", async () => {
+    const fetcher = outcomeQueue({ kind: "rate-limited" });
     const ctx = makeCtx(db, fetcher, broadcaster);
     const before = Date.now();
 
     await pollFixtureOnce(ctx, fixture);
 
     expect(ctx.pausedUntil).toBeGreaterThanOrEqual(before + 5 * 60_000 - 1000);
+    expect(broadcastChatter).not.toHaveBeenCalled();
+  });
+
+  it("does nothing on a skip outcome (routine self-pacing, not a failure)", async () => {
+    const fetcher = outcomeQueue({ kind: "skip" });
+    const ctx = makeCtx(db, fetcher, broadcaster);
+
+    await pollFixtureOnce(ctx, fixture);
+
+    expect(ctx.disabled).toBe(false);
+    expect(ctx.pausedUntil).toBe(0);
     expect(broadcastChatter).not.toHaveBeenCalled();
   });
 });
@@ -265,9 +268,9 @@ describe("pollAllOnce", () => {
   });
 
   it("short-circuits every fixture once disabled mid-loop (a bad token must not spam requests)", async () => {
-    const fetcher = fetcherQueue(
-      { status: 401, json: {} },
-      { status: 200, json: apiResponse([{ id: "1", text: "hi", author_id: "u1" }]) }
+    const fetcher = outcomeQueue(
+      { kind: "auth-error", detail: "X API returned 401" },
+      { kind: "ok", posts: [rawPost({ id: "1", text: "hi" })] }
     );
     const ctx = makeCtx(db, fetcher, broadcaster);
     const fixtures = [
@@ -281,12 +284,12 @@ describe("pollAllOnce", () => {
     expect(ctx.disabled).toBe(true);
   });
 
-  it("skips polling entirely while paused after a 429", async () => {
-    const fetcher = fetcherQueue({ status: 429, json: {} });
+  it("skips polling entirely while paused after a rate-limited outcome", async () => {
+    const fetcher = outcomeQueue({ kind: "rate-limited" });
     const ctx = makeCtx(db, fetcher, broadcaster);
     const fixtures = [{ fixtureId: 1, team1: "A", team2: "B" }];
 
-    await pollAllOnce(ctx, () => fixtures); // triggers the 429, sets pausedUntil
+    await pollAllOnce(ctx, () => fixtures); // triggers the rate-limit, sets pausedUntil
     await pollAllOnce(ctx, () => fixtures); // should no-op — still paused
 
     expect(fetcher).toHaveBeenCalledTimes(1);
@@ -294,7 +297,7 @@ describe("pollAllOnce", () => {
 
   it("polls nothing when there are no live subscribed fixtures", async () => {
     const fetcher = vi.fn();
-    const ctx = makeCtx(db, fetcher as unknown as XFetcher, broadcaster);
+    const ctx = makeCtx(db, fetcher as unknown as ChatterFetcher, broadcaster);
 
     await pollAllOnce(ctx, () => []);
 
@@ -302,37 +305,218 @@ describe("pollAllOnce", () => {
   });
 });
 
-describe("startChatter (dormant path)", () => {
+// ---------------------------------------------------------------------------
+// buildApiFetcher — HTTP status -> FetchOutcome translation
+// ---------------------------------------------------------------------------
+
+describe("buildApiFetcher", () => {
+  const fixture = { fixtureId: 42, team1: "Argentina", team2: "Switzerland" };
+  let fetchSpy: { mockRestore: () => void } | undefined;
+
+  afterEach(() => {
+    fetchSpy?.mockRestore();
+    fetchSpy = undefined;
+  });
+
+  it("maps a 200 response through parseApiResponse into an ok outcome", async () => {
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({
+      status: 200,
+      json: async () =>
+        apiResponse([{ id: "1", text: "hi", author_id: "u1" }], [{ id: "u1", name: "Fan", username: "fan" }]),
+    } as Response);
+
+    const outcome = await buildApiFetcher("token")(fixture);
+
+    expect(outcome.kind).toBe("ok");
+    if (outcome.kind === "ok") {
+      expect(outcome.posts[0]).toMatchObject({ id: "1", authorName: "Fan", authorHandle: "fan" });
+    }
+  });
+
+  it("maps a 401 to an auth-error outcome", async () => {
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ status: 401, json: async () => ({}) } as Response);
+    const outcome = await buildApiFetcher("token")(fixture);
+    expect(outcome.kind).toBe("auth-error");
+  });
+
+  it("maps a 429 to a rate-limited outcome", async () => {
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ status: 429, json: async () => ({}) } as Response);
+    const outcome = await buildApiFetcher("token")(fixture);
+    expect(outcome.kind).toBe("rate-limited");
+  });
+
+  it("maps a 500 to a transient error outcome", async () => {
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockResolvedValue({ status: 500, json: async () => ({}) } as Response);
+    const outcome = await buildApiFetcher("token")(fixture);
+    expect(outcome.kind).toBe("error");
+  });
+
+  it("maps a network-level throw to a transient error outcome", async () => {
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockRejectedValue(new Error("network down"));
+    const outcome = await buildApiFetcher("token")(fixture);
+    expect(outcome).toEqual({ kind: "error", message: "network down" });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// resolveChatterBackend — pure CHATTER_FETCHER=cli|api|auto selection logic
+// ---------------------------------------------------------------------------
+
+describe("resolveChatterBackend", () => {
+  it("auto: picks api when a bearer token is present", () => {
+    const result = resolveChatterBackend({ X_BEARER_TOKEN: "tok" }, () => "/should/not/be/used");
+    expect(result).toEqual({ kind: "api", bearerToken: "tok" });
+  });
+
+  it("auto: picks cli when no bearer token is set and the binary resolves", () => {
+    const result = resolveChatterBackend({}, () => "/fake/bin/twitter");
+    expect(result).toEqual({ kind: "cli", binPath: "/fake/bin/twitter" });
+  });
+
+  it("auto: dormant when neither a token nor a binary is available", () => {
+    const result = resolveChatterBackend({}, () => null);
+    expect(result.kind).toBe("dormant");
+  });
+
+  it("explicit api mode ignores an available CLI binary and goes dormant without a token", () => {
+    const result = resolveChatterBackend({ CHATTER_FETCHER: "api" }, () => "/fake/bin/twitter");
+    expect(result.kind).toBe("dormant");
+  });
+
+  it("explicit cli mode ignores an available token and goes dormant without a binary", () => {
+    const result = resolveChatterBackend({ CHATTER_FETCHER: "cli", X_BEARER_TOKEN: "tok" }, () => null);
+    expect(result.kind).toBe("dormant");
+  });
+
+  it("an unrecognized CHATTER_FETCHER value falls back to auto behavior", () => {
+    const result = resolveChatterBackend({ CHATTER_FETCHER: "bogus", X_BEARER_TOKEN: "tok" }, () => null);
+    expect(result).toEqual({ kind: "api", bearerToken: "tok" });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// startChatter — backend selection wiring + startup logs
+// ---------------------------------------------------------------------------
+
+describe("startChatter backend selection", () => {
   const originalToken = process.env.X_BEARER_TOKEN;
+  const originalMode = process.env.CHATTER_FETCHER;
 
   beforeEach(() => {
     delete process.env.X_BEARER_TOKEN;
+    delete process.env.CHATTER_FETCHER;
   });
 
   afterEach(() => {
     if (originalToken === undefined) delete process.env.X_BEARER_TOKEN;
     else process.env.X_BEARER_TOKEN = originalToken;
+    if (originalMode === undefined) delete process.env.CHATTER_FETCHER;
+    else process.env.CHATTER_FETCHER = originalMode;
   });
 
-  it("logs one line and never touches fetch when X_BEARER_TOKEN is unset", () => {
+  function newDb(): Database.Database {
+    const db = openDb(":memory:");
+    initKv(db);
+    return db;
+  }
+
+  it("stays dormant and logs which backends were checked when neither a token nor a CLI binary is available", () => {
     const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
     const fetchSpy = vi.spyOn(globalThis, "fetch");
 
-    const db = openDb(":memory:");
-    initKv(db);
     const handle = startChatter({
-      db,
+      db: newDb(),
       broadcaster: { broadcastChatter: vi.fn() },
       getLiveSubscribedFixtures: () => [{ fixtureId: 1, team1: "A", team2: "B" }],
+      resolveCliBinary: () => null,
     });
 
     expect(logSpy).toHaveBeenCalledWith(
-      "[Chatter] X_BEARER_TOKEN not set — match chatter disabled."
+      "[Chatter] Match chatter disabled — no X_BEARER_TOKEN and no `twitter` binary found " +
+        "(checked TWITTER_CLI_PATH, PATH (`which twitter`), ~/.local/bin, ~/.agent-reach/bin)."
     );
     expect(fetchSpy).not.toHaveBeenCalled();
     expect(() => handle.stop()).not.toThrow();
 
     logSpy.mockRestore();
     fetchSpy.mockRestore();
+  });
+
+  it("selects the X API backend when X_BEARER_TOKEN is set, even if a CLI binary also resolves", () => {
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    process.env.X_BEARER_TOKEN = "test-token";
+
+    const handle = startChatter({
+      db: newDb(),
+      broadcaster: { broadcastChatter: vi.fn() },
+      getLiveSubscribedFixtures: () => [], // selection-only — never actually poll (no real network here)
+      resolveCliBinary: () => "/fake/bin/twitter",
+    });
+
+    expect(logSpy).toHaveBeenCalledWith("[Chatter] Match chatter enabled via the X API backend.");
+    handle.stop();
+    logSpy.mockRestore();
+  });
+
+  it("auto mode selects the CLI backend when no token is set and the binary resolves (injected fake resolver — no real PATH lookup or subprocess)", () => {
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const cliFetcherStub: ChatterFetcher = vi.fn(async (): Promise<FetchOutcome> => ({ kind: "ok", posts: [] }));
+    const buildCliFetcherSpy = vi.fn((binPath: string) => {
+      expect(binPath).toBe("/fake/bin/twitter");
+      return cliFetcherStub;
+    });
+
+    const handle = startChatter({
+      db: newDb(),
+      broadcaster: { broadcastChatter: vi.fn() },
+      getLiveSubscribedFixtures: () => [], // selection-only — never actually poll
+      resolveCliBinary: () => "/fake/bin/twitter",
+      buildCliFetcher: buildCliFetcherSpy,
+    });
+
+    expect(logSpy).toHaveBeenCalledWith(
+      "[Chatter] Match chatter enabled via the local `twitter` CLI backend (/fake/bin/twitter)."
+    );
+    expect(buildCliFetcherSpy).toHaveBeenCalledWith("/fake/bin/twitter");
+    handle.stop();
+    logSpy.mockRestore();
+  });
+
+  it("explicit CHATTER_FETCHER=api does not fall back to the CLI when no token is set", () => {
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    process.env.CHATTER_FETCHER = "api";
+
+    const handle = startChatter({
+      db: newDb(),
+      broadcaster: { broadcastChatter: vi.fn() },
+      getLiveSubscribedFixtures: () => [],
+      resolveCliBinary: () => "/fake/bin/twitter", // present, but must be ignored in explicit api mode
+    });
+
+    expect(logSpy).toHaveBeenCalledWith(
+      "[Chatter] Match chatter disabled — CHATTER_FETCHER=api but X_BEARER_TOKEN is not set."
+    );
+    handle.stop();
+    logSpy.mockRestore();
+  });
+
+  it("explicit CHATTER_FETCHER=cli does not fall back to the API when the binary is missing, even with a token set", () => {
+    const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    process.env.CHATTER_FETCHER = "cli";
+    process.env.X_BEARER_TOKEN = "test-token";
+
+    const handle = startChatter({
+      db: newDb(),
+      broadcaster: { broadcastChatter: vi.fn() },
+      getLiveSubscribedFixtures: () => [],
+      resolveCliBinary: () => null,
+    });
+
+    expect(logSpy).toHaveBeenCalledWith(
+      "[Chatter] Match chatter disabled — CHATTER_FETCHER=cli but no `twitter` binary found " +
+        "(checked TWITTER_CLI_PATH, PATH (`which twitter`), ~/.local/bin, ~/.agent-reach/bin)."
+    );
+    handle.stop();
+    logSpy.mockRestore();
   });
 });

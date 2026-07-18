@@ -333,15 +333,24 @@ id).
 
 At most ~10 posts, newest first.
 
+### Fetch backend is configurable server-side — the wire contract does not change
+
+The backend fetches posts from either the official X API (bearer token) or the local
+`twitter` CLI (`CHATTER_FETCHER=cli|api|auto`, server-side env var only). This is purely
+an internal fetch-seam detail: every post — from either backend — still passes through
+the same moderation pipeline before being cached or broadcast, and the `chatter` message
+shape above is identical regardless of which backend produced it. The frontend has no way
+to tell which backend is active and does not need to.
+
 ### Graceful absence — this message may simply never arrive
 
 Treat absence as "hide the chatter panel entirely," not as a loading/error state. All of
 the following are normal, expected reasons no `chatter` message ever shows up for a
 fixture:
 
-- The backend has no X API credential configured (`X_BEARER_TOKEN` unset) — the entire
-  chatter subsystem is dormant for the whole process; no fixture ever gets a `chatter`
-  message.
+- Neither fetch backend is available (no `X_BEARER_TOKEN` and no local `twitter` CLI
+  binary — the normal case on a server deploy, e.g. Railway) — the entire chatter
+  subsystem is dormant for the whole process; no fixture ever gets a `chatter` message.
 - The fixture hasn't reached `phase: "live"` yet (see `fixture_list`) — only live
   fixtures are polled. A finished fixture still serves whatever was cached while it was
   live (no fresh polling), and an upcoming fixture has never been polled at all.
@@ -351,8 +360,10 @@ fixture:
 Once a `chatter` message does arrive for a fixture, expect further ones as the cached
 list changes (new posts pass moderation), but there's no guaranteed cadence — the
 backend polls a shared loop on the order of ~90s per live, subscribed fixture, and backs
-off further (or stops permanently for the process) under X API rate limits or auth
-failures. The frontend should not infer anything from a gap between `chatter` messages.
+off further (or stops permanently for the process) under rate limits or backend
+failures (auth errors for the X API; non-zero exit/timeout/unparseable output for the
+CLI). Delivery is best-effort and absent-when-unavailable in every case — the frontend
+should not infer anything from a gap between `chatter` messages.
 
 ### Moderation guarantees
 

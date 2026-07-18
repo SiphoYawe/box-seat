@@ -1,6 +1,7 @@
 import type Database from "better-sqlite3";
 import { kvGet, kvSet } from "../store/kv.js";
 import type { ChatterPost } from "../ws/server.js";
+import { buildCliFetcher, resolveTwitterCliPathSync } from "./cliFetcher.js";
 
 /** One shared loop polls every subscribed+live fixture on this cadence. */
 const POLL_INTERVAL_MS = 90_000;
@@ -224,16 +225,34 @@ export interface LiveSubscribedFixture {
   team2: string;
 }
 
-/** Injectable HTTP fetcher — a trimmed-down `fetch` so tests never monkeypatch globals. */
-export type XFetcher = (query: string) => Promise<{ status: number; json(): Promise<unknown> }>;
+/**
+ * Outcome of one backend-specific fetch attempt for a single fixture — the
+ * seam a fetcher backend (X API or the `twitter` CLI) must satisfy so the
+ * shared poller stays backend-agnostic. Each backend translates its own
+ * failure model (HTTP status codes for the API, exit codes/timeouts for the
+ * CLI) into this common shape.
+ */
+export type FetchOutcome =
+  | { kind: "ok"; posts: RawXPost[] }
+  /** Permanent for the process — bad/expired token, or an unrecoverable CLI failure. Same discipline as the old 401 path. */
+  | { kind: "auth-error"; detail?: string }
+  /** Temporary pause (currently only the X API's 429). */
+  | { kind: "rate-limited" }
+  /** Transient — logged, cache left untouched, no disabling. */
+  | { kind: "error"; message: string }
+  /** Routine self-pacing (e.g. the CLI's shared 60s-minimum gate) — not a failure, no log. */
+  | { kind: "skip" };
+
+/** Injectable backend fetcher — either the X API or the local `twitter` CLI. Tests inject fakes so nothing ever hits a real network or subprocess. */
+export type ChatterFetcher = (fixture: LiveSubscribedFixture) => Promise<FetchOutcome>;
 
 export interface PollContext {
   db: Database.Database;
   broadcaster: ChatterBroadcaster;
-  fetcher: XFetcher;
-  /** Set permanently on a 401/403 — a bad token must not spam retries for the rest of the process. */
+  fetcher: ChatterFetcher;
+  /** Set permanently on an unrecoverable backend failure — must not spam retries for the rest of the process. */
   disabled: boolean;
-  /** Poll ticks no-op until this timestamp — set on a 429. */
+  /** Poll ticks no-op until this timestamp — set on a rate-limit. */
   pausedUntil: number;
 }
 
@@ -246,11 +265,9 @@ export async function pollFixtureOnce(
   ctx: PollContext,
   fixture: LiveSubscribedFixture
 ): Promise<void> {
-  const query = buildQuery(fixture.team1, fixture.team2);
-
-  let res: { status: number; json(): Promise<unknown> };
+  let outcome: FetchOutcome;
   try {
-    res = await ctx.fetcher(query);
+    outcome = await ctx.fetcher(fixture);
   } catch (err) {
     console.warn(
       `[Chatter] Fetch failed for fixture ${fixture.fixtureId} (keeping stale cache):`,
@@ -259,38 +276,32 @@ export async function pollFixtureOnce(
     return;
   }
 
-  if (res.status === 401 || res.status === 403) {
+  if (outcome.kind === "skip") return; // routine self-pacing (e.g. CLI's shared 60s gate) — not a failure
+
+  if (outcome.kind === "auth-error") {
     if (!ctx.disabled) {
       console.error(
-        `[Chatter] X API returned ${res.status} — disabling match chatter for the rest of this process (bad/expired token?).`
+        `[Chatter] ${outcome.detail ?? "Unrecoverable backend failure"} — disabling match chatter for the rest of this process.`
       );
     }
     ctx.disabled = true;
     return;
   }
 
-  if (res.status === 429) {
+  if (outcome.kind === "rate-limited") {
     ctx.pausedUntil = Date.now() + RATE_LIMIT_BACKOFF_MS;
     console.warn("[Chatter] X API rate-limited (429) — pausing chatter polling for 5 minutes.");
     return;
   }
 
-  if (res.status < 200 || res.status >= 300) {
+  if (outcome.kind === "error") {
     console.warn(
-      `[Chatter] X API returned ${res.status} for fixture ${fixture.fixtureId} — keeping stale cache.`
+      `[Chatter] Fetch failed for fixture ${fixture.fixtureId} (keeping stale cache): ${outcome.message}`
     );
     return;
   }
 
-  let json: unknown;
-  try {
-    json = await res.json();
-  } catch (err) {
-    console.warn(`[Chatter] Failed to parse X API response for fixture ${fixture.fixtureId}:`, err);
-    return;
-  }
-
-  const accepted = parseApiResponse(json).filter(moderatePost).map(toChatterPost);
+  const accepted = outcome.posts.filter(moderatePost).map(toChatterPost);
   if (accepted.length === 0) return; // keep whatever's cached rather than overwrite with empty
 
   accepted.sort((a, b) => b.ts - a.ts);
@@ -321,18 +332,100 @@ export async function pollAllOnce(
   }
 }
 
-function buildDefaultFetcher(bearerToken: string): XFetcher {
-  return async (query: string) => {
+/** X API-backed `ChatterFetcher` — builds the search query, calls the API, and translates HTTP status codes into a `FetchOutcome`. */
+export function buildApiFetcher(bearerToken: string): ChatterFetcher {
+  return async (fixture: LiveSubscribedFixture) => {
+    const query = buildQuery(fixture.team1, fixture.team2);
     const url = new URL(X_SEARCH_URL);
     url.searchParams.set("query", query);
     url.searchParams.set("tweet.fields", "lang,public_metrics,created_at,entities,attachments");
     url.searchParams.set("expansions", "author_id");
     url.searchParams.set("user.fields", "name,username");
     url.searchParams.set("max_results", "25");
-    const res = await fetch(url, {
-      headers: { Authorization: `Bearer ${bearerToken}` },
-    });
-    return { status: res.status, json: () => res.json() };
+
+    let res: Response;
+    try {
+      res = await fetch(url, { headers: { Authorization: `Bearer ${bearerToken}` } });
+    } catch (err) {
+      return { kind: "error", message: err instanceof Error ? err.message : String(err) };
+    }
+
+    if (res.status === 401 || res.status === 403) {
+      return { kind: "auth-error", detail: `X API returned ${res.status} (bad/expired token?)` };
+    }
+    if (res.status === 429) {
+      return { kind: "rate-limited" };
+    }
+    if (res.status < 200 || res.status >= 300) {
+      return { kind: "error", message: `X API returned ${res.status}` };
+    }
+
+    let json: unknown;
+    try {
+      json = await res.json();
+    } catch {
+      return { kind: "error", message: "failed to parse X API response" };
+    }
+
+    return { kind: "ok", posts: parseApiResponse(json) };
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Backend selection
+// ---------------------------------------------------------------------------
+
+export interface ChatterBackendEnv {
+  CHATTER_FETCHER?: string;
+  X_BEARER_TOKEN?: string;
+}
+
+export type ChatterBackendSelection =
+  | { kind: "api"; bearerToken: string }
+  | { kind: "cli"; binPath: string }
+  | { kind: "dormant"; reason: string };
+
+/**
+ * Pure backend-selection logic for `CHATTER_FETCHER=cli|api|auto` (default
+ * `auto`). No fetch, no subprocess, no console output — `resolveCliBinary` is
+ * injected so this (and its tests) never touch the real PATH/filesystem
+ * directly. `auto` prefers the X API when a token is present, else falls back
+ * to the CLI when the binary resolves, else stays dormant exactly as before.
+ * An explicit `api`/`cli` mode does NOT fall back to the other backend — it
+ * either works or goes dormant with a reason that says why.
+ */
+export function resolveChatterBackend(
+  env: ChatterBackendEnv,
+  resolveCliBinary: () => string | null
+): ChatterBackendSelection {
+  const rawMode = (env.CHATTER_FETCHER ?? "auto").trim().toLowerCase();
+  const mode = rawMode === "api" || rawMode === "cli" ? rawMode : "auto";
+  const bearerToken = env.X_BEARER_TOKEN;
+
+  const dormantReasonSuffix =
+    "checked TWITTER_CLI_PATH, PATH (`which twitter`), ~/.local/bin, ~/.agent-reach/bin";
+
+  if (mode === "api") {
+    if (bearerToken) return { kind: "api", bearerToken };
+    return { kind: "dormant", reason: "CHATTER_FETCHER=api but X_BEARER_TOKEN is not set" };
+  }
+
+  if (mode === "cli") {
+    const binPath = resolveCliBinary();
+    if (binPath) return { kind: "cli", binPath };
+    return {
+      kind: "dormant",
+      reason: `CHATTER_FETCHER=cli but no \`twitter\` binary found (${dormantReasonSuffix})`,
+    };
+  }
+
+  // auto: prefer the X API when a token is present, else fall back to the CLI.
+  if (bearerToken) return { kind: "api", bearerToken };
+  const binPath = resolveCliBinary();
+  if (binPath) return { kind: "cli", binPath };
+  return {
+    kind: "dormant",
+    reason: `no X_BEARER_TOKEN and no \`twitter\` binary found (${dormantReasonSuffix})`,
   };
 }
 
@@ -341,6 +434,12 @@ export interface StartChatterOptions {
   broadcaster: ChatterBroadcaster;
   /** Returns every fixture that currently has >=1 subscriber AND is live, with team names for query building. */
   getLiveSubscribedFixtures: () => LiveSubscribedFixture[];
+  /** Test/deploy seam — defaults to `process.env`. Only `CHATTER_FETCHER`/`X_BEARER_TOKEN` are read. */
+  env?: ChatterBackendEnv;
+  /** Test seam — defaults to the real PATH/filesystem lookup (`resolveTwitterCliPathSync`). */
+  resolveCliBinary?: () => string | null;
+  /** Test seam — defaults to the real `buildCliFetcher`. */
+  buildCliFetcher?: (binPath: string) => ChatterFetcher;
 }
 
 export interface ChatterHandle {
@@ -348,21 +447,35 @@ export interface ChatterHandle {
 }
 
 /**
- * Starts the shared chatter poll loop. Completely dormant — no polling, no
- * WS messages, nothing but one log line — when `X_BEARER_TOKEN` is unset or
- * empty; this must be a totally safe no-op path.
+ * Starts the shared chatter poll loop. Selects a backend via `CHATTER_FETCHER`
+ * (see `resolveChatterBackend`) and stays completely dormant — no polling, no
+ * WS messages, nothing but one log line explaining what was checked — when
+ * neither backend is available; this must be a totally safe no-op path (e.g.
+ * on a Railway deploy where the `twitter` CLI binary doesn't exist).
  */
 export function startChatter(opts: StartChatterOptions): ChatterHandle {
-  const bearerToken = process.env.X_BEARER_TOKEN;
-  if (!bearerToken) {
-    console.log("[Chatter] X_BEARER_TOKEN not set — match chatter disabled.");
+  const env = opts.env ?? process.env;
+  const resolveCliBinary = opts.resolveCliBinary ?? resolveTwitterCliPathSync;
+  const makeCliFetcher = opts.buildCliFetcher ?? buildCliFetcher;
+
+  const selection = resolveChatterBackend(env, resolveCliBinary);
+
+  let fetcher: ChatterFetcher;
+  if (selection.kind === "dormant") {
+    console.log(`[Chatter] Match chatter disabled — ${selection.reason}.`);
     return { stop() {} };
+  } else if (selection.kind === "api") {
+    fetcher = buildApiFetcher(selection.bearerToken);
+    console.log("[Chatter] Match chatter enabled via the X API backend.");
+  } else {
+    fetcher = makeCliFetcher(selection.binPath);
+    console.log(`[Chatter] Match chatter enabled via the local \`twitter\` CLI backend (${selection.binPath}).`);
   }
 
   const ctx: PollContext = {
     db: opts.db,
     broadcaster: opts.broadcaster,
-    fetcher: buildDefaultFetcher(bearerToken),
+    fetcher,
     disabled: false,
     pausedUntil: 0,
   };
