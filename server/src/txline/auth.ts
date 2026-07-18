@@ -163,47 +163,89 @@ export async function setupTxLineSession(
     TOKEN_2022_PROGRAM_ID
   );
 
-  const tx = await program.methods
-    .subscribe(SERVICE_LEVEL_ID, SUBSCRIPTION_WEEKS)
-    .accounts({
-      user: serviceWallet.publicKey,
-      pricingMatrix: pricingMatrixPda,
-      tokenMint,
-      userTokenAccount: userTokenAccount.address,
-      tokenTreasuryVault,
-      tokenTreasuryPda,
-      tokenProgram: TOKEN_2022_PROGRAM_ID,
-      associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
-      systemProgram: anchor.web3.SystemProgram.programId,
-    })
-    .transaction();
+  const subscribeIxs = (
+    await program.methods
+      .subscribe(SERVICE_LEVEL_ID, SUBSCRIPTION_WEEKS)
+      .accounts({
+        user: serviceWallet.publicKey,
+        pricingMatrix: pricingMatrixPda,
+        tokenMint,
+        userTokenAccount: userTokenAccount.address,
+        tokenTreasuryVault,
+        tokenTreasuryPda,
+        tokenProgram: TOKEN_2022_PROGRAM_ID,
+        associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
+        systemProgram: anchor.web3.SystemProgram.programId,
+      })
+      .transaction()
+  ).instructions;
 
-  const latestBlockhash = await connection.getLatestBlockhash("confirmed");
-  tx.recentBlockhash = latestBlockhash.blockhash;
-  tx.feePayer = serviceWallet.publicKey;
-  tx.sign(serviceWallet);
-
-  // The signature is fixed once the wallet signs, whether or not the
-  // transaction ultimately lands on-chain.
-  const txSig = anchor.utils.bytes.bs58.encode(tx.signature!);
-
+  // The public mainnet RPC regularly drops fee-less transactions until the
+  // blockhash expires. Land reliably: priority fee + fresh blockhash per attempt.
+  const SEND_ATTEMPTS = 4;
+  const attemptedSigs: string[] = [];
+  let txSig = "";
   let alreadySubscribed = false;
-  try {
-    await connection.sendRawTransaction(tx.serialize());
-    await connection.confirmTransaction(
-      {
-        signature: txSig,
-        blockhash: latestBlockhash.blockhash,
-        lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
-      },
-      "confirmed"
+
+  for (let attempt = 1; attempt <= SEND_ATTEMPTS; attempt++) {
+    const tx = new anchor.web3.Transaction();
+    tx.add(
+      anchor.web3.ComputeBudgetProgram.setComputeUnitPrice({
+        microLamports: 100_000,
+      }),
+      ...subscribeIxs
     );
-  } catch (err) {
-    if (isActiveSubscriptionError(err)) {
-      alreadySubscribed = true;
-      console.log("[TxLINE] Already subscribed — proceeding to activation");
-    } else {
+    const latestBlockhash = await connection.getLatestBlockhash("confirmed");
+    tx.recentBlockhash = latestBlockhash.blockhash;
+    tx.feePayer = serviceWallet.publicKey;
+    tx.sign(serviceWallet);
+
+    // The signature is fixed once the wallet signs, whether or not the
+    // transaction ultimately lands on-chain.
+    txSig = anchor.utils.bytes.bs58.encode(tx.signature!);
+    attemptedSigs.push(txSig);
+
+    try {
+      await connection.sendRawTransaction(tx.serialize());
+      await connection.confirmTransaction(
+        {
+          signature: txSig,
+          blockhash: latestBlockhash.blockhash,
+          lastValidBlockHeight: latestBlockhash.lastValidBlockHeight,
+        },
+        "confirmed"
+      );
+      break;
+    } catch (err) {
+      if (isActiveSubscriptionError(err)) {
+        alreadySubscribed = true;
+        console.log("[TxLINE] Already subscribed — proceeding to activation");
+        break;
+      }
+      const isExpiry =
+        (err as Error)?.name === "TransactionExpiredBlockheightExceededError" ||
+        String((err as Error)?.message ?? "").includes("block height exceeded");
+      if (isExpiry && attempt < SEND_ATTEMPTS) {
+        console.warn(
+          `[TxLINE] Subscribe tx expired unconfirmed (attempt ${attempt}/${SEND_ATTEMPTS}) — retrying with fresh blockhash...`
+        );
+        continue;
+      }
       throw err;
+    }
+  }
+
+  // An "expired" attempt can still land after we gave up on it. If a later
+  // attempt then failed with ActiveSubscription, find which earlier signature
+  // actually landed so activation references a real on-chain transaction.
+  if (alreadySubscribed && attemptedSigs.length > 1) {
+    const statuses = await connection.getSignatureStatuses(attemptedSigs, {
+      searchTransactionHistory: true,
+    });
+    const landedIdx = statuses.value.findIndex((s) => s !== null);
+    if (landedIdx >= 0) {
+      txSig = attemptedSigs[landedIdx];
+      console.log("[TxLINE] Recovered landed subscribe signature for activation.");
     }
   }
 
