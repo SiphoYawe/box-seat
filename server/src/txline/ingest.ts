@@ -27,9 +27,72 @@ export interface FixtureInfo {
 
 export type FixtureInfoHandler = (info: FixtureInfo) => void;
 
+/** One player entry within a lineup team block, as captured from `Lineups[].lineups[]`. */
+export interface RawLineupPlayer {
+  fixturePlayerId?: number;
+  /** The player's normativeId — stable across fixtures, used as fixture_players.player_id. */
+  playerId: number;
+  name?: string;
+  number?: string;
+  starter?: boolean;
+  unit?: number;
+}
+
+/** One team block within a `Lineups` array — `normativeId` is the team's TxLINE id. */
+export interface RawLineupTeam {
+  normativeId?: number;
+  players: RawLineupPlayer[];
+}
+
+/**
+ * Parsed `Lineups` field from a `lineups` action. Verified against
+ * `/api/scores/historical/18222446`: `Lineups[]` -> one block per team with
+ * `normativeId` + `lineups[]` -> `{ fixturePlayerId, rosterNumber, starter,
+ * positionId, unitId, player: { normativeId, preferredName, ... } }`.
+ * `participant1Id`/`participant2Id` are the record's own fixture-participant
+ * ids (present at the top level of every record, live and historical alike),
+ * used to resolve each team block's `normativeId` to participant 1|2.
+ */
+export interface ParsedLineups {
+  participant1Id?: number;
+  participant2Id?: number;
+  teams: RawLineupTeam[];
+}
+
+/** Flattened lineup player, resolved to a participant, ready for `store/players.ts#upsertLineupPlayers`. */
+export interface ResolvedLineupPlayer {
+  playerId: number;
+  name?: string;
+  number?: string;
+  starter?: boolean;
+  unit?: number;
+  participant: 1 | 2;
+}
+
+/**
+ * Parsed `PlayerStats` field — running per-player goal totals keyed by player
+ * normativeId (string), one block per participant. Verified shape:
+ * `{ Participant1: { "<playerNormativeId>": { "goals": 1, ... } }, ... }`.
+ * Arrives on later, unrelated actions too (not necessarily the goal action
+ * itself) — every appearance is the current running total, not a delta.
+ */
+export interface ParsedPlayerStats {
+  participant1?: Record<string, number>;
+  participant2?: Record<string, number>;
+}
+
+export type PlayerDataHandler = (
+  fixtureId: number,
+  data: { lineups?: ParsedLineups; playerStats?: ParsedPlayerStats }
+) => void;
+
 export interface ParsedScoresMessage {
   event: RawScoreEvent | null;
   fixtureInfo?: FixtureInfo;
+  /** Resolved fixture id, even when `event` itself failed to parse (e.g. missing ts/seq) — so lineups/playerStats can still be captured. */
+  fixtureId?: number;
+  lineups?: ParsedLineups;
+  playerStats?: ParsedPlayerStats;
 }
 
 function firstDefined<T>(...values: (T | null | undefined)[]): T | undefined {
@@ -105,13 +168,136 @@ function extractClock(update: any): RawScoreEvent["clock"] {
 }
 
 /**
+ * Extracts the `Lineups` field from a `lineups` action record. Tolerant of
+ * missing/malformed entries — skips an individual bad player or team rather
+ * than dropping the whole message or throwing. A player with no resolvable
+ * `player.normativeId` is skipped outright (no stable id to key the row on).
+ */
+function extractLineups(update: any): ParsedLineups | undefined {
+  const teamsRaw = update?.Lineups ?? update?.lineups;
+  if (!Array.isArray(teamsRaw) || teamsRaw.length === 0) return undefined;
+
+  const teams: RawLineupTeam[] = [];
+  for (const team of teamsRaw) {
+    if (!team || typeof team !== "object") continue;
+    const normativeId = firstDefined<number>(team.normativeId, team.NormativeId);
+    const playersRaw = team.lineups ?? team.Lineups;
+    if (!Array.isArray(playersRaw)) continue;
+
+    const players: RawLineupPlayer[] = [];
+    for (const p of playersRaw) {
+      if (!p || typeof p !== "object") continue;
+      const player = p.player ?? p.Player;
+      const playerId = firstDefined<number>(player?.normativeId, player?.NormativeId);
+      if (playerId === undefined) continue;
+      players.push({
+        fixturePlayerId: firstDefined<number>(p.fixturePlayerId, p.FixturePlayerId),
+        playerId,
+        name: firstDefined<string>(player?.preferredName, player?.PreferredName),
+        number: firstDefined<string>(p.rosterNumber, p.RosterNumber),
+        starter: firstDefined<boolean>(p.starter, p.Starter),
+        unit: firstDefined<number>(p.unitId, p.UnitId),
+      });
+    }
+    if (players.length > 0) teams.push({ normativeId, players });
+  }
+  if (teams.length === 0) return undefined;
+
+  return {
+    participant1Id: firstDefined<number>(update?.Participant1Id, update?.participant1Id),
+    participant2Id: firstDefined<number>(update?.Participant2Id, update?.participant2Id),
+    teams,
+  };
+}
+
+/**
+ * Resolves each team block's `normativeId` to participant 1|2 by matching
+ * against the fixture's known participant ids, and flattens to one array
+ * ready for `store/players.ts#upsertLineupPlayers`. Prefers the ids carried
+ * on the lineups record itself; falls back to caller-supplied ids (typically
+ * from the fixtures table) when the record didn't carry them. A team that
+ * can't be resolved to either participant is skipped — never guessed.
+ */
+export function resolveLineupPlayers(
+  lineups: ParsedLineups,
+  fallback: { participant1Id?: number | null; participant2Id?: number | null }
+): ResolvedLineupPlayer[] {
+  const participant1Id = lineups.participant1Id ?? fallback.participant1Id ?? undefined;
+  const participant2Id = lineups.participant2Id ?? fallback.participant2Id ?? undefined;
+
+  const resolved: ResolvedLineupPlayer[] = [];
+  for (const team of lineups.teams) {
+    let participant: 1 | 2 | undefined;
+    if (
+      team.normativeId !== undefined &&
+      participant1Id !== undefined &&
+      team.normativeId === participant1Id
+    ) {
+      participant = 1;
+    } else if (
+      team.normativeId !== undefined &&
+      participant2Id !== undefined &&
+      team.normativeId === participant2Id
+    ) {
+      participant = 2;
+    }
+    if (participant === undefined) continue;
+    for (const p of team.players) {
+      resolved.push({
+        playerId: p.playerId,
+        name: p.name,
+        number: p.number,
+        starter: p.starter,
+        unit: p.unit,
+        participant,
+      });
+    }
+  }
+  return resolved;
+}
+
+/**
+ * Extracts the `PlayerStats` field. Only the `goals` key is captured (other
+ * stat keys present in the feed, e.g. yellowCards/redCards, are out of scope
+ * for this table). A player entry with no numeric `goals` field is omitted
+ * entirely rather than defaulted to 0, so it never clobbers a previously
+ * recorded total for that player.
+ */
+function extractPlayerStats(update: any): ParsedPlayerStats | undefined {
+  const statsRaw = update?.PlayerStats ?? update?.playerStats;
+  if (!statsRaw || typeof statsRaw !== "object") return undefined;
+
+  const extractBlock = (block: unknown): Record<string, number> | undefined => {
+    if (!block || typeof block !== "object") return undefined;
+    const goalsByPlayer: Record<string, number> = {};
+    for (const [playerId, stat] of Object.entries(block as Record<string, unknown>)) {
+      const s = stat as any;
+      const goals = firstDefined<number>(s?.goals, s?.Goals);
+      if (typeof goals === "number") goalsByPlayer[playerId] = goals;
+    }
+    return Object.keys(goalsByPlayer).length > 0 ? goalsByPlayer : undefined;
+  };
+
+  const result: ParsedPlayerStats = {};
+  const p1 = extractBlock((statsRaw as any).Participant1 ?? (statsRaw as any).participant1);
+  const p2 = extractBlock((statsRaw as any).Participant2 ?? (statsRaw as any).participant2);
+  if (p1) result.participant1 = p1;
+  if (p2) result.participant2 = p2;
+  if (!result.participant1 && !result.participant2) return undefined;
+  return result;
+}
+
+/**
  * Parses one already-`JSON.parse`d scores record into our RawScoreEvent
- * shape (plus any FixtureInfo it carries). Records arrive in two shapes:
+ * shape (plus any FixtureInfo/Lineups/PlayerStats it carries). Records
+ * arrive in two shapes:
  *
- * - SSE-wrapped: `{ FixtureInfo?: {...}, Update: {...} }` — the live stream shape.
+ * - SSE-wrapped: `{ FixtureInfo?: {...}, Update: {...} }` — documented for the live stream.
  * - Bare: the Update-record fields directly at the top level, with no
- *   `FixtureInfo`/`Update` wrapper — this is how the
- *   `/api/scores/historical/{fixtureId}` endpoint returns records.
+ *   `FixtureInfo`/`Update` wrapper — this is how both the live
+ *   `/api/scores/stream` and `/api/scores/historical/{fixtureId}` endpoints
+ *   were measured actually sending records (verified against fixture
+ *   18222446's historical feed and the live 18257865 stream).
  *
  * Both are handled here so `connectScoresStream` and `backfillFixture` share
  * one parser instead of drifting apart.
@@ -136,13 +322,31 @@ export function parseScoresRecord(
     return { event: null };
   }
 
+  const fixtureInfo = extractFixtureInfo(parsed?.FixtureInfo);
+
+  let lineups: ParsedLineups | undefined;
+  try {
+    lineups = extractLineups(update);
+  } catch (err) {
+    console.warn("[TxLINE] Failed to parse Lineups (skipped):", err);
+  }
+
+  let playerStats: ParsedPlayerStats | undefined;
+  try {
+    playerStats = extractPlayerStats(update);
+  } catch (err) {
+    console.warn("[TxLINE] Failed to parse PlayerStats (skipped):", err);
+  }
+
   // Ts/Seq back NOT NULL DB columns (see store/eventLog.ts) — reject payloads
-  // missing either rather than letting the insert throw downstream.
+  // missing either rather than letting the insert throw downstream. Lineups/
+  // PlayerStats are still returned even when this happens, since they don't
+  // depend on the event log.
   const ts = firstDefined<number>(update.Ts, update.ts);
   const seq = firstDefined<number>(update.Seq, update.seq);
   if (ts === undefined || seq === undefined) {
     console.warn("[TxLINE] Unparseable scores payload:", rawForLog.slice(0, 200));
-    return { event: null };
+    return { event: null, fixtureInfo, fixtureId, lineups, playerStats };
   }
 
   const event: RawScoreEvent = {
@@ -159,13 +363,14 @@ export function parseScoresRecord(
     clock: extractClock(update),
   };
 
-  return { event, fixtureInfo: extractFixtureInfo(parsed?.FixtureInfo) };
+  return { event, fixtureInfo, fixtureId, lineups, playerStats };
 }
 
 /**
  * Parses a raw TxLINE scores SSE payload into our RawScoreEvent shape, plus
- * any FixtureInfo it carries. See docs/txline/scores/soccer-feed.md and the
- * Scores Product API PDF for the full raw message shape.
+ * any FixtureInfo/Lineups/PlayerStats it carries. See
+ * docs/txline/scores/soccer-feed.md and the Scores Product API PDF for the
+ * full raw message shape.
  */
 export function parseScoresPayload(raw: string): ParsedScoresMessage {
   let parsed: any;
@@ -180,15 +385,17 @@ export function parseScoresPayload(raw: string): ParsedScoresMessage {
 
 /**
  * Opens a persistent connection to TxLINE's /scores/stream and invokes `onEvent`
- * for every parsed message (and `onFixtureInfo` whenever a message carries
- * fixture metadata). Handles JWT renewal on 401/403 automatically, matching
- * the pattern in docs/txline/reference-code/mainnet/scripts/subscription_free_tier.ts.
+ * for every parsed message (`onFixtureInfo` whenever a message carries fixture
+ * metadata, `onPlayerData` whenever one carries Lineups and/or PlayerStats).
+ * Handles JWT renewal on 401/403 automatically, matching the pattern in
+ * docs/txline/reference-code/mainnet/scripts/subscription_free_tier.ts.
  */
 export function connectScoresStream(
   session: TxLineSession,
   onEvent: ScoreEventHandler,
   onFixtureInfo?: FixtureInfoHandler,
-  onAuthDeath?: () => void
+  onAuthDeath?: () => void,
+  onPlayerData?: PlayerDataHandler
 ): EventSource {
   const streamUrl = `${API_BASE_URL}/scores/stream`;
   let currentJwt = session.jwt;
@@ -227,8 +434,13 @@ export function connectScoresStream(
   });
 
   eventSource.onmessage = (evt: MessageEvent) => {
-    const { event, fixtureInfo } = parseScoresPayload(evt.data);
+    const { event, fixtureInfo, fixtureId, lineups, playerStats } = parseScoresPayload(
+      evt.data
+    );
     if (fixtureInfo) onFixtureInfo?.(fixtureInfo);
+    if ((lineups || playerStats) && fixtureId !== undefined) {
+      onPlayerData?.(fixtureId, { lineups, playerStats });
+    }
     if (event) onEvent(event);
   };
 

@@ -25,6 +25,25 @@ export function openDb(path: string): Database.Database {
       start_time INTEGER,
       raw TEXT NOT NULL
     );
+
+    CREATE TABLE IF NOT EXISTS fixture_players (
+      fixture_id INTEGER NOT NULL,
+      player_id INTEGER NOT NULL,
+      name TEXT,
+      number TEXT,
+      starter INTEGER,
+      unit INTEGER,
+      participant INTEGER,
+      goals INTEGER NOT NULL DEFAULT 0,
+      PRIMARY KEY (fixture_id, player_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS fixture_attestation (
+      fixture_id INTEGER PRIMARY KEY,
+      tx_sig TEXT NOT NULL,
+      cluster TEXT NOT NULL,
+      ts INTEGER NOT NULL
+    );
   `);
   return db;
 }

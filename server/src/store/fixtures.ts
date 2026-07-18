@@ -74,6 +74,28 @@ export function upsertFixture(
   return { isNew };
 }
 
+/** Looks up one fixture's metadata (participant ids, etc). Undefined if unknown. */
+export function getFixture(
+  db: Database.Database,
+  fixtureId: number
+): FixtureMeta | undefined {
+  return db
+    .prepare(
+      `SELECT
+         fixture_id AS fixtureId,
+         participant1,
+         participant1_id AS participant1Id,
+         participant2,
+         participant2_id AS participant2Id,
+         competition,
+         competition_id AS competitionId,
+         start_time AS startTime,
+         raw
+       FROM fixtures WHERE fixture_id = ?`
+    )
+    .get(fixtureId) as FixtureMeta | undefined;
+}
+
 export function listFixtures(db: Database.Database): FixtureMeta[] {
   return db
     .prepare(

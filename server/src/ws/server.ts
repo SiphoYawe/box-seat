@@ -25,11 +25,32 @@ export interface FixtureListEntry {
   hasData: boolean;
 }
 
+/** One player row of the `fixture_players` message — see docs/frontend/BACKEND-CONTRACT.md. */
+export interface FixturePlayerEntry {
+  id: number;
+  name: string | null;
+  number: string | null;
+  starter: boolean | null;
+  unit: number | null;
+  participant: 1 | 2 | null;
+  goals: number;
+}
+
+export type AttestationCluster = "mainnet-beta" | "devnet";
+
 export type ServerMessage =
   | { type: "state"; state: MatchState }
   | { type: "keyMoment"; fixtureId: number; moment: MatchState["keyMoments"][number] }
   | { type: "replay_chunk"; fixtureId: number; events: unknown[]; done: boolean }
-  | { type: "fixture_list"; fixtures: FixtureListEntry[] };
+  | { type: "fixture_list"; fixtures: FixtureListEntry[] }
+  | { type: "fixture_players"; fixtureId: number; players: FixturePlayerEntry[] }
+  | {
+      type: "attestation";
+      fixtureId: number;
+      txSig: string;
+      cluster: AttestationCluster;
+      status: "confirmed" | "pending";
+    };
 
 export type SubscribeHandler = (ws: WebSocket, fixtureId: number) => void;
 
@@ -105,6 +126,44 @@ export class Broadcaster {
       const payload: ServerMessage = { type: "state", state };
       ws.send(JSON.stringify(payload));
     }
+  }
+
+  /**
+   * Sends the current `fixture_players` snapshot to one client, once, on
+   * subscribe. Callers are expected to skip calling this entirely when the
+   * fixture has no players rows yet (graceful absence — no message sent).
+   */
+  sendFixturePlayers(
+    ws: WebSocket,
+    fixtureId: number,
+    players: FixturePlayerEntry[]
+  ): void {
+    if (ws.readyState !== ws.OPEN) return;
+    const payload: ServerMessage = { type: "fixture_players", fixtureId, players };
+    ws.send(JSON.stringify(payload));
+  }
+
+  /**
+   * Sends the persisted attestation for one fixture to one client, on
+   * subscribe. We only persist an attestation row after on-chain
+   * confirmation, so `status` is always "confirmed" here — the field is kept
+   * for forward-compat (a future "pending" state before confirmation).
+   */
+  sendAttestation(
+    ws: WebSocket,
+    fixtureId: number,
+    txSig: string,
+    cluster: AttestationCluster
+  ): void {
+    if (ws.readyState !== ws.OPEN) return;
+    const payload: ServerMessage = {
+      type: "attestation",
+      fixtureId,
+      txSig,
+      cluster,
+      status: "confirmed",
+    };
+    ws.send(JSON.stringify(payload));
   }
 
   private sendFixtureList(ws: WebSocket): void {

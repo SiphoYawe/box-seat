@@ -2,8 +2,15 @@ import type Database from "better-sqlite3";
 import axios from "axios";
 import { API_BASE_URL } from "./config.js";
 import type { TxLineSession } from "./auth.js";
-import { parseScoresRecord } from "./ingest.js";
+import {
+  parseScoresRecord,
+  resolveLineupPlayers,
+  type ParsedLineups,
+  type ParsedPlayerStats,
+} from "./ingest.js";
 import { appendEvent } from "../store/eventLog.js";
+import { getFixture } from "../store/fixtures.js";
+import { upsertLineupPlayers, updatePlayerGoals } from "../store/players.js";
 import type { RawScoreEvent } from "../reducer/types.js";
 
 export interface BackfillResult {
@@ -41,13 +48,49 @@ function parseHistoricalResponseBody(data: unknown): unknown[] {
 }
 
 /**
+ * Persists whatever lineups/player-stats one parsed record carried. Tolerant
+ * of missing fixture metadata (falls back to the fixtures table for
+ * participant resolution) and never throws — a bad record here must not
+ * abort the rest of the backfill.
+ */
+function capturePlayerData(
+  db: Database.Database,
+  fixtureId: number,
+  lineups: ParsedLineups | undefined,
+  playerStats: ParsedPlayerStats | undefined
+): void {
+  try {
+    if (lineups) {
+      const fixture = getFixture(db, fixtureId);
+      const resolved = resolveLineupPlayers(lineups, {
+        participant1Id: fixture?.participant1Id ?? undefined,
+        participant2Id: fixture?.participant2Id ?? undefined,
+      });
+      if (resolved.length > 0) upsertLineupPlayers(db, fixtureId, resolved);
+    }
+    if (playerStats?.participant1) {
+      updatePlayerGoals(db, fixtureId, 1, playerStats.participant1);
+    }
+    if (playerStats?.participant2) {
+      updatePlayerGoals(db, fixtureId, 2, playerStats.participant2);
+    }
+  } catch (err) {
+    console.warn(
+      `[Backfill] Fixture ${fixtureId}: failed to persist player data (skipped):`,
+      err
+    );
+  }
+}
+
+/**
  * Re-derives one fixture's local event log from TxLINE's historical endpoint
  * — the authoritative source of truth for a completed/in-progress fixture's
  * message history. This is what corrects any locally-recorded events that
  * were parsed by an older, lossier version of the parser (e.g. before we
- * captured Id/Score/Clock).
+ * captured Id/Score/Clock). Along the way, also captures any lineups/
+ * player-goal data the records carry (idempotent upserts — safe to re-run).
  *
- * Safety: existing rows are only replaced once we have a successful,
+ * Safety: existing event rows are only replaced once we have a successful,
  * non-empty, *parseable* fetch in hand. `/scores/historical/{fixtureId}`
  * only serves fixtures started between two weeks and six hours ago — a 4xx
  * for anything outside that window (or any other failure) must leave
@@ -78,8 +121,16 @@ export async function backfillFixture(
   // parser as the live stream so the two paths can't drift apart.
   const events: RawScoreEvent[] = [];
   for (const record of records) {
-    const { event } = parseScoresRecord(record, JSON.stringify(record));
+    const {
+      event,
+      fixtureId: recordFixtureId,
+      lineups,
+      playerStats,
+    } = parseScoresRecord(record, JSON.stringify(record));
     if (event) events.push(event);
+    if (lineups || playerStats) {
+      capturePlayerData(db, recordFixtureId ?? event?.fixtureId ?? fixtureId, lineups, playerStats);
+    }
   }
 
   if (events.length === 0) {

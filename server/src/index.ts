@@ -6,7 +6,9 @@ import { setupTxLineSession, type TxLineSession } from "./txline/auth.js";
 import { API_BASE_URL } from "./txline/config.js";
 import {
   connectScoresStream,
+  resolveLineupPlayers,
   type FixtureInfo,
+  type PlayerDataHandler,
 } from "./txline/ingest.js";
 import { backfillFixture } from "./txline/backfill.js";
 import { reduce } from "./reducer/reducer.js";
@@ -20,8 +22,10 @@ import {
 import { openDb } from "./store/db.js";
 import { appendEvent, readEventLog, listFixtureIds } from "./store/eventLog.js";
 import { initKv, kvGet, kvSet } from "./store/kv.js";
-import { listFixtures, upsertFixture } from "./store/fixtures.js";
-import { Broadcaster, type FixtureListEntry } from "./ws/server.js";
+import { getFixture, listFixtures, upsertFixture } from "./store/fixtures.js";
+import { listFixturePlayers, updatePlayerGoals, upsertLineupPlayers } from "./store/players.js";
+import { getAttestation, upsertAttestation } from "./store/attestations.js";
+import { Broadcaster, type AttestationCluster, type FixtureListEntry } from "./ws/server.js";
 import { attestMatch } from "./solana/attestation.js";
 import type Database from "better-sqlite3";
 
@@ -31,6 +35,13 @@ const API_TOKEN_KEY = "txline_api_token";
 /** TxLINE's World Cup 2026 competition id. */
 const WORLD_CUP_COMPETITION_ID = 72;
 const MS_PER_DAY = 86_400_000;
+/** Delay between sequential startup attestation catch-up calls — RPC-polite. */
+const ATTESTATION_CATCHUP_DELAY_MS = 500;
+
+/** `"devnet"` if SOLANA_RPC_URL mentions it, otherwise `"mainnet-beta"`. */
+function clusterFromRpcUrl(rpcUrl: string): AttestationCluster {
+  return rpcUrl.includes("devnet") ? "devnet" : "mainnet-beta";
+}
 
 function isFinalised(events: RawScoreEvent[]): boolean {
   return events.some(isTerminalEvent);
@@ -186,6 +197,7 @@ async function main() {
   const tokenMint = new PublicKey(process.env.TXL_TOKEN_MINT!);
   const db = openDb(process.env.DB_PATH!);
   initKv(db);
+  const cluster = clusterFromRpcUrl(process.env.SOLANA_RPC_URL!);
 
   const matchStates = new Map<number, MatchState>();
   const attested = new Set<number>();
@@ -207,12 +219,39 @@ async function main() {
         }
         const state = matchStates.get(fixtureId) ?? foldState(fixtureId, events);
         broadcaster.sendState(ws, state);
-        return;
-      }
-      // Live fixture we already have in-memory state for: send an immediate
-      // snapshot rather than making the client wait for the next live event.
-      if (matchStates.has(fixtureId)) {
+      } else if (matchStates.has(fixtureId)) {
+        // Live fixture we already have in-memory state for: send an immediate
+        // snapshot rather than making the client wait for the next live event.
         broadcaster.sendState(ws, matchStates.get(fixtureId)!);
+      }
+
+      // Players/attestation: sent once per subscribe, independent of the
+      // live/replay branch above. Graceful absence — nothing sent when the
+      // fixture has no players rows / no attestation row yet.
+      const players = listFixturePlayers(db, fixtureId);
+      if (players.length > 0) {
+        broadcaster.sendFixturePlayers(
+          ws,
+          fixtureId,
+          players.map((p) => ({
+            id: p.playerId,
+            name: p.name,
+            number: p.number,
+            starter: p.starter === null ? null : p.starter === 1,
+            unit: p.unit,
+            participant: p.participant,
+            goals: p.goals,
+          }))
+        );
+      }
+      const attestation = getAttestation(db, fixtureId);
+      if (attestation) {
+        broadcaster.sendAttestation(
+          ws,
+          fixtureId,
+          attestation.txSig,
+          attestation.cluster as AttestationCluster
+        );
       }
     }
   );
@@ -240,17 +279,58 @@ async function main() {
   // events recorded by the older, lossier parser (missing Id/Score/Clock).
   await backfillPastFixtures(db, session);
 
-  // Rebuild in-memory state from the (now-corrected) local event log.
+  // Rebuild in-memory state from the (now-corrected) local event log. `attested`
+  // is seeded from the fixture_attestation TABLE (has a row = actually attested
+  // on-chain), not blanket-marked for every terminal fixture — otherwise a
+  // backfilled-finished fixture could sit forever with no attestation and no
+  // chip. Fixtures that are terminal but missing a row are queued for the
+  // catch-up pass below instead.
+  const terminalFixtureIds: number[] = [];
   for (const fixtureId of listFixtureIds(db)) {
     const events = readEventLog(db, fixtureId);
     matchStates.set(fixtureId, foldState(fixtureId, events));
-    if (isFinalised(events)) attested.add(fixtureId); // don't re-attest after restart
+    if (isFinalised(events)) {
+      terminalFixtureIds.push(fixtureId);
+      if (getAttestation(db, fixtureId)) attested.add(fixtureId);
+    }
   }
   console.log(
     `[Startup] Rebuilt state for ${matchStates.size} fixture(s) from event log.`
   );
 
   broadcaster.broadcastFixtureList(buildFixtureList(db, matchStates));
+
+  // Attestation catch-up: terminal fixtures with no persisted attestation row
+  // (e.g. finalised before this change existed, or a prior attempt failed)
+  // get attested now. Sequential with a small delay between calls to be
+  // RPC-polite — fire-and-forget relative to startup (never awaited by
+  // `main`), persists via `.then` on success. `attestMatch` never throws.
+  (async () => {
+    const pending = terminalFixtureIds.filter((id) => !attested.has(id));
+    if (pending.length === 0) return;
+    console.log(
+      `[Startup] Attestation catch-up: ${pending.length} terminal fixture(s) missing an attestation row.`
+    );
+    for (const fixtureId of pending) {
+      if (attested.has(fixtureId)) continue; // a live terminal event may have raced us
+      attested.add(fixtureId);
+      const state = matchStates.get(fixtureId);
+      if (!state) continue;
+      await attestMatch(connection, serviceWallet, state).then((sig) => {
+        if (!sig) return;
+        try {
+          upsertAttestation(db, { fixtureId, txSig: sig, cluster, ts: Date.now() });
+          console.log(`[Startup] Attestation catch-up: fixture ${fixtureId} -> ${sig}`);
+        } catch (err) {
+          console.error(
+            `[Startup] Failed to persist catch-up attestation for fixture ${fixtureId}:`,
+            err
+          );
+        }
+      });
+      await new Promise((resolve) => setTimeout(resolve, ATTESTATION_CATCHUP_DELAY_MS));
+    }
+  })();
 
   const onEvent = (event: RawScoreEvent) => {
     try {
@@ -263,13 +343,49 @@ async function main() {
       if (isTerminalEvent(event) && !attested.has(event.fixtureId)) {
         attested.add(event.fixtureId);
         // Fire-and-forget — attestMatch never throws (see solana/attestation.ts).
-        attestMatch(connection, serviceWallet, next);
+        attestMatch(connection, serviceWallet, next).then((sig) => {
+          if (!sig) return;
+          try {
+            upsertAttestation(db, {
+              fixtureId: event.fixtureId,
+              txSig: sig,
+              cluster,
+              ts: Date.now(),
+            });
+          } catch (err) {
+            console.error(
+              `[Attestation] Failed to persist attestation for fixture ${event.fixtureId}:`,
+              err
+            );
+          }
+        });
         // A fixture just went terminal — refresh the match list so clients
         // see its final score/status without waiting for a new fixture.
         broadcaster.broadcastFixtureList(buildFixtureList(db, matchStates));
       }
     } catch (err) {
       console.error("[Ingest] Failed to process event (skipped):", err);
+    }
+  };
+
+  const onPlayerData: PlayerDataHandler = (fixtureId, { lineups, playerStats }) => {
+    try {
+      if (lineups) {
+        const fixture = getFixture(db, fixtureId);
+        const resolved = resolveLineupPlayers(lineups, {
+          participant1Id: fixture?.participant1Id ?? undefined,
+          participant2Id: fixture?.participant2Id ?? undefined,
+        });
+        if (resolved.length > 0) upsertLineupPlayers(db, fixtureId, resolved);
+      }
+      if (playerStats?.participant1) {
+        updatePlayerGoals(db, fixtureId, 1, playerStats.participant1);
+      }
+      if (playerStats?.participant2) {
+        updatePlayerGoals(db, fixtureId, 2, playerStats.participant2);
+      }
+    } catch (err) {
+      console.error("[Ingest] Failed to process player data (skipped):", err);
     }
   };
 
@@ -304,12 +420,12 @@ async function main() {
     authDeaths++;
   };
 
-  let stream = connectScoresStream(session, onEvent, onFixtureInfo, onAuthDeath);
+  let stream = connectScoresStream(session, onEvent, onFixtureInfo, onAuthDeath, onPlayerData);
   // Watchdog: some SSE failure modes close the stream permanently — resurrect it.
   setInterval(() => {
     if (stream.readyState === 2 /* CLOSED */) {
       console.warn("[TxLINE] Scores stream closed — reconnecting...");
-      stream = connectScoresStream(session, onEvent, onFixtureInfo, onAuthDeath);
+      stream = connectScoresStream(session, onEvent, onFixtureInfo, onAuthDeath, onPlayerData);
     }
     if (authDeaths >= 5) {
       console.warn(
@@ -327,7 +443,13 @@ async function main() {
           kvSet(db, API_TOKEN_KEY, newSession.apiToken);
           session = newSession;
           stream.close();
-          stream = connectScoresStream(newSession, onEvent, onFixtureInfo, onAuthDeath);
+          stream = connectScoresStream(
+            newSession,
+            onEvent,
+            onFixtureInfo,
+            onAuthDeath,
+            onPlayerData
+          );
         } catch (err) {
           console.error(
             "[TxLINE] Failed to recover from persistent auth failure:",

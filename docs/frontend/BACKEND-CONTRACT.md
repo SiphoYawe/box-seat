@@ -186,3 +186,101 @@ Each `fixture_list` entry now carries two additional fields the frontend MUST ob
 - `hasData`: boolean — `false` means the backend holds no event data for this fixture:
   its `score` is meaningless (do not display it — show the card as "FT" without a
   score, or greyed/non-clickable), and subscribing will yield no replay.
+
+## New WS messages: `fixture_players` and `attestation` (added 2026-07-18)
+
+Two new server-to-client message types. Both are sent **once per `subscribe`**, after
+whatever `replay_chunk`/`state` messages that subscribe already triggers (order
+relative to those doesn't matter) — and **only when the backend actually has the
+data**. Neither changes the shape or semantics of `state`, `replay_chunk`, or
+`fixture_list`.
+
+### `fixture_players`
+
+Lineups (starting XI + bench) and running per-player goal totals, captured from
+TxLINE's `lineups` action and `PlayerStats` field. Sent once on subscribe **only when
+the fixture has at least one captured player row** — a fixture with no lineup data yet
+(not started, or TxLINE hasn't sent it) yields no message at all; do not wait for one.
+
+```json
+{
+  "type": "fixture_players",
+  "fixtureId": 18222446,
+  "players": [
+    {
+      "id": 10096940,
+      "name": "Almada, Thiago",
+      "number": "16",
+      "starter": false,
+      "unit": 0,
+      "participant": 1,
+      "goals": 0
+    },
+    {
+      "id": 1184377,
+      "name": "Mac Allister, Alexis",
+      "number": "20",
+      "starter": true,
+      "unit": 0,
+      "participant": 1,
+      "goals": 1
+    }
+  ]
+}
+```
+
+Field semantics:
+
+- `id` — the player's TxLINE `normativeId`, stable across fixtures.
+- `name` — TxLINE's `preferredName` (`"Last, First"` formatting, as sent — not
+  reformatted). Null if never captured.
+- `number` — shirt number as a string (TxLINE sends it as a string, e.g. `"10"`), null
+  if unknown.
+- `starter` — boolean, or null if unknown (never guess `false` for "unknown").
+- `unit` — the raw formation unit id from the feed (0-indexed group, not a pitch
+  position) — keep it opaque and map it frontend-side if needed. Null if unknown.
+- `participant` — `1` or `2`, matching `state.score`'s participant numbering. Null in
+  the rare case a player's team couldn't be resolved to either fixture participant
+  (backend skips attributing those rather than guessing — so this should be rare/never
+  in practice).
+- `goals` — running total for this player in this fixture, **authoritative** (replaces
+  outright on each update, same pattern as `state.score` — never increment client-side).
+  Defaults to `0` for a player who has a lineup row but hasn't scored.
+
+A player who scores before their lineup row exists still gets a row (via the goals
+update alone) with `name`/`number`/`starter`/`unit` all null until a later lineups
+message (or backfill) fills them in — treat those fields as always-optional.
+
+### `attestation`
+
+The Solana on-chain attestation for a fixture's final state, once the backend has
+successfully landed and confirmed it. Sent once on subscribe **only when an
+attestation has been persisted for that fixture** — most fixtures (anything not yet
+finished) will never get this message; do not show a pending/loading chip while
+waiting for it, just render nothing until (if ever) it arrives.
+
+```json
+{
+  "type": "attestation",
+  "fixtureId": 18222446,
+  "txSig": "5s3s...base58...txsig",
+  "cluster": "mainnet-beta",
+  "status": "confirmed"
+}
+```
+
+- `txSig` — base58 transaction signature. Link to
+  `https://solscan.io/tx/<txSig>?cluster=<cluster>` (omit the `?cluster=` query param
+  entirely for `mainnet-beta`, per Solscan's convention).
+- `cluster` — `"mainnet-beta"` or `"devnet"`, derived server-side from `SOLANA_RPC_URL`.
+- `status` — always `"confirmed"` today, since the backend only persists (and
+  therefore only ever sends) an attestation row after on-chain confirmation. The field
+  is kept for forward-compat with a possible future `"pending"` state sent before
+  confirmation — treat any other value as "don't show the chip yet".
+
+Backend behavior notes (not part of the wire contract, but useful context): attestation
+happens once per fixture the moment its state first reaches a terminal status
+(`game_finalised` / finished `statusId`), and again as a startup catch-up pass for any
+already-terminal fixture that's missing a persisted attestation row (e.g. finalised
+before this feature existed). A confirmed attestation, once persisted, never changes —
+there's no "re-attest" or update path.
