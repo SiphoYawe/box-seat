@@ -57,6 +57,14 @@ you come back. Items are ordered by urgency.
 
 ## 🟢 Optional / as-needed
 
+- [ ] **X API bearer token (only if you want the "Match chatter" panel)** — Kimi's
+  backend work order item 4 proposes a moderated live-X-posts feed per match. It
+  requires an X API key (paid tier for recent search) and your call on whether
+  showing third-party social content in the demo is worth it. If yes: get a
+  bearer token from developer.x.com and hand it to me; I'll build the proxied,
+  server-moderated, read-only version Kimi specced. If no: we skip it — the
+  frontend hides the panel gracefully.
+
 - [ ] **TxODDS dev support access** — if we hit TxLINE API issues I can't debug:
   [Discord](https://discord.gg/pPXPpZ6bwM) / [Telegram](https://t.me/TxLINEChat).
   Joining now (before you need help) is cheap insurance.
