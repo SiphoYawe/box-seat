@@ -1,0 +1,676 @@
+{
+ "fixtureId": 18185036,
+ "espnEventId": 760502,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "24",
+   "yellowCards": "4",
+   "redCards": "0",
+   "offsides": "2",
+   "wonCorners": "11",
+   "saves": "1",
+   "possessionPct": "44.7",
+   "totalShots": "10",
+   "shotsOnTarget": "3",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "272",
+   "totalPasses": "359",
+   "passPct": "0.8",
+   "accurateCrosses": "8",
+   "totalCrosses": "30",
+   "crossPct": "0.3",
+   "totalLongBalls": "31",
+   "accurateLongBalls": "12",
+   "longballPct": "0.4",
+   "blockedShots": "3",
+   "effectiveTackles": "9",
+   "totalTackles": "18",
+   "tacklePct": "0.5",
+   "interceptions": "5",
+   "effectiveClearance": "10",
+   "totalClearance": "10"
+  },
+  "participant2": {
+   "foulsCommitted": "14",
+   "yellowCards": "4",
+   "redCards": "0",
+   "offsides": "3",
+   "wonCorners": "1",
+   "saves": "3",
+   "possessionPct": "55.3",
+   "totalShots": "5",
+   "shotsOnTarget": "4",
+   "shotPct": "0.8",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "388",
+   "totalPasses": "473",
+   "passPct": "0.8",
+   "accurateCrosses": "1",
+   "totalCrosses": "5",
+   "crossPct": "0.2",
+   "totalLongBalls": "51",
+   "accurateLongBalls": "17",
+   "longballPct": "0.3",
+   "blockedShots": "0",
+   "effectiveTackles": "9",
+   "totalTackles": "13",
+   "tacklePct": "0.7",
+   "interceptions": "9",
+   "effectiveClearance": "47",
+   "totalClearance": "47"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 50,
+   "participant": 2,
+   "name": "Azzedine Ounahi"
+  },
+  {
+   "minute": 82,
+   "participant": 2,
+   "name": "Azzedine Ounahi"
+  },
+  {
+   "minute": 90,
+   "participant": 2,
+   "name": "Soufiane Rahimi"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "16",
+    "name": "Maxime Crépeau",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Luc de Fougerolles",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Moïse Bombito",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Richie Laryea",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "2",
+    "name": "Alistair Johnston",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Stephen Eustáquio",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Niko Sigur",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Ali Ahmed",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Tajon Buchanan",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "12",
+    "name": "Tani Oluwaseyi",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Jonathan David",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Alfie Jones",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Dayne St. Clair",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Joel Waterman",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Alphonso Davies",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Promise David",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Liam Millar",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Derek Cornelius",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Owen Goodman",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Nathan Saliba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Mathieu Choinière",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Jonathan Osorio",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Cyle Larin",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Jacob Shaffelburg",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Jayden Nelson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Yassine Bounou",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Redouane Halhal",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Issa Diop",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "3",
+    "name": "Noussair Mazraoui",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Achraf Hakimi",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Azzedine Ounahi",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "24",
+    "name": "Neil El Aynaoui",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Ayyoub Bouaddi",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "11",
+    "name": "Ismael Saibari",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Bilal El Khannouss",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Brahim Díaz",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Zakaria El Ouahdi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Amine Sbaï",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Soufiane Rahimi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Youssef Belammari",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Anass Salah-Eddine",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Ayoube Amaimouni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Gessime Yassine",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Chadi Riad",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Samir El Mourabet",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Chemsdine Talbi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Marwane Saadane",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Munir El Kajoui",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Ahmed Reda Tagnaouti",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Sofyan Amrabat",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Ayoub El Kaabi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-4-2",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "NRG Stadium",
+  "city": "Houston, Texas",
+  "attendance": 68777
+ },
+ "article": {
+  "headline": "Morocco send Canada crashing out of World Cup",
+  "description": "Azzedine Ounahi scored twice in the second half as Morocco beat co-hosts Canada 3-0 in Houston to book their place in the World Cup quarterfinals.",
+  "story": "<p><photo caption=\"Morocco beat Canada 3-0 in the World Cup round of 16.\"></p>\n<p><a data-player-guid=\"6352a5df-7c1e-ec8d-bf58-f4dafa55e69b\" href=\"http://espn.com/soccer/player/_/id/291552/azzedine-ounahi\">Azzedine Ounahi</a> scored twice in the second half as <a data-clubhouse-guid=\"a6945df8-27b1-9615-af13-7379154954b9\" href=\"http://espn.com/soccer/team?id=2869\">Morocco</a> beat co-hosts <a data-clubhouse-guid=\"c09eeeeb-7c2d-23f9-1bbf-153ff7e59905\" href=\"http://espn.com/soccer/team?id=206\">Canada</a> 3-0 in Houston to book their place in the World Cup quarterfinals.</p>\n<p>Morocco, semifinalists in <a data-clubhouse-guid=\"9e775b11-9fbd-ae9c-d590-9d3e892188f7\" href=\"http://espn.com/soccer/team?id=4398\">Qatar</a> four years ago, had been second best during the first half as Canadian-born goalkeeper <a data-player-guid=\"ec62cfce-f0d0-3a90-7e94-7a2ba13a1336\" href=\"http://espn.com/soccer/player/_/id/175149/yassine-bounou\">Yassine Bounou</a> denied both <a data-player-guid=\"508c0892-be59-17f4-0c11-88b8fbf65646\" href=\"http://espn.com/soccer/player/_/id/273499/jonathan-david\">Jonathan David</a> and <a data-player-guid=\"1f76a642-c780-3483-b2ea-1e98c511ce70\" href=\"http://espn.com/soccer/player/_/id/294039/tani-oluwaseyi\">Tani Oluwaseyi</a> early on.</p>\n<p>Girona midfielder Ounahi eventually broke the deadlock five minutes after the restart when he swept in a low shot following a well-worked free-kick and then added a late second on the break before <a data-player-guid=\"23feefb5-c5d9-8276-4383-1e7337dcd980\" href=\"http://espn.com/soccer/player/_/id/276139/soufiane-rahimi\">Soufiane Rahimi</a> added a third in stoppage time to make sure of a place in the last eight against either <a data-clubhouse-guid=\"81be996c-0f98-eec4-6284-c6be0d186360\" href=\"http://espn.com/soccer/team?id=478\">France</a> or <a data-clubhouse-guid=\"67227b21-5b19-9dd2-b805-534045f412f9\" href=\"http://espn.com/soccer/team?id=210\">Paraguay</a>.</p>\n<p>Canada -- with star man <a data-player-guid=\"d41614d6-11bc-0e9b-d180-06dfff0d4ec6\" href=\"http://espn.com/soccer/player/_/id/236721/alphonso-davies\">Alphonso Davies</a> again on the bench -- had started brightly as Jonathan David's angled effort from an early corner was palmed away by Morocco keeper Bounou, who then produced a fine reaction save after Tani Oluwaseyi had burst into the penalty area.</p>\n<p>Morocco -- runners-up to <a data-clubhouse-guid=\"2a0"
+ },
+ "h2h": [
+  {
+   "date": "2022-12-01T15:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Morocco",
+   "round": "Group Stage",
+   "competition": "2022 FIFA World Cup",
+   "note": "Morocco advances."
+  },
+  {
+   "date": "2016-10-11T19:00Z",
+   "score": "4-0",
+   "result": "L",
+   "opponent": "Morocco",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-06-28T19:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "South Africa",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Canada advances."
+   },
+   {
+    "date": "2026-06-24T19:00Z",
+    "score": "2-1",
+    "result": "L",
+    "opponent": "Switzerland",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Switzerland advances."
+   },
+   {
+    "date": "2026-06-18T22:00Z",
+    "score": "6-0",
+    "result": "W",
+    "opponent": "Qatar",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Canada advances."
+   },
+   {
+    "date": "2026-06-12T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Bosnia-Herzegovina",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-05T23:30Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Republic of Ireland",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-06-30T01:00Z",
+    "score": "1-1",
+    "result": "W",
+    "opponent": "Netherlands",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-24T22:00Z",
+    "score": "4-2",
+    "result": "W",
+    "opponent": "Haiti",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Morocco advances."
+   },
+   {
+    "date": "2026-06-19T22:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Scotland",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Morocco advances."
+   },
+   {
+    "date": "2026-06-13T22:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Brazil",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-07T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Norway",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

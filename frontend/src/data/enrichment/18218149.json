@@ -1,0 +1,685 @@
+{
+ "fixtureId": 18218149,
+ "espnEventId": 760511,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "13",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "3",
+   "wonCorners": "5",
+   "saves": "1",
+   "possessionPct": "67.9",
+   "totalShots": "17",
+   "shotsOnTarget": "8",
+   "shotPct": "0.5",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "598",
+   "totalPasses": "664",
+   "passPct": "0.9",
+   "accurateCrosses": "2",
+   "totalCrosses": "20",
+   "crossPct": "0.1",
+   "totalLongBalls": "35",
+   "accurateLongBalls": "19",
+   "longballPct": "0.5",
+   "blockedShots": "5",
+   "effectiveTackles": "6",
+   "totalTackles": "11",
+   "tacklePct": "0.5",
+   "interceptions": "5",
+   "effectiveClearance": "15",
+   "totalClearance": "15"
+  },
+  "participant2": {
+   "foulsCommitted": "18",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "1",
+   "saves": "6",
+   "possessionPct": "32.1",
+   "totalShots": "5",
+   "shotsOnTarget": "2",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "243",
+   "totalPasses": "312",
+   "passPct": "0.8",
+   "accurateCrosses": "2",
+   "totalCrosses": "11",
+   "crossPct": "0.2",
+   "totalLongBalls": "45",
+   "accurateLongBalls": "20",
+   "longballPct": "0.4",
+   "blockedShots": "2",
+   "effectiveTackles": "6",
+   "totalTackles": "10",
+   "tacklePct": "0.6",
+   "interceptions": "9",
+   "effectiveClearance": "34",
+   "totalClearance": "34"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 30,
+   "participant": 1,
+   "name": "Fabián Ruiz"
+  },
+  {
+   "minute": 41,
+   "participant": 2,
+   "name": "Charles De Ketelaere"
+  },
+  {
+   "minute": 88,
+   "participant": 1,
+   "name": "Mikel Merino"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "23",
+    "name": "Unai Simón",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Aymeric Laporte",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Pau Cubarsí",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Marc Cucurella",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Pedro Porro",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Dani Olmo",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Fabián Ruiz",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "16",
+    "name": "Rodri",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Mikel Oyarzabal",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "15",
+    "name": "Álex Baena",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Lamine Yamal",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Nico Williams",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Yéremy Pino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Alejandro Grimaldo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Víctor Muñoz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Mikel Merino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Joan García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Eric García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Borja Iglesias",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Gavi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "David Raya",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Marc Pubill",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Pedri",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Martín Zubimendi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Ferran Torres",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Marcos Llorente",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Thibaut Courtois",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "4",
+    "name": "Brandon Mechele",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Nathan Ngoy",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Maxim De Cuyper",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "21",
+    "name": "Timothy Castagne",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Kevin De Bruyne",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Nicolas Raskin",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Hans Vanaken",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Charles De Ketelaere",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jérémy Doku",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Leandro Trossard",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "22",
+    "name": "Alexis Saelemaekers",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Koni De Winter",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Joaquin Seys",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Diego Moreira",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Senne Lammens",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Dodi Lukébakio",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Arthur Theate",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Matias Fernandez-Pardo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Thomas Meunier",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Axel Witsel",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Mike Penders",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Romelu Lukaku",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "SoFi Stadium",
+  "city": "Inglewood, California",
+  "attendance": 70492
+ },
+ "article": {
+  "headline": "Senne Lammens mistake sends Spain into World Cup semifinal at Belgium's expense",
+  "description": "Mikel Merino scored in the 88th minute on a rebound yielded by backup Belgium goalkeeper Senne Lammens, and Spain advanced to the World Cup semifinals with a 2-1 victory on Friday.",
+  "story": "<p>Substitute <a data-player-guid=\"2ddb2d9a-11b1-28cd-ecb8-691cb8f9faa1\" href=\"http://espn.com/soccer/player/_/id/209581/mikel-merino\">Mikel Merino</a> fired another late winner as <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> snatched a place in the World Cup semi-finals with a 2-1 win over <a data-clubhouse-guid=\"4084f797-3877-2af0-b70f-570d25a1a141\" href=\"http://espn.com/soccer/team?id=459\">Belgium</a>.</p>\n<p>The <a data-clubhouse-guid=\"feb44e87-58fa-9597-2691-b3c32768ebe4\" href=\"http://espn.com/soccer/team?id=359\">Arsenal</a> midfielder followed up his clincher against <a data-clubhouse-guid=\"12433baf-649d-7f4f-7233-6db63a5f62f4\" href=\"http://espn.com/soccer/team?id=482\">Portugal</a> as he pounced on a mistake by replacement goalkeeper <a data-player-guid=\"83b92ff7-5bb8-3a8e-8f0d-42e292cba669\" href=\"http://espn.com/soccer/player/_/id/301425/senne-lammens\">Senne Lammens</a> after 88 minutes of a tight round-of-16 encounter in Los Angeles.</p>\n<p><a data-player-guid=\"70c7088d-af91-f008-6fde-27addeb58a13\" href=\"http://espn.com/soccer/player/_/id/214596/fabian-ruiz\">Fabián Ruiz</a> had given Spain the lead after 30 minutes, but Belgium rallied before the interval and breached their opponents' normally rock-solid defence through the in-form <a data-player-guid=\"777f9795-1de2-2790-46a7-63af3c364027\" href=\"http://espn.com/soccer/player/_/id/296319/charles-de-ketelaere\">Charles De Ketelaere</a>.</p>\n<p>Both sides pushed in an absorbing second half but Belgium's hopes suffered a serious blow when goalkeeper <a data-player-guid=\"13a8a402-8124-7609-c510-11cd93678276\" href=\"http://espn.com/soccer/player/_/id/134283/thibaut-courtois\">Thibaut Courtois</a> left the field injured and in tears late on.</p>\n<p>As time ticked down, his replacement Lammens was unable to hold a long-range shot from <a data-player-guid=\"22e26eeb-527d-357c-ab14-848cfd322479\" href=\"http://espn.com/soccer/player/_/id/368992/pau-cubarsi\">Pau Cubarsí</a> and Merino pounced.</p>\n<p><photo caption=\"Sanne Lammens' error proved decisive in Friday's World Cup quarterfinal between Belgium and Spain.\"></p>\n<p>Belgium's afternoon had begun badly when <a data-player-guid=\"c138ddbe-c1d3-e55b-6619-b675316420f6\" href=\"http://espn.com/soccer/player/_/id/193297/youri-tielemans\">Youri Tielemans</a>, having initially been named on the teamsheet,"
+ },
+ "h2h": [
+  {
+   "date": "2016-09-01T18:45Z",
+   "score": "2-0",
+   "result": "W",
+   "opponent": "Belgium",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2009-09-05T20:00Z",
+   "score": "5-0",
+   "result": "W",
+   "opponent": "Belgium",
+   "round": "Group Stage 2010",
+   "competition": "2010 World Cup Qualifying - UEFA",
+   "note": null
+  },
+  {
+   "date": "2008-10-15T18:45Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "Belgium",
+   "round": "Group Stage 2010",
+   "competition": "2010 World Cup Qualifying - UEFA",
+   "note": null
+  },
+  {
+   "date": "2005-10-08T18:45Z",
+   "score": "2-0",
+   "result": "W",
+   "opponent": "Belgium",
+   "round": "Group Stage 2006",
+   "competition": "2006 World Cup Qualifying - UEFA",
+   "note": null
+  },
+  {
+   "date": "2004-10-09T19:45Z",
+   "score": "2-0",
+   "result": "W",
+   "opponent": "Belgium",
+   "round": "Group Stage 2006",
+   "competition": "2006 World Cup Qualifying - UEFA",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-06T19:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Portugal",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-02T19:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-27T00:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Uruguay",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-21T16:00Z",
+    "score": "4-0",
+    "result": "W",
+    "opponent": "Saudi Arabia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-15T16:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Cape Verde",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-07T00:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "United States",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-07-01T20:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-06-27T03:00Z",
+    "score": "5-1",
+    "result": "W",
+    "opponent": "New Zealand",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-06-21T19:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Iran",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-15T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Egypt",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   }
+  ]
+ }
+}

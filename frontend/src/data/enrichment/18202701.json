@@ -1,0 +1,668 @@
+{
+ "fixtureId": 18202701,
+ "espnEventId": 760509,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "13",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "3",
+   "wonCorners": "6",
+   "saves": "0",
+   "possessionPct": "63.6",
+   "totalShots": "19",
+   "shotsOnTarget": "7",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "541",
+   "totalPasses": "602",
+   "passPct": "0.9",
+   "accurateCrosses": "8",
+   "totalCrosses": "26",
+   "crossPct": "0.3",
+   "totalLongBalls": "30",
+   "accurateLongBalls": "18",
+   "longballPct": "0.6",
+   "blockedShots": "4",
+   "effectiveTackles": "15",
+   "totalTackles": "20",
+   "tacklePct": "0.8",
+   "interceptions": "7",
+   "effectiveClearance": "14",
+   "totalClearance": "14"
+  },
+  "participant2": {
+   "foulsCommitted": "11",
+   "yellowCards": "4",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "1",
+   "saves": "4",
+   "possessionPct": "36.4",
+   "totalShots": "5",
+   "shotsOnTarget": "2",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "287",
+   "totalPasses": "349",
+   "passPct": "0.8",
+   "accurateCrosses": "2",
+   "totalCrosses": "8",
+   "crossPct": "0.3",
+   "totalLongBalls": "37",
+   "accurateLongBalls": "13",
+   "longballPct": "0.4",
+   "blockedShots": "1",
+   "effectiveTackles": "7",
+   "totalTackles": "16",
+   "tacklePct": "0.4",
+   "interceptions": "9",
+   "effectiveClearance": "44",
+   "totalClearance": "44"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 15,
+   "participant": 2,
+   "name": "Yasser Ibrahim"
+  },
+  {
+   "minute": 67,
+   "participant": 2,
+   "name": "Mostafa Zico"
+  },
+  {
+   "minute": 79,
+   "participant": 1,
+   "name": "Cristian Romero"
+  },
+  {
+   "minute": 83,
+   "participant": 1,
+   "name": "Lionel Messi"
+  },
+  {
+   "minute": 90,
+   "participant": 1,
+   "name": "Enzo Fernández"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "12",
+    "name": "Gerónimo Rulli",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Giuliano Simeone",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Giovani Lo Celso",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Thiago Almada",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Exequiel Palacios",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Juan Musso",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Valentín Barco",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "José Manuel López",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Lautaro Martínez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Nico Paz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Facundo Medina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Gonzalo Montiel",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Marcos Senesi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Nicolás Otamendi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Nico González",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Emiliano Martínez",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Lisandro Martínez",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Cristian Romero",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "5",
+    "name": "Leandro Paredes",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Nicolás Tagliafico",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Nahuel Molina",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Alexis Mac Allister",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Enzo Fernández",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Rodrigo De Paul",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Julián Álvarez",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Lionel Messi",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "23",
+    "name": "Mostafa Shoubir",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Ramy Rabia",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Yasser Ibrahim",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Karim Hafez",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Mohamed Hany",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Marawan Attia",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Mohanad Lashin",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Emam Ashour",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "12",
+    "name": "Haissem Hassan",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "11",
+    "name": "Mostafa Zico",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Mohamed Salah",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Trézéguet",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Mohamed Alaa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Zizo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Hossam Abdelmaguid",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Hamza Abdelkarim",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Hamdy Fathy",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Mohamed El Shenawy",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Mahmoud Saber",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Omar Marmoush",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Ibrahim Adel",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Mahdy Soliman",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Nabil Donga",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Tarek Alaa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-1-3-2",
+  "formation2": "4-4-2"
+ },
+ "venue": {
+  "name": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "attendance": 68239
+ },
+ "article": {
+  "headline": "Argentina overturn two-goal deficit to beat Egypt late at World Cup",
+  "description": "Argentina remarkably beat Egypt 3-2 with a stoppage-time winner after turning around a two-goal deficit in the World Cup round of 16.",
+  "story": "<p><photo caption=\"Argentina claimed a last-gasp win over Egypt.\"></p>\n<p><a data-player-guid=\"b6765ac7-63b2-227c-12e8-f6342bf9405c\" href=\"http://espn.com/soccer/player/_/id/285450/enzo-fernandez\">Enzo Fernández</a> headed a stoppage-time winner as <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> produced one of the great World Cup comebacks to beat <a data-clubhouse-guid=\"1326a2f9-1a26-1d6d-67b2-bb34d1c726ce\" href=\"http://espn.com/soccer/team?id=2620\">Egypt</a> 3-2 in Atlanta and reach the quarterfinals.</p>\n<p>The <a data-clubhouse-guid=\"c43a00b9-2826-72b3-77a0-62730abc936e\" href=\"http://espn.com/soccer/team?id=363\">Chelsea</a> midfielder snatched a thrilling win for the reigning champions in the second minute of added time after his side had trailed 2-0 in the 79th minute and looked to be crashing out.</p>\n<p><a data-player-guid=\"23b2a218-6834-47eb-42cd-339ab9e12c2d\" href=\"http://espn.com/soccer/player/_/id/265417/yasser-ibrahim\">Yasser Ibrahim</a> gave Egypt a shock half-time lead before Lionel Messi's penalty was saved and <a data-player-guid=\"acca9d95-dfb3-32fe-9509-dc80a5c71fad\" href=\"http://espn.com/soccer/player/_/id/378495/mostafa-zico\">Mostafa Zico</a> put the Pharaohs 2-0 up in the second period after his earlier effort had been ruled out by VAR.</p>\n<p>But Cristian Romero's header threw Argentina a lifeline and after <a data-player-guid=\"dc5f8d51-332b-0ab2-b4b0-c97efdc624e0\" href=\"http://espn.com/soccer/player/_/id/45843/lionel-messi\">Lionel Messi</a> smashed home an 83rd-minute equaliser, Fernandez completed a remarkable fightback.</p>\n<p>Argentina, who had been given a huge scare by <a data-clubhouse-guid=\"d4df09fe-4066-fc4a-ab3d-03e0e19653f3\" href=\"http://espn.com/soccer/team?id=2597\">Cape Verde</a> in the previous round, somehow stayed on course for the 'bicampeonato', a successful defence of the World Cup they won in 2022 in <a data-clubhouse-guid=\"9e775b11-9fbd-ae9c-d590-9d3e892188f7\" href=\"http://espn.com/soccer/team?id=4398\">Qatar</a>.</p>\n<p>Egypt faced a big step up in quality after group draws against <a data-clubhouse-guid=\"4084f797-3877-2af0-b70f-570d25a1a141\" href=\"http://espn.com/soccer/team?id=459\">Belgium</a> and <a data-clubhouse-guid=\"bf49dbeb-e7e8-b8f1-27e8-ae3c730ac278\" href=\"http://espn.com/soccer/team?id=469\">Iran</a> sandwiched a win over <a data-clubhou"
+ },
+ "h2h": [
+  {
+   "date": "2008-03-26T18:00Z",
+   "score": "2-0",
+   "result": "W",
+   "opponent": "Egypt",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-03T22:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Cape Verde",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-28T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Jordan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-22T17:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-17T01:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Algeria",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-10T01:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Iceland",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-03T18:00Z",
+    "score": "1-1",
+    "result": "W",
+    "opponent": "Australia",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-27T03:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Iran",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-22T01:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "New Zealand",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Egypt advances."
+   },
+   {
+    "date": "2026-06-15T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Belgium",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-06T22:00Z",
+    "score": "2-1",
+    "result": "L",
+    "opponent": "Brazil",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,666 @@
+{
+ "fixtureId": 18179549,
+ "espnEventId": 760501,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "14",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "2",
+   "wonCorners": "3",
+   "saves": "0",
+   "possessionPct": "60.7",
+   "totalShots": "20",
+   "shotsOnTarget": "8",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "532",
+   "totalPasses": "586",
+   "passPct": "0.9",
+   "accurateCrosses": "5",
+   "totalCrosses": "15",
+   "crossPct": "0.3",
+   "totalLongBalls": "55",
+   "accurateLongBalls": "32",
+   "longballPct": "0.6",
+   "blockedShots": "4",
+   "effectiveTackles": "8",
+   "totalTackles": "12",
+   "tacklePct": "0.7",
+   "interceptions": "5",
+   "effectiveClearance": "24",
+   "totalClearance": "24"
+  },
+  "participant2": {
+   "foulsCommitted": "10",
+   "yellowCards": "3",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "2",
+   "saves": "7",
+   "possessionPct": "39.3",
+   "totalShots": "8",
+   "shotsOnTarget": "0",
+   "shotPct": "0.0",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "312",
+   "totalPasses": "376",
+   "passPct": "0.8",
+   "accurateCrosses": "2",
+   "totalCrosses": "15",
+   "crossPct": "0.1",
+   "totalLongBalls": "46",
+   "accurateLongBalls": "9",
+   "longballPct": "0.2",
+   "blockedShots": "5",
+   "effectiveTackles": "7",
+   "totalTackles": "13",
+   "tacklePct": "0.5",
+   "interceptions": "5",
+   "effectiveClearance": "11",
+   "totalClearance": "11"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 14,
+   "participant": 1,
+   "name": "Jhon Arias"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "12",
+    "name": "Camilo Vargas",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Jhon Lucumí",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Davinson Sánchez",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Johan Mojica",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Daniel Muñoz",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Jefferson Lerma",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jhon Arias",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "14",
+    "name": "Gustavo Puerta",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Jhon Córdoba",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Luis Díaz",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "James Rodríguez",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "18",
+    "name": "Willer Ditta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Kevin Castaño",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "David Ospina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Álvaro Montero",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Deiver Machado",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Luis Suárez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Andrés Gómez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Jorge Carrascal",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Cucho Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Juan Fernando Quintero",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Richard Ríos",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Juan Portilla",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Yerry Mina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Santiago Arias",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Jáminton Campaz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Lawrence Ati Zigi",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Jerome Opoku",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Derrick Luckassen",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Thomas Partey",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Gideon Mensah",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Marvin Senaya",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Kwasi Sibo",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "3",
+    "name": "Caleb Yirenkyi",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "11",
+    "name": "Antoine Semenyo",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Iñaki Williams",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Jordan Ayew",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "6",
+    "name": "Abdul Mumin",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Prince Adu",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Kojo Peprah Oppong",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Alidu Seidu",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Baba Rahman",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Elisha Owusu",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Jonas Adjetey",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Augustine Boakye",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Brandon Thomas-Asante",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Christopher Bonsu Baah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Ernest Nuamah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Benjamin Asare",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Kamaldeen Sulemana",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Joseph Anang",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Fatawu Issahaku",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-3-3",
+  "formation2": "4-1-4-1"
+ },
+ "venue": {
+  "name": "GEHA Field at Arrowhead Stadium",
+  "city": "Kansas City, Missouri",
+  "attendance": 69045
+ },
+ "article": {
+  "headline": "Jhon Arias guides Colombia past Ghana into round of 16",
+  "description": "Colombia booked the last place in the World Cup's round of 16 as they beat Ghana 1-0 in Kansas City. Jhon Arias grabbed the only goal after 14 minutes as the earned a meeting with Switzerland in Vancouver.",
+  "story": "<p><a data-clubhouse-guid=\"7f32673e-0a85-dbdd-3380-19cfe5d6c009\" href=\"http://espn.com/soccer/team?id=208\">Colombia</a> booked the last place in the World Cup's round of 16 as they beat <a data-clubhouse-guid=\"ff586f4a-c356-4a04-88a8-450cc2a5ad27\" href=\"http://espn.com/soccer/team?id=4469\">Ghana</a> 1-0 in Kansas City.</p>\n<p><a data-player-guid=\"68e45ebe-62a4-fee7-ae45-0550fef7a7d5\" href=\"http://espn.com/soccer/player/_/id/239566/jhon-arias\">Jhon Arias</a> grabbed the only goal after 14 minutes as the earned a meeting with <a data-clubhouse-guid=\"fe8cdad6-2fb3-84d7-e08a-0178e4112534\" href=\"http://espn.com/soccer/team?id=475\">Switzerland</a> in Vancouver.</p>\n<p>Both sides were forced into early changes by injury, <a data-player-guid=\"26b70748-4173-44e0-1f83-01954be4777d\" href=\"http://espn.com/soccer/player/_/id/272722/luis-suarez\">Luis Suárez</a> coming on for <a data-player-guid=\"ba0bf21d-edaf-0088-4c26-67004f3fb8e0\" href=\"http://espn.com/soccer/player/_/id/176058/jhon-cordoba\">Jhon Córdoba</a> and making an instant impact - his cross being swept in by the unmarked Arias at the far post.</p>\n<p><a data-player-guid=\"85acb242-27fa-3292-b769-0ffd3b61c958\" href=\"http://espn.com/soccer/player/_/id/305669/alidu-seidu\">Alidu Seidu</a> had a tougher time after coming on at right-back for Ghana, facing the dangerous <a data-player-guid=\"23d1d18d-75c4-76be-f2a9-1580f4d35e0f\" href=\"http://espn.com/soccer/player/_/id/257390/luis-diaz\">Luis Díaz</a> as Colombia looked the more threatening team.</p>\n<p>Ghana found some rhythm as <a data-player-guid=\"ed520531-3344-157f-7be2-dec0351d41db\" href=\"http://espn.com/soccer/player/_/id/273292/antoine-semenyo\">Antoine Semenyo</a> got more involved, but Colombia twice came close to extending their lead before the break - Diaz firing wide when unmarked in the box before <a data-player-guid=\"323e0702-bee6-13be-f003-e2fb6f0b8abf\" href=\"http://espn.com/soccer/player/_/id/219562/lawrence-ati-zigi\">Lawrence Ati Zigi</a> produced an excellent save to turn away Johan Mojica's header.</p>\n<p>Semenyo was left frustrated as he fired a ball across goal early in the half with nobody making a run.</p>\n<p>Colombia thought they had doubled their lead as they created a chance for Diaz to turn in at the far post, only for the offside flag to cut short celebrations, Ati Zigi denying the former <a data-clubhouse-guid=\"a47fbcec-c948-cf4c-9e41-3dfa3758"
+ },
+ "h2h": [
+  {
+   "date": "2026-07-04T01:30Z",
+   "score": "1-0",
+   "result": "W",
+   "opponent": "Ghana",
+   "round": "Round of 32",
+   "competition": "2026 FIFA World Cup",
+   "note": "Colombia advances."
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-04T01:30Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Ghana",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-27T23:30Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Portugal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-24T02:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-18T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Uzbekistan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-07T23:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Jordan",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-04T01:30Z",
+    "score": "1-0",
+    "result": "L",
+    "opponent": "Colombia",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-27T21:00Z",
+    "score": "2-1",
+    "result": "L",
+    "opponent": "Croatia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Croatia advances."
+   },
+   {
+    "date": "2026-06-23T20:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "England",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-17T23:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Panama",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Ghana advances."
+   },
+   {
+    "date": "2026-06-02T18:45Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Wales",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

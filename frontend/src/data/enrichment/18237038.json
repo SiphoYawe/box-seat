@@ -1,0 +1,707 @@
+{
+ "fixtureId": 18237038,
+ "espnEventId": 760514,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "11",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "4",
+   "wonCorners": "7",
+   "saves": "0",
+   "possessionPct": "49.1",
+   "totalShots": "10",
+   "shotsOnTarget": "3",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "395",
+   "totalPasses": "472",
+   "passPct": "0.8",
+   "accurateCrosses": "4",
+   "totalCrosses": "20",
+   "crossPct": "0.2",
+   "totalLongBalls": "36",
+   "accurateLongBalls": "19",
+   "longballPct": "0.5",
+   "blockedShots": "2",
+   "effectiveTackles": "8",
+   "totalTackles": "13",
+   "tacklePct": "0.6",
+   "interceptions": "8",
+   "effectiveClearance": "11",
+   "totalClearance": "11"
+  },
+  "participant2": {
+   "foulsCommitted": "12",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "5",
+   "wonCorners": "1",
+   "saves": "3",
+   "possessionPct": "50.9",
+   "totalShots": "10",
+   "shotsOnTarget": "2",
+   "shotPct": "0.2",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "427",
+   "totalPasses": "502",
+   "passPct": "0.9",
+   "accurateCrosses": "1",
+   "totalCrosses": "7",
+   "crossPct": "0.1",
+   "totalLongBalls": "51",
+   "accurateLongBalls": "14",
+   "longballPct": "0.3",
+   "blockedShots": "3",
+   "effectiveTackles": "14",
+   "totalTackles": "22",
+   "tacklePct": "0.6",
+   "interceptions": "7",
+   "effectiveClearance": "22",
+   "totalClearance": "22"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 22,
+   "participant": 2,
+   "name": "Mikel Oyarzabal"
+  },
+  {
+   "minute": 58,
+   "participant": 2,
+   "name": "Pedro Porro"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "16",
+    "name": "Mike Maignan",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "William Saliba",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "4",
+    "name": "Dayot Upamecano",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Lucas Digne",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "5",
+    "name": "Jules Koundé",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Michael Olise",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "14",
+    "name": "Adrien Rabiot",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Aurélien Tchouaméni",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Kylian Mbappé",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Bradley Barcola",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Ousmane Dembélé",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Brice Samba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Robin Risser",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Ibrahima Konaté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Malo Gusto",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Jean-Philippe Mateta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Marcus Thuram",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Manu Koné",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Lucas Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Theo Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Désiré Doué",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Rayan Cherki",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Maghnes Akliouche",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "N'Golo Kanté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Warren Zaïre-Emery",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Maxence Lacroix",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "23",
+    "name": "Unai Simón",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Aymeric Laporte",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Pau Cubarsí",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Marc Cucurella",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Pedro Porro",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Dani Olmo",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Fabián Ruiz",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "16",
+    "name": "Rodri",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Mikel Oyarzabal",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "15",
+    "name": "Álex Baena",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Lamine Yamal",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Alejandro Grimaldo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Marc Pubill",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Ferran Torres",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Borja Iglesias",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Marcos Llorente",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Víctor Muñoz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Nico Williams",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Yéremy Pino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Pedri",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Eric García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Gavi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Martín Zubimendi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Joan García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "David Raya",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Mikel Merino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "attendance": 70176
+ },
+ "article": {
+  "headline": "Spain upset favorites France to reach World Cup final",
+  "description": "Mikel Oyarzabal and Pedro Porro gave Spain a 2-0 win over France in the first semifinal of the World Cup.",
+  "story": "<p>ARLINGTON, Texas -- <a data-player-guid=\"cc1e1907-8138-a86f-a5bf-2b18c7a4a60f\" href=\"http://espn.com/soccer/player/_/id/229018/mikel-oyarzabal\">Mikel Oyarzabal</a> scored from the penalty spot after a heady play by teenager <a data-player-guid=\"de67ce6f-0991-36b9-afb9-c008f21dc4b4\" href=\"http://espn.com/soccer/player/_/id/362150/lamine-yamal\">Lamine Yamal</a>, <a data-player-guid=\"2de417a4-c7a3-4ca5-cfda-ac0193bd0104\" href=\"http://espn.com/soccer/player/_/id/268533/pedro-porro\">Pedro Porro</a> added another goal and <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> advanced to its first World Cup final since winning in 2010 with a 2-0 victory over <a data-clubhouse-guid=\"81be996c-0f98-eec4-6284-c6be0d186360\" href=\"http://espn.com/soccer/team?id=478\">France</a> on Tuesday.</p>\n<p>A day after his 19th birthday, Yamal was denied a goal on a close offside call that came soon after Porro's give-and-go with <a data-player-guid=\"4ac1c50f-aad6-d466-47b8-343f613b7e66\" href=\"http://espn.com/soccer/player/_/id/227765/dani-olmo\">Dani Olmo</a> in the 58th minute had put Spain up 2-0. But it was Yamal's smart play against a veteran defender that put Spain in the lead.</p>\n<p>Spain will face either defending champion <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> or <a data-clubhouse-guid=\"217dee4e-6974-a197-49a2-afda6e1788c9\" href=\"http://espn.com/soccer/team?id=448\">England</a> on Sunday in East Rutherford, New Jersey. They face each other on Wednesday in Atlanta.</p>\n<p><a data-player-guid=\"61edbcca-c316-afde-575f-d9dd69176cc4\" href=\"http://espn.com/soccer/player/_/id/231388/kylian-mbappe\">Kylian Mbappé</a> and France, FIFA's top-ranked team, were trying to become only the third team to reach three consecutive World Cup finals. They instead will play in the third-place game in Miami Gardens, Florida, on Saturday, the day before the final at MetLife Stadium across the river from New York City.</p>\n<p><photo1></p>\n<p>This win on soccer's biggest stage marked the third summer in a row that Spain beat France in a tournament semifinal match. Yamal scored in a 2-1 win in the 2024 European Championship semifinals just days before his 17th birthday, and La Roja won 5-4 in Nations League play last year.</p>\n<p>After a quarterfinal win over <a "
+ },
+ "h2h": [
+  {
+   "date": "2025-06-05T19:00Z",
+   "score": "5-4",
+   "result": "L",
+   "opponent": "Spain",
+   "round": "Semifinals",
+   "competition": "2024-25 UEFA Nations League",
+   "note": "Spain advances."
+  },
+  {
+   "date": "2024-07-09T19:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Spain",
+   "round": "Semifinals",
+   "competition": "2024 European Championship",
+   "note": "Spain advances."
+  },
+  {
+   "date": "2021-10-10T18:45Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "Spain",
+   "round": "Final",
+   "competition": "2020-21 UEFA Nations League",
+   "note": "Limited Audience"
+  },
+  {
+   "date": "2017-03-28T19:00Z",
+   "score": "2-0",
+   "result": "L",
+   "opponent": "Spain",
+   "round": "International Friendly",
+   "competition": "2017 International Friendly",
+   "note": null
+  },
+  {
+   "date": "2014-09-04T19:00Z",
+   "score": "1-0",
+   "result": "W",
+   "opponent": "Spain",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-09T20:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Morocco",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-07-04T21:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Paraguay",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-30T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Sweden",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-22T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Iraq",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-10T19:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Belgium",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-06T19:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Portugal",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-02T19:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-27T00:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Uruguay",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-21T16:00Z",
+    "score": "4-0",
+    "result": "W",
+    "opponent": "Saudi Arabia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   }
+  ]
+ }
+}

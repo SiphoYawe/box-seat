@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-condensed: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --color-ink: #05070c;
+  --color-panel: rgba(10, 14, 20, 0.85);
+  --color-edge: #2a3242;
+  --color-text: #e6eaf2;
+  --color-muted: #8a93a6;
+  --color-live: #e30613;
+  --color-amber: #ffb300;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  overscroll-behavior: none;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.glass {
+  background: var(--color-panel);
+  border: 1px solid var(--color-edge);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* takeover diagonal light streaks */
+@keyframes streaks {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 340px 340px;
+  }
+}
+
+.streaks::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    115deg,
+    transparent 0 46px,
+    rgba(255, 255, 255, 0.045) 46px 60px
+  );
+  animation: streaks 7s linear infinite;
+}
+
+@keyframes cardspin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.cardspin {
+  animation: cardspin 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .streaks::before,
+  .cardspin {
+    animation: none;
+  }
+}

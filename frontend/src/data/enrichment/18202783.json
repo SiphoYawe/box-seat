@@ -1,0 +1,642 @@
+{
+ "fixtureId": 18202783,
+ "espnEventId": 760508,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "22",
+   "yellowCards": "3",
+   "redCards": "0",
+   "offsides": "5",
+   "wonCorners": "3",
+   "saves": "3",
+   "possessionPct": "53.4",
+   "totalShots": "7",
+   "shotsOnTarget": "2",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "547",
+   "totalPasses": "631",
+   "passPct": "0.9",
+   "accurateCrosses": "1",
+   "totalCrosses": "15",
+   "crossPct": "0.1",
+   "totalLongBalls": "62",
+   "accurateLongBalls": "32",
+   "longballPct": "0.5",
+   "blockedShots": "1",
+   "effectiveTackles": "7",
+   "totalTackles": "12",
+   "tacklePct": "0.6",
+   "interceptions": "14",
+   "effectiveClearance": "35",
+   "totalClearance": "35"
+  },
+  "participant2": {
+   "foulsCommitted": "21",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "4",
+   "wonCorners": "7",
+   "saves": "2",
+   "possessionPct": "46.6",
+   "totalShots": "15",
+   "shotsOnTarget": "3",
+   "shotPct": "0.2",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "454",
+   "totalPasses": "547",
+   "passPct": "0.8",
+   "accurateCrosses": "3",
+   "totalCrosses": "19",
+   "crossPct": "0.2",
+   "totalLongBalls": "79",
+   "accurateLongBalls": "33",
+   "longballPct": "0.4",
+   "blockedShots": "4",
+   "effectiveTackles": "8",
+   "totalTackles": "17",
+   "tacklePct": "0.5",
+   "interceptions": "13",
+   "effectiveClearance": "22",
+   "totalClearance": "22"
+  }
+ },
+ "scorers": [],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Gregor Kobel",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Manuel Akanji",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Nico Elvedi",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Ricardo Rodríguez",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "6",
+    "name": "Denis Zakaria",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "14",
+    "name": "Ardon Jashari",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Granit Xhaka",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Remo Freuler",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Breel Embolo",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "11",
+    "name": "Dan Ndoye",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "22",
+    "name": "Fabian Rieder",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "21",
+    "name": "Marvin Keller",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Yvon Mvogo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Zeki Amdouni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Noah Okafor",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Rubén Vargas",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Eray Cömert",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Cedric Itten",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Christian Fassnacht",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Silvan Widmer",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Miro Muheim",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Djibril Sow",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Aurèle Amenda",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "12",
+    "name": "Camilo Vargas",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Jhon Lucumí",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Davinson Sánchez",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Johan Mojica",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Daniel Muñoz",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Gustavo Puerta",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Jefferson Lerma",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Luis Díaz",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jhon Arias",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "25",
+    "name": "Luis Suárez",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "James Rodríguez",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Jhon Córdoba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Santiago Arias",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Richard Ríos",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Cucho Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Jáminton Campaz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Kevin Castaño",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Jorge Carrascal",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Andrés Gómez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Willer Ditta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "David Ospina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Juan Fernando Quintero",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Álvaro Montero",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Yerry Mina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Juan Portilla",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Deiver Machado",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-4-1-1"
+ },
+ "venue": {
+  "name": "BC Place",
+  "city": "Vancouver",
+  "attendance": 52497
+ },
+ "article": {
+  "headline": "Switzerland send Colombia home from World Cup after penalty shootout",
+  "description": "Rubén Vargas struck the winning spot-kick as Switzerland beat Colombia 4-3 in a penalty shoot-out to reach the World Cup quarterfinals after a goalless 120 minutes in Vancouver.",
+  "story": "<p><photo caption=\"Switzerland beat Colombia on penalties.\"></p>\n<p><a data-player-guid=\"0510c4ab-6bdd-99bc-c598-29cda5914978\" href=\"http://espn.com/soccer/player/_/id/259513/ruben-vargas\">Rubén Vargas</a> struck the winning spot-kick as <a data-clubhouse-guid=\"fe8cdad6-2fb3-84d7-e08a-0178e4112534\" href=\"http://espn.com/soccer/team?id=475\">Switzerland</a> beat <a data-clubhouse-guid=\"7f32673e-0a85-dbdd-3380-19cfe5d6c009\" href=\"http://espn.com/soccer/team?id=208\">Colombia</a> 4-3 in a penalty shoot-out to reach the World Cup quarterfinals after a goalless 120 minutes in Vancouver.</p>\n<p><a data-clubhouse-guid=\"9db0d7f2-b091-5122-f29b-397ec1349254\" href=\"http://espn.com/soccer/team?id=243\">Sevilla</a> winger Vargas held his nerve after a cagey encounter of few goalscoring chances at the Vancouver Stadium and Switzerland will next face defending champions <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> on Sunday in Kansas.</p>\n<p>Vargas's team-mate <a data-player-guid=\"05565c83-6cae-802b-9669-ea4ba9bd1856\" href=\"http://espn.com/soccer/player/_/id/214562/manuel-akanji\">Manuel Akanji</a> fired his spot-kick over the crossbar, but Colombia pair <a data-player-guid=\"9556c7b9-bd71-f906-642f-7332bba3f80e\" href=\"http://espn.com/soccer/player/_/id/197105/davinson-sanchez\">Davinson Sánchez</a> and <a data-player-guid=\"78a0ba3e-a734-38a2-9ea0-5cf36969e6b4\" href=\"http://espn.com/soccer/player/_/id/336809/cucho-hernandez\">Cucho Hernández</a> both failed to convert and the South Americans made a painful exit.</p>\n<p>It was 20 minutes before <a data-player-guid=\"d30d49e0-21db-3216-93d6-544ed54b89d4\" href=\"http://espn.com/soccer/player/_/id/341736/gustavo-puerta\">Gustavo Puerta</a> forced Switzerland goalkeeper <a data-player-guid=\"e4e9b0db-f22b-b0d9-98a4-6bc706d1a25e\" href=\"http://espn.com/soccer/player/_/id/238544/gregor-kobel\">Gregor Kobel</a> into the first save, while Fabian Rieder's angled shot was kept out by Colombia keeper <a data-player-guid=\"148c9053-4a2c-dfe3-6dae-beaa587a61db\" href=\"http://espn.com/soccer/player/_/id/185147/camilo-vargas\">Camilo Vargas</a>.</p>\n<p>The caution-first approach continued in the second half. Switzerland substitute <a data-player-guid=\"58088c9d-8d2f-3c25-9946-6bd6c70ec119\" href=\"http://espn.com/soccer/player/_/id/222446/djibril-sow\">Djibril Sow</a> slipped as he con"
+ },
+ "h2h": [
+  {
+   "date": "2007-03-25T17:30Z",
+   "score": "3-1",
+   "result": "L",
+   "opponent": "Colombia",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "1994-06-26T07:00Z",
+   "score": "2-0",
+   "result": "L",
+   "opponent": "Colombia",
+   "round": "Group Stage",
+   "competition": "1994 FIFA World Cup",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-03T03:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Algeria",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Switzerland advances."
+   },
+   {
+    "date": "2026-06-24T19:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Canada",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Switzerland advances."
+   },
+   {
+    "date": "2026-06-18T19:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Bosnia-Herzegovina",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Switzerland advances."
+   },
+   {
+    "date": "2026-06-13T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Qatar",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-06T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Australia",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-04T01:30Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Ghana",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-27T23:30Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Portugal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-24T02:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-18T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Uzbekistan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Colombia advances."
+   },
+   {
+    "date": "2026-06-07T23:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Jordan",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

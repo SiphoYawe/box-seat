@@ -1,0 +1,704 @@
+{
+ "fixtureId": 18192996,
+ "espnEventId": 760505,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "14",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "12",
+   "saves": "2",
+   "possessionPct": "66.9",
+   "totalShots": "20",
+   "shotsOnTarget": "5",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "418",
+   "totalPasses": "453",
+   "passPct": "0.9",
+   "accurateCrosses": "13",
+   "totalCrosses": "52",
+   "crossPct": "0.3",
+   "totalLongBalls": "40",
+   "accurateLongBalls": "28",
+   "longballPct": "0.7",
+   "blockedShots": "7",
+   "effectiveTackles": "7",
+   "totalTackles": "16",
+   "tacklePct": "0.4",
+   "interceptions": "7",
+   "effectiveClearance": "13",
+   "totalClearance": "13"
+  },
+  "participant2": {
+   "foulsCommitted": "7",
+   "yellowCards": "4",
+   "redCards": "1",
+   "offsides": "0",
+   "wonCorners": "2",
+   "saves": "3",
+   "possessionPct": "33.1",
+   "totalShots": "6",
+   "shotsOnTarget": "5",
+   "shotPct": "0.8",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "195",
+   "totalPasses": "244",
+   "passPct": "0.8",
+   "accurateCrosses": "1",
+   "totalCrosses": "4",
+   "crossPct": "0.3",
+   "totalLongBalls": "44",
+   "accurateLongBalls": "21",
+   "longballPct": "0.5",
+   "blockedShots": "0",
+   "effectiveTackles": "9",
+   "totalTackles": "18",
+   "tacklePct": "0.5",
+   "interceptions": "4",
+   "effectiveClearance": "49",
+   "totalClearance": "49"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 36,
+   "participant": 2,
+   "name": "Jude Bellingham"
+  },
+  {
+   "minute": 38,
+   "participant": 2,
+   "name": "Jude Bellingham"
+  },
+  {
+   "minute": 42,
+   "participant": 1,
+   "name": "Julián Quiñones"
+  },
+  {
+   "minute": 60,
+   "participant": 2,
+   "name": "Harry Kane"
+  },
+  {
+   "minute": 69,
+   "participant": 1,
+   "name": "Raúl Jiménez"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Raúl Rangel",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Johan Vásquez",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "César Montes",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Jesús Gallardo",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Jorge Sánchez",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "6",
+    "name": "Érik Lira",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Luis Romo",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Gilberto Mora",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Raúl Jiménez",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Julián Quiñones",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "25",
+    "name": "Roberto Alvarado",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Guillermo Ochoa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Mateo Chávez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Armando González",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Álvaro Fidalgo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Carlos Acevedo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Obed Vargas",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "César Huerta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Alexis Vega",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Israel Reyes",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Santiago Gimenez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Brian Gutiérrez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Edson Álvarez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Orbelín Pineda",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Guillermo Martínez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Luis Chávez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Jordan Pickford",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Marc Guéhi",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Ezri Konsa",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Nico O'Reilly",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Jarell Quansah",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Jude Bellingham",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Elliot Anderson",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "4",
+    "name": "Declan Rice",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Harry Kane",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "18",
+    "name": "Anthony Gordon",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Bukayo Saka",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "5",
+    "name": "John Stones",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Ollie Watkins",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Jordan Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Noni Madueke",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Dan Burn",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Trevoh Chalobah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Kobbie Mainoo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "James Trafford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Marcus Rashford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Djed Spence",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Eberechi Eze",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Morgan Rogers",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Reece James",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Dean Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Ivan Toney",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-3-3",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "Estadio Banorte",
+  "city": "Mexico City",
+  "attendance": 80824
+ },
+ "article": {
+  "headline": "10-man England win thriller against Mexico to reach World Cup quarterfinals",
+  "description": "Jude Bellingham was the star with a first-half brace, while Harry Kane's penalty would prove the difference maker. ",
+  "story": "<p>England overcame hostility, altitude and Jarell Quansah's red card as Thomas Tuchel's side edged a 3-2 blockbuster against World Cup co-hosts Mexico to set-up a quarter-final clash with Norway.</p>\n<p>The back-to-back European Championship finalists faced all manner of obstacles heading into Sunday's last-16 tie at the majestic Estadio Azteca, where kick-off was delayed by an hour due to a storm.</p>\n<p>England started well 2,200 metres above sea level when the last-16 tie eventually got under way, with Jude Bellingham's quickfire brace silencing supporters whose hopes would be revived by Julian Quinones before the break.</p>\n<p>Mexican belief grew further when right-back Quansah was sent off for a clumsy challenge early in the second half, only for Tuchel's team to immediately respond through skipper Harry Kane's spot-kick.</p>\n<p>Raul Jimenez added a penalty of his own to increase English nerves, yet the visitors showed defensive nous and togetherness to win on a wild night in Mexico City. A date with Norway in Miami is the reward.</p>\n<p>'Football's Coming Home' rung around the famous stadium at the end of a match that began with a start as intense as the atmosphere. Early on, England effectively took the sting out of proceedings, although Jordan Pickford had to produce a world-class stop to deny Jimenez's header.</p>\n<p>The visitors got through to the hydration break unscathed and soon began to pose problems at the other end.</p>\n<p>Anthony Gordon forced a save from Raul Rangel and an outstanding break brought a 36th-minute opener in Mexico City.  Pickford plucked out a pass and threw out to Declan Rice, who drove from deep in his own half and played wide to Bukayo Saka. The winger sent a fine clipped cross that Bellingham headed home.</p>\n<p><photo1></p>\n<p>Inside two minutes, England doubled their lead.  Pressure from Elliot Anderson and Gordon saw England gain possession, with Bellingham playing wide to Kane and meeting the skipper's low ball from close range.</p>\n<p>That moment took the electricity out of the Azteca, but El Tri's fans were not silenced for long. Items cascaded down the stands as Mexico celebrated reducing the deficit as Quinones lasered home after England failed to deal with a free kick.</p>\n<p>Tuchel's side had to hold on for dear life after that. Jimenez struck wide and then saw a header tipped over by Pickford, who roared in de"
+ },
+ "h2h": [
+  {
+   "date": "2026-07-06T01:00Z",
+   "score": "3-2",
+   "result": "L",
+   "opponent": "England",
+   "round": "Round of 16",
+   "competition": "2026 FIFA World Cup",
+   "note": "England advances."
+  },
+  {
+   "date": "2010-05-24T19:00Z",
+   "score": "3-1",
+   "result": "L",
+   "opponent": "England",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "1966-07-16T07:00Z",
+   "score": "2-0",
+   "result": "L",
+   "opponent": "England",
+   "round": "Group Stage",
+   "competition": "1966 FIFA World Cup",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-06T01:00Z",
+    "score": "3-2",
+    "result": "L",
+    "opponent": "England",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-01T02:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Ecuador",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Mexico advances."
+   },
+   {
+    "date": "2026-06-25T01:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Czechia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Mexico advances."
+   },
+   {
+    "date": "2026-06-19T01:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "South Korea",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Mexico advances."
+   },
+   {
+    "date": "2026-06-11T19:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "South Africa",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Mexico advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-06T01:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Mexico",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-01T16:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-27T21:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Panama",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-23T20:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Ghana",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-17T20:00Z",
+    "score": "4-2",
+    "result": "W",
+    "opponent": "Croatia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   }
+  ]
+ }
+}

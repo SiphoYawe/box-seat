@@ -1,0 +1,703 @@
+{
+ "fixtureId": 18241006,
+ "espnEventId": 760515,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "11",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "2",
+   "saves": "3",
+   "possessionPct": "35.8",
+   "totalShots": "5",
+   "shotsOnTarget": "2",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "273",
+   "totalPasses": "325",
+   "passPct": "0.8",
+   "accurateCrosses": "3",
+   "totalCrosses": "16",
+   "crossPct": "0.2",
+   "totalLongBalls": "42",
+   "accurateLongBalls": "16",
+   "longballPct": "0.4",
+   "blockedShots": "2",
+   "effectiveTackles": "9",
+   "totalTackles": "15",
+   "tacklePct": "0.6",
+   "interceptions": "9",
+   "effectiveClearance": "27",
+   "totalClearance": "27"
+  },
+  "participant2": {
+   "foulsCommitted": "15",
+   "yellowCards": "3",
+   "redCards": "0",
+   "offsides": "3",
+   "wonCorners": "6",
+   "saves": "1",
+   "possessionPct": "64.2",
+   "totalShots": "15",
+   "shotsOnTarget": "5",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "537",
+   "totalPasses": "588",
+   "passPct": "0.9",
+   "accurateCrosses": "6",
+   "totalCrosses": "20",
+   "crossPct": "0.3",
+   "totalLongBalls": "27",
+   "accurateLongBalls": "13",
+   "longballPct": "0.5",
+   "blockedShots": "3",
+   "effectiveTackles": "9",
+   "totalTackles": "20",
+   "tacklePct": "0.5",
+   "interceptions": "6",
+   "effectiveClearance": "31",
+   "totalClearance": "31"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 55,
+   "participant": 1,
+   "name": "Anthony Gordon"
+  },
+  {
+   "minute": 85,
+   "participant": 2,
+   "name": "Enzo Fernández"
+  },
+  {
+   "minute": 90,
+   "participant": 2,
+   "name": "Lautaro Martínez"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Jordan Pickford",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Marc Guéhi",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "John Stones",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "25",
+    "name": "Djed Spence",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "24",
+    "name": "Reece James",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Jude Bellingham",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Elliot Anderson",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Declan Rice",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Harry Kane",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Anthony Gordon",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Morgan Rogers",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Jordan Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Noni Madueke",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Eberechi Eze",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Ollie Watkins",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Bukayo Saka",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Trevoh Chalobah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "James Trafford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Dan Burn",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Dean Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Marcus Rashford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Ivan Toney",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Ezri Konsa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Kobbie Mainoo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Nico O'Reilly",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "23",
+    "name": "Emiliano Martínez",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Lisandro Martínez",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "13",
+    "name": "Cristian Romero",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Leandro Paredes",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "3",
+    "name": "Nicolás Tagliafico",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Nahuel Molina",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Alexis Mac Allister",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Enzo Fernández",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Julián Álvarez",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Giuliano Simeone",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Lionel Messi",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Gonzalo Montiel",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Lautaro Martínez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Marcos Senesi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Facundo Medina",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Nico González",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Juan Musso",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Valentín Barco",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Gerónimo Rulli",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Giovani Lo Celso",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Nicolás Otamendi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Nico Paz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Thiago Almada",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Exequiel Palacios",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Rodrigo De Paul",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "José Manuel López",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-1-4-1"
+ },
+ "venue": {
+  "name": "Mercedes-Benz Stadium",
+  "city": "Atlanta, Georgia",
+  "attendance": 68239
+ },
+ "article": {
+  "headline": "Argentina come from behind, score two in six minutes against England to reach World Cup final ",
+  "description": "Defending champion Argentina rallied to beat England 2-1 on Wednesday and reach the World Cup final.",
+  "story": "<p>ATLANTA -- No \"Hand of God\" this time. <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> didn't need it.</p>\n<p>Instead it was the hallowed feet of <a data-player-guid=\"dc5f8d51-332b-0ab2-b4b0-c97efdc624e0\" href=\"http://espn.com/soccer/player/_/id/45843/lionel-messi\">Lionel Messi</a> and the unbreakable spirit of a team that has repeatedly fought back at this year's World Cup that is now one step away from back-to-back titles.</p>\n<p>Trailing 1-0 going into the 85th minute, Argentina rallied for a 2-1 victory over <a data-clubhouse-guid=\"217dee4e-6974-a197-49a2-afda6e1788c9\" href=\"http://espn.com/soccer/team?id=448\">England</a> on Wednesday with goals from <a data-player-guid=\"b6765ac7-63b2-227c-12e8-f6342bf9405c\" href=\"http://espn.com/soccer/player/_/id/285450/enzo-fernandez\">Enzo Fernández</a> and substitute <a data-player-guid=\"f2d92beb-5b82-65be-f72a-6f6efd6b0560\" href=\"http://espn.com/soccer/player/_/id/219713/lautaro-martinez\">Lautaro Martínez</a>.</p>\n<p>\"I dreamed it, I swear. I told Alexis (Mac Allister) that I was going to score. I told him that I was going to come on and I was going to win it,\" Martinez said. \"I can tell you this team keeps showing what it's made of.\"</p>\n<p>At the final whistle, Messi fell to his knees in celebration while England players collapsed in disbelief - again.</p>\n<p><photo1></p>\n<p>Add 2026 to 1986 and 1998 on the list of games when Argentina has extinguished English hopes at the World Cup.</p>\n<p>\"I'm gutted for the team, the staff, the fans,\" England captain <a data-player-guid=\"66b16016-7a3a-434f-ae82-e767fc5fac88\" href=\"http://espn.com/soccer/player/_/id/142200/harry-kane\">Harry Kane</a> said. \"We worked so hard to be here. The lads have given every bit of blood, sweat and tears. To fall short like we did is just gutting.\"</p>\n<p>The defending champions will take on European champion <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> in the final on Sunday in East Rutherford, New Jersey. The best that South America has to offer against the best of Europe.</p>\n<p>The loss for England will hurt a new generation of fans in a similar way to Diego Maradona's infamous handball goal in the 1986 World Cup quarterfinals and the penalty shootout loss in 1998 when David Beckham was sent off for"
+ },
+ "h2h": [
+  {
+   "date": "2005-11-12T16:45Z",
+   "score": "3-2",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2002-06-07T11:30Z",
+   "score": "1-0",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": "Group Stage",
+   "competition": "2002 FIFA World Cup",
+   "note": null
+  },
+  {
+   "date": "1998-06-30T07:00Z",
+   "score": "2-2",
+   "result": "D",
+   "opponent": "Argentina",
+   "round": "Second Round",
+   "competition": "1998 FIFA World Cup",
+   "note": null
+  },
+  {
+   "date": "1986-06-22T16:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Argentina",
+   "round": "Quarterfinals",
+   "competition": "1986 FIFA World Cup",
+   "note": null
+  },
+  {
+   "date": "1966-07-23T14:00Z",
+   "score": "1-0",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": "Quarterfinals",
+   "competition": "1966 FIFA World Cup",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-11T21:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-06T01:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Mexico",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-01T16:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-27T21:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Panama",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-23T20:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Ghana",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-12T01:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Switzerland",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-07T16:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Egypt",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-03T22:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Cape Verde",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-28T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Jordan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-22T17:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   }
+  ]
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "fixtureId": 18257739,
+ "espnEventId": 760517,
+ "stats": {
+  "participant1": {
+   "goalDifference": "12",
+   "totalGoals": "13",
+   "goalAssists": "9",
+   "goalsConceded": "1"
+  },
+  "participant2": {
+   "goalDifference": "12",
+   "totalGoals": "19",
+   "goalAssists": "12",
+   "goalsConceded": "7"
+  }
+ },
+ "scorers": [],
+ "rosters": {
+  "participant1": [],
+  "participant2": [],
+  "formation1": null,
+  "formation2": null
+ },
+ "venue": {
+  "name": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "attendance": null
+ },
+ "article": null,
+ "h2h": [
+  {
+   "date": "2018-03-27T19:30Z",
+   "score": "6-1",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": "International Friendly",
+   "competition": "2018 International Friendly",
+   "note": null
+  },
+  {
+   "date": "2010-09-07T20:00Z",
+   "score": "4-1",
+   "result": "L",
+   "opponent": "Argentina",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2009-11-14T19:45Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2006-10-11T20:00Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "Argentina",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "1966-07-13T07:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Argentina",
+   "round": "Group Stage",
+   "competition": "1966 FIFA World Cup",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-14T19:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "France",
+    "round": "Semifinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-10T19:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Belgium",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-06T19:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Portugal",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-02T19:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-27T00:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Uruguay",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-15T19:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "England",
+    "round": "Semifinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-12T01:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Switzerland",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-07T16:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Egypt",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-03T22:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Cape Verde",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-06-28T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Jordan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   }
+  ]
+ }
+}

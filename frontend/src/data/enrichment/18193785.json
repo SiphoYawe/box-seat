@@ -1,0 +1,713 @@
+{
+ "fixtureId": 18193785,
+ "espnEventId": 760507,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "11",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "3",
+   "saves": "3",
+   "possessionPct": "55.9",
+   "totalShots": "7",
+   "shotsOnTarget": "2",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "459",
+   "totalPasses": "527",
+   "passPct": "0.9",
+   "accurateCrosses": "2",
+   "totalCrosses": "11",
+   "crossPct": "0.2",
+   "totalLongBalls": "36",
+   "accurateLongBalls": "19",
+   "longballPct": "0.5",
+   "blockedShots": "0",
+   "effectiveTackles": "9",
+   "totalTackles": "20",
+   "tacklePct": "0.5",
+   "interceptions": "9",
+   "effectiveClearance": "23",
+   "totalClearance": "23"
+  },
+  "participant2": {
+   "foulsCommitted": "9",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "5",
+   "saves": "1",
+   "possessionPct": "44.1",
+   "totalShots": "15",
+   "shotsOnTarget": "7",
+   "shotPct": "0.5",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "334",
+   "totalPasses": "414",
+   "passPct": "0.8",
+   "accurateCrosses": "5",
+   "totalCrosses": "15",
+   "crossPct": "0.3",
+   "totalLongBalls": "60",
+   "accurateLongBalls": "18",
+   "longballPct": "0.3",
+   "blockedShots": "4",
+   "effectiveTackles": "10",
+   "totalTackles": "22",
+   "tacklePct": "0.5",
+   "interceptions": "9",
+   "effectiveClearance": "18",
+   "totalClearance": "18"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 9,
+   "participant": 2,
+   "name": "Charles De Ketelaere"
+  },
+  {
+   "minute": 31,
+   "participant": 1,
+   "name": "Malik Tillman"
+  },
+  {
+   "minute": 33,
+   "participant": 2,
+   "name": "Charles De Ketelaere"
+  },
+  {
+   "minute": 57,
+   "participant": 2,
+   "name": "Hans Vanaken"
+  },
+  {
+   "minute": 90,
+   "participant": 2,
+   "name": "Romelu Lukaku"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "24",
+    "name": "Matt Freese",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Tim Ream",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Chris Richards",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Antonee Robinson",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "16",
+    "name": "Alex Freeman",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Tyler Adams",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Malik Tillman",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Weston McKennie",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Folarin Balogun",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Christian Pulisic",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "2",
+    "name": "Sergiño Dest",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "12",
+    "name": "Miles Robinson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Ricardo Pepi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Timothy Weah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Max Arfsten",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Matt Turner",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Brenden Aaronson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Alejandro Zendejas",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Giovanni Reyna",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Joe Scally",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Chris Brady",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Auston Trusty",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Mark McKenzie",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Haji Wright",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Sebastian Berhalter",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Thibaut Courtois",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Brandon Mechele",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Nathan Ngoy",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Maxim De Cuyper",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Timothy Castagne",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Youri Tielemans",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Nicolas Raskin",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "24",
+    "name": "Amadou Onana",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Charles De Ketelaere",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Leandro Trossard",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "14",
+    "name": "Dodi Lukébakio",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Romelu Lukaku",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Diego Moreira",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Alexis Saelemaekers",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Matias Fernandez-Pardo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Thomas Meunier",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Hans Vanaken",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Senne Lammens",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jérémy Doku",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Kevin De Bruyne",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Axel Witsel",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Mike Penders",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Arthur Theate",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Joaquin Seys",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Zeno Debast",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Koni De Winter",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-3-3",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "Lumen Field",
+  "city": "Seattle, Washington",
+  "attendance": 66925
+ },
+ "article": {
+  "headline": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+  "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+  "story": "<p><photo1></p>\n<p>The <a href=\"https://www.espn.co.uk/football/team/_/id/660/united-states\" target=\"_blank\">United States</a>' hopes for a deep World Cup run at home ended when <a data-player-guid=\"777f9795-1de2-2790-46a7-63af3c364027\" href=\"http://espn.com/soccer/player/_/id/296319/charles-de-ketelaere\">Charles De Ketelaere</a> scored twice and assisted on another goal, helping <a data-clubhouse-guid=\"4084f797-3877-2af0-b70f-570d25a1a141\" href=\"http://espn.com/soccer/team?id=459\">Belgium</a> expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.</p>\n<p>While the U.S. was boosted by the presence of star forward <a data-player-guid=\"2e8fce58-86b5-b7e1-174d-eb785db17a1b\" href=\"http://espn.com/soccer/player/_/id/282643/folarin-balogun\">Folarin Balogun</a>, whose one-game red-card suspension was controversially lifted by FIFA, American defenders were at fault in a pair of first-half goals and goalkeeper <a data-player-guid=\"56bd8f73-7610-b0d5-fe90-b517cd9ae61d\" href=\"http://espn.com/soccer/player/_/id/252974/matt-freese\">Matt Freese</a>'s gaffe gave the Red Devils a third early in the second half.</p>\n<p>Second-half substitute <a data-player-guid=\"b7f7737c-1e5a-7165-d26a-413acf8ced3d\" href=\"http://espn.com/soccer/player/_/id/139437/romelu-lukaku\">Romelu Lukaku</a> added Belgium's final goal in the third minute of stoppage time.</p>\n<p>Seeking its first World Cup title, Belgium knocked the U.S. out in the round of 16 for the second time in 12 years and extended its unbeaten streak to 18 games. The Red Devils play 2010 champion <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> on Friday at Inglewood, California, for a semifinal berth against <a data-clubhouse-guid=\"81be996c-0f98-eec4-6284-c6be0d186360\" href=\"http://espn.com/soccer/team?id=478\">France</a> or <a data-clubhouse-guid=\"a6945df8-27b1-9615-af13-7379154954b9\" href=\"http://espn.com/soccer/team?id=2869\">Morocco</a>.</p>\n<p><a data-player-guid=\"fae326e6-8649-3a52-b980-b6ae39ea88e3\" href=\"http://espn.com/soccer/player/_/id/301416/malik-tillman\">Malik Tillman</a> tied the score 1-1 midway through the first half with his second free kick goal of the tournament, but the Americans conceded just 61 seconds after the ensuing kickoff. U.S. coach Mauricio Pochettino showed his frustration by kicking a rac"
+ },
+ "h2h": [
+  {
+   "date": "2026-07-07T00:00Z",
+   "score": "4-1",
+   "result": "L",
+   "opponent": "Belgium",
+   "round": "Round of 16",
+   "competition": "2026 FIFA World Cup",
+   "note": "Belgium advances."
+  },
+  {
+   "date": "2026-03-28T19:30Z",
+   "score": "5-2",
+   "result": "L",
+   "opponent": "Belgium",
+   "round": null,
+   "competition": "2026 International Friendly",
+   "note": null
+  },
+  {
+   "date": "2014-07-01T20:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Belgium",
+   "round": "Round of 16",
+   "competition": "2014 FIFA World Cup",
+   "note": null
+  },
+  {
+   "date": "2013-05-30T00:00Z",
+   "score": "4-2",
+   "result": "L",
+   "opponent": "Belgium",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2011-09-06T18:30Z",
+   "score": "1-0",
+   "result": "L",
+   "opponent": "Belgium",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-07T00:00Z",
+    "score": "4-1",
+    "result": "L",
+    "opponent": "Belgium",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-07-02T00:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Bosnia-Herzegovina",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "United States advances."
+   },
+   {
+    "date": "2026-06-26T02:00Z",
+    "score": "3-2",
+    "result": "L",
+    "opponent": "Türkiye",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Türkiye advances."
+   },
+   {
+    "date": "2026-06-19T19:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Australia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "United States advances."
+   },
+   {
+    "date": "2026-06-13T01:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Paraguay",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "United States advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-07T00:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "United States",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-07-01T20:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-06-27T03:00Z",
+    "score": "5-1",
+    "result": "W",
+    "opponent": "New Zealand",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Belgium advances."
+   },
+   {
+    "date": "2026-06-21T19:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Iran",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-15T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Egypt",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   }
+  ]
+ }
+}

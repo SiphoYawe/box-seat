@@ -1,0 +1,702 @@
+{
+ "fixtureId": 18198205,
+ "espnEventId": 760506,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "9",
+   "yellowCards": "2",
+   "redCards": "0",
+   "offsides": "2",
+   "wonCorners": "3",
+   "saves": "5",
+   "possessionPct": "44.6",
+   "totalShots": "10",
+   "shotsOnTarget": "2",
+   "shotPct": "0.2",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "357",
+   "totalPasses": "427",
+   "passPct": "0.8",
+   "accurateCrosses": "4",
+   "totalCrosses": "13",
+   "crossPct": "0.3",
+   "totalLongBalls": "52",
+   "accurateLongBalls": "23",
+   "longballPct": "0.4",
+   "blockedShots": "3",
+   "effectiveTackles": "9",
+   "totalTackles": "14",
+   "tacklePct": "0.6",
+   "interceptions": "7",
+   "effectiveClearance": "23",
+   "totalClearance": "23"
+  },
+  "participant2": {
+   "foulsCommitted": "13",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "7",
+   "saves": "2",
+   "possessionPct": "55.4",
+   "totalShots": "15",
+   "shotsOnTarget": "6",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "467",
+   "totalPasses": "530",
+   "passPct": "0.9",
+   "accurateCrosses": "1",
+   "totalCrosses": "16",
+   "crossPct": "0.1",
+   "totalLongBalls": "33",
+   "accurateLongBalls": "16",
+   "longballPct": "0.5",
+   "blockedShots": "3",
+   "effectiveTackles": "13",
+   "totalTackles": "18",
+   "tacklePct": "0.7",
+   "interceptions": "6",
+   "effectiveClearance": "13",
+   "totalClearance": "13"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 90,
+   "participant": 2,
+   "name": "Mikel Merino"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Diogo Costa",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Renato Veiga",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Rúben Dias",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Nuno Mendes",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "João Cancelo",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Bruno Fernandes",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "João Neves",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Vitinha",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Cristiano Ronaldo",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "João Félix",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "18",
+    "name": "Pedro Neto",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "14",
+    "name": "Gonçalo Inácio",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Gonçalo Guedes",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Matheus Nunes",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Diogo Dalot",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "José Sá",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Bernardo Silva",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Nélson Semedo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Francisco Conceição",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Gonçalo Ramos",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Rafael Leão",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Rui Silva",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Tomás Araújo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Samú Costa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Francisco Trincão",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Rúben Neves",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "23",
+    "name": "Unai Simón",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Aymeric Laporte",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Pau Cubarsí",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Marc Cucurella",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Pedro Porro",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Dani Olmo",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Pedri",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "16",
+    "name": "Rodri",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Mikel Oyarzabal",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "15",
+    "name": "Álex Baena",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Lamine Yamal",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Mikel Merino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Eric García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Borja Iglesias",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "David Raya",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Nico Williams",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Martín Zubimendi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Marc Pubill",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Ferran Torres",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Marcos Llorente",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Alejandro Grimaldo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Víctor Muñoz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Gavi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Yéremy Pino",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Joan García",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Fabián Ruiz",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "AT&T Stadium",
+  "city": "Arlington, Texas",
+  "attendance": 70649
+ },
+ "article": {
+  "headline": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+  "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+  "story": "<p><photo caption=\"Spain eliminated Portugal from the World Cup.\"></p>\n<p>Cristiano Ronaldo's World Cup dream ended in tears as <a data-player-guid=\"2ddb2d9a-11b1-28cd-ecb8-691cb8f9faa1\" href=\"http://espn.com/soccer/player/_/id/209581/mikel-merino\">Mikel Merino</a> stepped off the bench to fire <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> into the quarterfinals with an injury-time winner in Dallas.</p>\n<p>The Portuguese superstar had been a passenger for much of a low-key contest that belatedly sprang into life when Merino followed up his quick free quick to nip into the box and fire the only goal of the game past keeper <a data-player-guid=\"9d03c5f6-c0e5-8877-4f22-4512cfd7c1b7\" href=\"http://espn.com/soccer/player/_/id/238903/diogo-costa\">Diogo Costa</a>.</p>\n<p>Spain had held the upper hand throughout but they were still forced to hold off a frantic late push from the Portuguese with <a data-player-guid=\"bf92e82e-1179-0a00-281d-529b403ae556\" href=\"http://espn.com/soccer/player/_/id/199833/bernardo-silva\">Bernardo Silva</a> lofting a header narrowly over bar from Sergio Conceicao's right-wing cross.</p>\n<p>Ultimately <a data-clubhouse-guid=\"12433baf-649d-7f4f-7233-6db63a5f62f4\" href=\"http://espn.com/soccer/team?id=482\">Portugal</a> paid the price for playing it too cagey for much of the second half, with <a data-clubhouse-guid=\"feb44e87-58fa-9597-2691-b3c32768ebe4\" href=\"http://espn.com/soccer/team?id=359\">Arsenal</a> man Merino capitalising with a clever move to send his country through to the last eight.</p>\n<p><a data-player-guid=\"cc1e1907-8138-a86f-a5bf-2b18c7a4a60f\" href=\"http://espn.com/soccer/player/_/id/229018/mikel-oyarzabal\">Mikel Oyarzabal</a> was guilty of a shocking miss for the Spaniards with eight minutes left on the clock when he was put through by <a data-player-guid=\"4ac1c50f-aad6-d466-47b8-343f613b7e66\" href=\"http://espn.com/soccer/player/_/id/227765/dani-olmo\">Dani Olmo</a> but appeared to think he was offside and casually dragged his shot wide to the right of goal.</p>\n<p>Spain had another great chance in the 16th minute when they forced a brilliant double save from Costa, first an effort from <a data-player-guid=\"de67ce6f-0991-36b9-afb9-c008f21dc4b4\" href=\"http://espn.com/soccer/player/_/id/362150/lamine-yamal\">Lamine Yamal</a> after cutting in from the right and momen"
+ },
+ "h2h": [
+  {
+   "date": "2025-06-08T19:00Z",
+   "score": "2-2",
+   "result": "W",
+   "opponent": "Spain",
+   "round": "Final",
+   "competition": "2024-25 UEFA Nations League",
+   "note": null
+  },
+  {
+   "date": "2022-09-27T18:45Z",
+   "score": "1-0",
+   "result": "L",
+   "opponent": "Spain",
+   "round": "Group Stage",
+   "competition": "2022-23 UEFA Nations League",
+   "note": "Spain advances."
+  },
+  {
+   "date": "2022-06-02T18:45Z",
+   "score": "1-1",
+   "result": "D",
+   "opponent": "Spain",
+   "round": "Group Stage",
+   "competition": "2022-23 UEFA Nations League",
+   "note": null
+  },
+  {
+   "date": "2021-06-04T17:30Z",
+   "score": "0-0",
+   "result": "D",
+   "opponent": "Spain",
+   "round": null,
+   "competition": "2021 International Friendly",
+   "note": "Limited Audience"
+  },
+  {
+   "date": "2020-10-07T18:45Z",
+   "score": "0-0",
+   "result": "D",
+   "opponent": "Spain",
+   "round": null,
+   "competition": "2020 International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-02T23:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Croatia",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Portugal advances."
+   },
+   {
+    "date": "2026-06-27T23:30Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Colombia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-23T17:00Z",
+    "score": "5-0",
+    "result": "W",
+    "opponent": "Uzbekistan",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Portugal advances."
+   },
+   {
+    "date": "2026-06-17T17:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Congo DR",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-10T19:45Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Nigeria",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-02T19:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Austria",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-27T00:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Uruguay",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-21T16:00Z",
+    "score": "4-0",
+    "result": "W",
+    "opponent": "Saudi Arabia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-06-15T16:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Cape Verde",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-09T02:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Peru",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

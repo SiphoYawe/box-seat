@@ -1,0 +1,704 @@
+{
+ "fixtureId": 18257865,
+ "espnEventId": 760516,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "5",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "2",
+   "saves": "2",
+   "possessionPct": "44.6",
+   "totalShots": "5",
+   "shotsOnTarget": "2",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "216",
+   "totalPasses": "238",
+   "passPct": "0.9",
+   "accurateCrosses": "0",
+   "totalCrosses": "2",
+   "crossPct": "0.0",
+   "totalLongBalls": "17",
+   "accurateLongBalls": "10",
+   "longballPct": "0.6",
+   "blockedShots": "2",
+   "effectiveTackles": "4",
+   "totalTackles": "7",
+   "tacklePct": "0.6",
+   "interceptions": "3",
+   "effectiveClearance": "3",
+   "totalClearance": "3"
+  },
+  "participant2": {
+   "foulsCommitted": "5",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "3",
+   "wonCorners": "3",
+   "saves": "2",
+   "possessionPct": "55.4",
+   "totalShots": "11",
+   "shotsOnTarget": "7",
+   "shotPct": "0.6",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "272",
+   "totalPasses": "290",
+   "passPct": "0.9",
+   "accurateCrosses": "3",
+   "totalCrosses": "9",
+   "crossPct": "0.3",
+   "totalLongBalls": "14",
+   "accurateLongBalls": "7",
+   "longballPct": "0.5",
+   "blockedShots": "4",
+   "effectiveTackles": "5",
+   "totalTackles": "12",
+   "tacklePct": "0.4",
+   "interceptions": "7",
+   "effectiveClearance": "6",
+   "totalClearance": "6"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 3,
+   "participant": 2,
+   "name": "Declan Rice"
+  },
+  {
+   "minute": 18,
+   "participant": 2,
+   "name": "Ezri Konsa"
+  },
+  {
+   "minute": 37,
+   "participant": 2,
+   "name": "Bukayo Saka"
+  },
+  {
+   "minute": 45,
+   "participant": 2,
+   "name": "Bukayo Saka"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "16",
+    "name": "Mike Maignan",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Maxence Lacroix",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Ibrahima Konaté",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Theo Hernández",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Malo Gusto",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Rayan Cherki",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Adrien Rabiot",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Warren Zaïre-Emery",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Kylian Mbappé",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Désiré Doué",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Michael Olise",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Marcus Thuram",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Robin Risser",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Manu Koné",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Maghnes Akliouche",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Bradley Barcola",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Jean-Philippe Mateta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Jules Koundé",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Brice Samba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "William Saliba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Dayot Upamecano",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Ousmane Dembélé",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "N'Golo Kanté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Lucas Digne",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Lucas Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Aurélien Tchouaméni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "13",
+    "name": "Dean Henderson",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Marc Guéhi",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Ezri Konsa",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Declan Rice",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Djed Spence",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Jarell Quansah",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Eberechi Eze",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Morgan Rogers",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Marcus Rashford",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Bukayo Saka",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Ivan Toney",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Jordan Pickford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Jude Bellingham",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Harry Kane",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Nico O'Reilly",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Trevoh Chalobah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Elliot Anderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "James Trafford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "John Stones",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Dan Burn",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Jordan Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Noni Madueke",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Anthony Gordon",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Reece James",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Ollie Watkins",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-1-4-1"
+ },
+ "venue": {
+  "name": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "attendance": null
+ },
+ "article": null,
+ "h2h": [
+  {
+   "date": "2022-12-10T19:00Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "England",
+   "round": "Quarterfinals",
+   "competition": "2022 FIFA World Cup",
+   "note": "France advances."
+  },
+  {
+   "date": "2017-06-13T19:00Z",
+   "score": "3-2",
+   "result": "W",
+   "opponent": "England",
+   "round": "International Friendly",
+   "competition": "2017 International Friendly",
+   "note": null
+  },
+  {
+   "date": "2015-11-17T20:00Z",
+   "score": "2-0",
+   "result": "L",
+   "opponent": "England",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2012-06-11T16:00Z",
+   "score": "1-1",
+   "result": "D",
+   "opponent": "England",
+   "round": "Group Stage",
+   "competition": "2012 European Championship",
+   "note": null
+  },
+  {
+   "date": "2010-11-17T20:00Z",
+   "score": "2-1",
+   "result": "W",
+   "opponent": "England",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-14T19:00Z",
+    "score": "2-0",
+    "result": "L",
+    "opponent": "Spain",
+    "round": "Semifinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Spain advances."
+   },
+   {
+    "date": "2026-07-09T20:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Morocco",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-07-04T21:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Paraguay",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-30T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Sweden",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-15T19:00Z",
+    "score": "2-1",
+    "result": "L",
+    "opponent": "Argentina",
+    "round": "Semifinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "Argentina advances."
+   },
+   {
+    "date": "2026-07-11T21:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Quarterfinals",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-06T01:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Mexico",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-01T16:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-27T21:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Panama",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   }
+  ]
+ }
+}

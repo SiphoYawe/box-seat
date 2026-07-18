@@ -1,0 +1,676 @@
+{
+ "fixtureId": 18213979,
+ "espnEventId": 760512,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "10",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "7",
+   "saves": "6",
+   "possessionPct": "47.6",
+   "totalShots": "13",
+   "shotsOnTarget": "4",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "494",
+   "totalPasses": "577",
+   "passPct": "0.9",
+   "accurateCrosses": "3",
+   "totalCrosses": "19",
+   "crossPct": "0.2",
+   "totalLongBalls": "46",
+   "accurateLongBalls": "18",
+   "longballPct": "0.4",
+   "blockedShots": "3",
+   "effectiveTackles": "11",
+   "totalTackles": "24",
+   "tacklePct": "0.5",
+   "interceptions": "9",
+   "effectiveClearance": "21",
+   "totalClearance": "21"
+  },
+  "participant2": {
+   "foulsCommitted": "8",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "5",
+   "wonCorners": "4",
+   "saves": "3",
+   "possessionPct": "52.4",
+   "totalShots": "14",
+   "shotsOnTarget": "8",
+   "shotPct": "0.6",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "568",
+   "totalPasses": "628",
+   "passPct": "0.9",
+   "accurateCrosses": "9",
+   "totalCrosses": "21",
+   "crossPct": "0.4",
+   "totalLongBalls": "50",
+   "accurateLongBalls": "26",
+   "longballPct": "0.5",
+   "blockedShots": "3",
+   "effectiveTackles": "9",
+   "totalTackles": "15",
+   "tacklePct": "0.6",
+   "interceptions": "6",
+   "effectiveClearance": "35",
+   "totalClearance": "35"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 36,
+   "participant": 1,
+   "name": "Andreas Schjelderup"
+  },
+  {
+   "minute": 45,
+   "participant": 2,
+   "name": "Jude Bellingham"
+  },
+  {
+   "minute": 93,
+   "participant": 2,
+   "name": "Jude Bellingham"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Ørjan Nyland",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Torbjørn Heggem",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "3",
+    "name": "Kristoffer Ajer",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "David Møller Wolfe",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Julian Ryerson",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Sander Berge",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Patrick Berg",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Martin Ødegaard",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Erling Haaland",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "21",
+    "name": "Andreas Schjelderup",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Alexander Sørloth",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Thelo Aasgaard",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Jens Petter Hauge",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Fredrik Aursnes",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Antonio Nusa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Henrik Falchener",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jørgen Strand Larsen",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Sondre Langas",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Leo Østigard",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Oscar Bobb",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Kristian Thorstvedt",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Morten Thorsby",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Marcus Holmgren Pedersen",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Sander Tangvik",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Egil Selvik",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Fredrik André Bjørkan",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Jordan Pickford",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Marc Guéhi",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "John Stones",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Nico O'Reilly",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "2",
+    "name": "Ezri Konsa",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Jude Bellingham",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Elliot Anderson",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Declan Rice",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "9",
+    "name": "Harry Kane",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Anthony Gordon",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Noni Madueke",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "13",
+    "name": "Dean Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Marcus Rashford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Morgan Rogers",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Eberechi Eze",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Ollie Watkins",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Dan Burn",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "James Trafford",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Trevoh Chalobah",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Ivan Toney",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Djed Spence",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Jordan Henderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Kobbie Mainoo",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Bukayo Saka",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Reece James",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-3-3",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "Hard Rock Stadium",
+  "city": "Miami Gardens, Florida",
+  "attendance": 64478
+ },
+ "article": {
+  "headline": "Jude Bellingham at the double as England beat Norway in extra time, reach World Cup semifinals",
+  "description": "Jude Bellingham scored in the third minute of extra time to lift England past Norway 2-1 and into the World Cup semifinals for the first time since 2018.",
+  "story": "<p>MIAMI GARDENS, Fla -- <a data-player-guid=\"5cb69fa5-1b68-f9a2-6a44-ad2447aa4337\" href=\"http://espn.com/soccer/player/_/id/291281/jude-bellingham\">Jude Bellingham</a> scored in the third minute of extra time to lift <a data-clubhouse-guid=\"217dee4e-6974-a197-49a2-afda6e1788c9\" href=\"http://espn.com/soccer/team?id=448\">England</a> past <a data-clubhouse-guid=\"2fceb68b-55e5-2028-6ca3-42869377b23e\" href=\"http://espn.com/soccer/team?id=464\">Norway</a> 2-1 and into the World Cup semifinals for the first time since 2018.</p>\n<p>Bellingham's goal was his second of the game -- he also had an equalizer late in the first half. The <a data-clubhouse-guid=\"66434654-a8ba-a04c-98e5-6bbd0dbbb780\" href=\"http://espn.com/soccer/team?id=86\">Real Madrid</a> star is now tied with England teammate <a data-player-guid=\"66b16016-7a3a-434f-ae82-e767fc5fac88\" href=\"http://espn.com/soccer/player/_/id/142200/harry-kane\">Harry Kane</a> with six goals in this tournament, behind the eight of France's <a data-player-guid=\"61edbcca-c316-afde-575f-d9dd69176cc4\" href=\"http://espn.com/soccer/player/_/id/231388/kylian-mbappe\">Kylian Mbappé</a> and Argentina's <a data-player-guid=\"dc5f8d51-332b-0ab2-b4b0-c97efdc624e0\" href=\"http://espn.com/soccer/player/_/id/45843/lionel-messi\">Lionel Messi</a>. He scored twice in the round of 16 as England beat co-host <a data-clubhouse-guid=\"9e213fae-5b9d-d331-8b4b-33abdaf57b4f\" href=\"http://espn.com/soccer/team?id=203\">Mexico</a>.</p>\n<p>England, winner of the 1966 World Cup and facing pressure to return to the title match, is now one win away from getting there. The Three Lions will face either <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> or <a data-clubhouse-guid=\"fe8cdad6-2fb3-84d7-e08a-0178e4112534\" href=\"http://espn.com/soccer/team?id=475\">Switzerland</a>, who were set to play Saturday night in Kansas City, Missouri.</p>\n<p><a data-player-guid=\"5f2173bf-8fe6-308e-838a-6d149b28b1e0\" href=\"http://espn.com/soccer/player/_/id/313415/andreas-schjelderup\">Andreas Schjelderup</a> scored in the 36th minute for Norway, a squad that reached its first quarterfinals and took the internet by storm with its \"Viking row\" and the charisma of 6-foot-5 striker <a data-player-guid=\"63b48f6c-a73d-78e7-71b9-21edae6b0e31\" href=\"http://espn.com/soccer/player/_/id/253989/erling-haaland\">Erling Haaland</a"
+ },
+ "h2h": [
+  {
+   "date": "2014-09-03T19:00Z",
+   "score": "1-0",
+   "result": "L",
+   "opponent": "England",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2012-05-26T18:45Z",
+   "score": "1-0",
+   "result": "L",
+   "opponent": "England",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-05T20:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Brazil",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-30T17:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Ivory Coast",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "L",
+    "opponent": "France",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-23T00:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-16T22:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Iraq",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-06T01:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Mexico",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-07-01T16:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Congo DR",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-27T21:00Z",
+    "score": "2-0",
+    "result": "W",
+    "opponent": "Panama",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   },
+   {
+    "date": "2026-06-23T20:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Ghana",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-17T20:00Z",
+    "score": "4-2",
+    "result": "W",
+    "opponent": "Croatia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "England advances."
+   }
+  ]
+ }
+}

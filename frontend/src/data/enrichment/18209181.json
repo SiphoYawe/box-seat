@@ -1,0 +1,680 @@
+{
+ "fixtureId": 18209181,
+ "espnEventId": 760510,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "10",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "5",
+   "saves": "1",
+   "possessionPct": "48",
+   "totalShots": "22",
+   "shotsOnTarget": "8",
+   "shotPct": "0.4",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "432",
+   "totalPasses": "486",
+   "passPct": "0.9",
+   "accurateCrosses": "5",
+   "totalCrosses": "12",
+   "crossPct": "0.4",
+   "totalLongBalls": "30",
+   "accurateLongBalls": "14",
+   "longballPct": "0.5",
+   "blockedShots": "5",
+   "effectiveTackles": "8",
+   "totalTackles": "11",
+   "tacklePct": "0.7",
+   "interceptions": "13",
+   "effectiveClearance": "20",
+   "totalClearance": "20"
+  },
+  "participant2": {
+   "foulsCommitted": "13",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "5",
+   "saves": "6",
+   "possessionPct": "52",
+   "totalShots": "5",
+   "shotsOnTarget": "1",
+   "shotPct": "0.2",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "452",
+   "totalPasses": "526",
+   "passPct": "0.9",
+   "accurateCrosses": "2",
+   "totalCrosses": "13",
+   "crossPct": "0.2",
+   "totalLongBalls": "39",
+   "accurateLongBalls": "11",
+   "longballPct": "0.3",
+   "blockedShots": "1",
+   "effectiveTackles": "5",
+   "totalTackles": "16",
+   "tacklePct": "0.3",
+   "interceptions": "6",
+   "effectiveClearance": "12",
+   "totalClearance": "12"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 60,
+   "participant": 1,
+   "name": "Kylian Mbappé"
+  },
+  {
+   "minute": 66,
+   "participant": 1,
+   "name": "Ousmane Dembélé"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "16",
+    "name": "Mike Maignan",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "William Saliba",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Dayot Upamecano",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Lucas Digne",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Jules Koundé",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "11",
+    "name": "Michael Olise",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Adrien Rabiot",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Manu Koné",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Kylian Mbappé",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "20",
+    "name": "Désiré Doué",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Ousmane Dembélé",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "N'Golo Kanté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Ibrahima Konaté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Robin Risser",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Rayan Cherki",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Theo Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Lucas Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Bradley Barcola",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Marcus Thuram",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Brice Samba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Maxence Lacroix",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Maghnes Akliouche",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Aurélien Tchouaméni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Warren Zaïre-Emery",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Jean-Philippe Mateta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Malo Gusto",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Yassine Bounou",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Noussair Mazraoui",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Issa Diop",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Anass Salah-Eddine",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "2",
+    "name": "Achraf Hakimi",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Azzedine Ounahi",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Neil El Aynaoui",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Ayyoub Bouaddi",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Bilal El Khannouss",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Chemsdine Talbi",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "10",
+    "name": "Brahim Díaz",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "22",
+    "name": "Ahmed Reda Tagnaouti",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Youssef Belammari",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Samir El Mourabet",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Redouane Halhal",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Gessime Yassine",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Marwane Saadane",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Ismael Saibari",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Sofyan Amrabat",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Chadi Riad",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Soufiane Rahimi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Amine Sbaï",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Munir El Kajoui",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Ayoube Amaimouni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Zakaria El Ouahdi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Ayoub El Kaabi",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-2-3-1",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "Gillette Stadium",
+  "city": "Foxborough, Massachusetts",
+  "attendance": 63811
+ },
+ "article": {
+  "headline": "Kylian Mbappé scores after missed penalty as France dispatch Morocco in World Cup quarterfinal",
+  "description": "Kylian Mbappé had a goal and an assist after missing a first-half penalty kick, Ousmane Dembélé scored the other goal and France beat Morocco 2-0 Thursday in the World Cup quarterfinals.",
+  "story": "<p>FOXBOROUGH, Mass -- <a data-player-guid=\"61edbcca-c316-afde-575f-d9dd69176cc4\" href=\"http://espn.com/soccer/player/_/id/231388/kylian-mbappe\">Kylian Mbappé</a> had a goal and an assist after missing a first-half penalty kick, <a data-player-guid=\"5c936c66-707c-6b18-bbef-6214d951771d\" href=\"http://espn.com/soccer/player/_/id/229744/ousmane-dembele\">Ousmane Dembélé</a> scored the other goal and <a data-clubhouse-guid=\"81be996c-0f98-eec4-6284-c6be0d186360\" href=\"http://espn.com/soccer/team?id=478\">France</a> beat <a data-clubhouse-guid=\"a6945df8-27b1-9615-af13-7379154954b9\" href=\"http://espn.com/soccer/team?id=2869\">Morocco</a> 2-0 Thursday in the World Cup quarterfinals.</p>\n<p><em>Les Bleus</em> will face either <a data-clubhouse-guid=\"99314f68-1c92-218b-b02b-67c50ff9bc3a\" href=\"http://espn.com/soccer/team?id=164\">Spain</a> or <a data-clubhouse-guid=\"4084f797-3877-2af0-b70f-570d25a1a141\" href=\"http://espn.com/soccer/team?id=459\">Belgium</a> in the semifinals in Dallas on Tuesday.</p>\n<p>Mbappé's goal in the 60th minute was the 20th of his World Cup career, moving him one behind <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a> captain <a data-player-guid=\"dc5f8d51-332b-0ab2-b4b0-c97efdc624e0\" href=\"http://espn.com/soccer/player/_/id/45843/lionel-messi\">Lionel Messi</a>. Dembélé scored his fifth goal of the tournament in the 66th.</p>\n<p>France beat Morocco by the same score in the semifinals of the 2022 tournament in <a data-clubhouse-guid=\"9e775b11-9fbd-ae9c-d590-9d3e892188f7\" href=\"http://espn.com/soccer/team?id=4398\">Qatar</a> when the <em>Atlas Lions</em> became the first African team to make it that far.</p>\n<p>France now remains on track to become only the third nation to play in the final of three consecutive World Cups.</p>\n<p><photo1></p>\n<p>France held a 21-4 advantage in shots on goal and 8-1 edge in shots on target for the game.</p>\n<p>France's second goal came after Mbappé took a pass and tapped it back for Dembélé. Mbappé kept running forward and took defenders with him, opening space for Dembélé's shot.</p>\n<p>Mbappé had the first shot on goal of the game, just missing wide right in the fourth minute. Then, in the 25th, he was running up the left side when he was chopped down in the box by Morocco defender <a data-player-guid=\"a4c11a48-923e-dc3d-bba0-77a565e28648\" href=\"http"
+ },
+ "h2h": [
+  {
+   "date": "2022-12-14T19:00Z",
+   "score": "2-0",
+   "result": "W",
+   "opponent": "Morocco",
+   "round": "Semifinals",
+   "competition": "2022 FIFA World Cup",
+   "note": "France advances."
+  },
+  {
+   "date": "2007-11-16T20:00Z",
+   "score": "2-2",
+   "result": "D",
+   "opponent": "Morocco",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-07-04T21:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Paraguay",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-30T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Sweden",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-22T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Iraq",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-16T19:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-07-04T17:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Canada",
+    "round": "Round of 16",
+    "competition": "2026 FIFA World Cup",
+    "note": "Morocco advances."
+   },
+   {
+    "date": "2026-06-30T01:00Z",
+    "score": "1-1",
+    "result": "W",
+    "opponent": "Netherlands",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-24T22:00Z",
+    "score": "4-2",
+    "result": "W",
+    "opponent": "Haiti",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Morocco advances."
+   },
+   {
+    "date": "2026-06-19T22:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Scotland",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Morocco advances."
+   },
+   {
+    "date": "2026-06-13T22:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Brazil",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   }
+  ]
+ }
+}

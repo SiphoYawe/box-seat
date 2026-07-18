@@ -1,0 +1,1615 @@
+[
+  {
+    "fixtureId": 14790158,
+    "action": "kickoff",
+    "statusId": 2,
+    "ts": 1784487600000,
+    "seq": 1
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487636000,
+    "seq": 2
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784487676199,
+    "seq": 3
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487708030,
+    "seq": 4
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487748134,
+    "seq": 5
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784487766446,
+    "seq": 6
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487790114,
+    "seq": 7
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487829964,
+    "seq": 8
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784487863009,
+    "seq": 9
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784487897126,
+    "seq": 10
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487933824,
+    "seq": 11
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784487970969,
+    "seq": 12
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784487996211,
+    "seq": 13
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488027410,
+    "seq": 14
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488064123,
+    "seq": 15
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488093107,
+    "seq": 16
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488123247,
+    "seq": 17
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488162393,
+    "seq": 18
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488193879,
+    "seq": 19
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488222086,
+    "seq": 20
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488242295,
+    "seq": 21
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488278791,
+    "seq": 22
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488284000,
+    "seq": 23
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488303515,
+    "seq": 24
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488325017,
+    "seq": 25
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488370671,
+    "seq": 26
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488392533,
+    "seq": 27
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488418926,
+    "seq": 28
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OffTarget"
+    },
+    "ts": 1784488461507,
+    "seq": 29
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488492682,
+    "seq": 30
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488535765,
+    "seq": 31
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488579910,
+    "seq": 32
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488601783,
+    "seq": 33
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488645148,
+    "seq": 34
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OnTarget"
+    },
+    "ts": 1784488656000,
+    "seq": 35
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488670959,
+    "seq": 36
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488714415,
+    "seq": 37
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488754057,
+    "seq": 38
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488771135,
+    "seq": 39
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488802984,
+    "seq": 40
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488839297,
+    "seq": 41
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OffTarget"
+    },
+    "ts": 1784488872000,
+    "seq": 42
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488872447,
+    "seq": 43
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488918386,
+    "seq": 44
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488953236,
+    "seq": 45
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784488978329,
+    "seq": 46
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784488996267,
+    "seq": 47
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489023188,
+    "seq": 48
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489055782,
+    "seq": 49
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489078290,
+    "seq": 50
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489098662,
+    "seq": 51
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "goal",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489100000,
+    "seq": 52
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489131661,
+    "seq": 53
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489150776,
+    "seq": 54
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489176584,
+    "seq": 55
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489200399,
+    "seq": 56
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489234813,
+    "seq": 57
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489279287,
+    "seq": 58
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489300814,
+    "seq": 59
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489344180,
+    "seq": 60
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489365527,
+    "seq": 61
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489383867,
+    "seq": 62
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489417976,
+    "seq": 63
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489457464,
+    "seq": 64
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489483441,
+    "seq": 65
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489517635,
+    "seq": 66
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489543666,
+    "seq": 67
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489562000,
+    "seq": 68
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489575229,
+    "seq": 69
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489596616,
+    "seq": 70
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489620789,
+    "seq": 71
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489660521,
+    "seq": 72
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489692151,
+    "seq": 73
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489720017,
+    "seq": 74
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489755909,
+    "seq": 75
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489799605,
+    "seq": 76
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489825927,
+    "seq": 77
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784489852165,
+    "seq": 78
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489880993,
+    "seq": 79
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 2,
+    "data": {
+      "outcome": "OnTarget"
+    },
+    "ts": 1784489898000,
+    "seq": 80
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489900711,
+    "seq": 81
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489940576,
+    "seq": 82
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784489969495,
+    "seq": 83
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490014610,
+    "seq": 84
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490031565,
+    "seq": 85
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784490078260,
+    "seq": 86
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490116609,
+    "seq": 87
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "free_kick",
+    "statusId": 4,
+    "participant": 2,
+    "data": {
+      "freeKickType": "Danger"
+    },
+    "ts": 1784490126000,
+    "seq": 88
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490159499,
+    "seq": 89
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490193026,
+    "seq": 90
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784490230874,
+    "seq": 91
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784490276766,
+    "seq": 92
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "halftime_finalised",
+    "statusId": 3,
+    "ts": 1784490300000,
+    "seq": 93
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491201550,
+    "seq": 94
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491221521,
+    "seq": 95
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "kickoff",
+    "statusId": 4,
+    "ts": 1784491260000,
+    "seq": 96
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491265346,
+    "seq": 97
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491297789,
+    "seq": 98
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491337764,
+    "seq": 99
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491376525,
+    "seq": 100
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491418362,
+    "seq": 101
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491457470,
+    "seq": 102
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491488277,
+    "seq": 103
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491511748,
+    "seq": 104
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491540670,
+    "seq": 105
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491575575,
+    "seq": 106
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491603908,
+    "seq": 107
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491608000,
+    "seq": 108
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491635976,
+    "seq": 109
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491665225,
+    "seq": 110
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491685469,
+    "seq": 111
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491704554,
+    "seq": 112
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491724388,
+    "seq": 113
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491744013,
+    "seq": 114
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "goal",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491770000,
+    "seq": 115
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491772933,
+    "seq": 116
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491803187,
+    "seq": 117
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784491848261,
+    "seq": 118
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491890798,
+    "seq": 119
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491933600,
+    "seq": 120
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491958886,
+    "seq": 121
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784491982417,
+    "seq": 122
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492000547,
+    "seq": 123
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492043667,
+    "seq": 124
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492082030,
+    "seq": 125
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492119625,
+    "seq": 126
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492146903,
+    "seq": 127
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "red_card",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492172000,
+    "seq": 128
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492184561,
+    "seq": 129
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492209384,
+    "seq": 130
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492234703,
+    "seq": 131
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492267297,
+    "seq": 132
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OffTarget"
+    },
+    "ts": 1784492299473,
+    "seq": 133
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492322624,
+    "seq": 134
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492369044,
+    "seq": 135
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492394554,
+    "seq": 136
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492439788,
+    "seq": 137
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492466837,
+    "seq": 138
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OnTarget"
+    },
+    "ts": 1784492484000,
+    "seq": 139
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492506872,
+    "seq": 140
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 1,
+    "data": {
+      "outcome": "OffTarget"
+    },
+    "ts": 1784492540434,
+    "seq": 141
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492561460,
+    "seq": 142
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492590107,
+    "seq": 143
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492633776,
+    "seq": 144
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492657790,
+    "seq": 145
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492702197,
+    "seq": 146
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "var_end",
+    "statusId": 4,
+    "participant": 2,
+    "data": {
+      "outcome": "Overturned"
+    },
+    "ts": 1784492742000,
+    "seq": 147
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492745890,
+    "seq": 148
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492763817,
+    "seq": 149
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784492792147,
+    "seq": 150
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492819245,
+    "seq": 151
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492862748,
+    "seq": 152
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492889976,
+    "seq": 153
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492927719,
+    "seq": 154
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492957204,
+    "seq": 155
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492975846,
+    "seq": 156
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784492994000,
+    "seq": 157
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493011665,
+    "seq": 158
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493048487,
+    "seq": 159
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493074729,
+    "seq": 160
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493111072,
+    "seq": 161
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493128931,
+    "seq": 162
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493164006,
+    "seq": 163
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493190290,
+    "seq": 164
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493228552,
+    "seq": 165
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493253411,
+    "seq": 166
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "goal",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493258000,
+    "seq": 167
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493276009,
+    "seq": 168
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493317137,
+    "seq": 169
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493346787,
+    "seq": 170
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493389891,
+    "seq": 171
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493410820,
+    "seq": 172
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493440442,
+    "seq": 173
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "corner",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493470328,
+    "seq": 174
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493511328,
+    "seq": 175
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493557545,
+    "seq": 176
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493596618,
+    "seq": 177
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "free_kick",
+    "statusId": 4,
+    "participant": 2,
+    "data": {
+      "freeKickType": "Offside"
+    },
+    "ts": 1784493612000,
+    "seq": 178
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493613603,
+    "seq": 179
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493642097,
+    "seq": 180
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493661677,
+    "seq": 181
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "high_danger_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493686150,
+    "seq": 182
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493709990,
+    "seq": 183
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493750180,
+    "seq": 184
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493790695,
+    "seq": 185
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493825392,
+    "seq": 186
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493860497,
+    "seq": 187
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "shot",
+    "statusId": 4,
+    "participant": 2,
+    "data": {
+      "outcome": "OffTarget"
+    },
+    "ts": 1784493876000,
+    "seq": 188
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493883849,
+    "seq": 189
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784493916675,
+    "seq": 190
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493940467,
+    "seq": 191
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784493981695,
+    "seq": 192
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "danger_possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784494004558,
+    "seq": 193
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784494023835,
+    "seq": 194
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784494059745,
+    "seq": 195
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "attack_possession",
+    "statusId": 4,
+    "participant": 2,
+    "ts": 1784494089128,
+    "seq": 196
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "possession",
+    "statusId": 4,
+    "participant": 1,
+    "ts": 1784494115312,
+    "seq": 197
+  },
+  {
+    "fixtureId": 14790158,
+    "action": "game_finalised",
+    "statusId": 100,
+    "ts": 1784494140000,
+    "seq": 198
+  }
+]

@@ -1,0 +1,702 @@
+{
+ "fixtureId": 18188721,
+ "espnEventId": 760503,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "13",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "2",
+   "saves": "4",
+   "possessionPct": "24.1",
+   "totalShots": "5",
+   "shotsOnTarget": "1",
+   "shotPct": "0.0",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "98",
+   "totalPasses": "183",
+   "passPct": "0.5",
+   "accurateCrosses": "0",
+   "totalCrosses": "5",
+   "crossPct": "0.0",
+   "totalLongBalls": "55",
+   "accurateLongBalls": "12",
+   "longballPct": "0.2",
+   "blockedShots": "1",
+   "effectiveTackles": "21",
+   "totalTackles": "29",
+   "tacklePct": "0.7",
+   "interceptions": "14",
+   "effectiveClearance": "21",
+   "totalClearance": "21"
+  },
+  "participant2": {
+   "foulsCommitted": "11",
+   "yellowCards": "3",
+   "redCards": "0",
+   "offsides": "0",
+   "wonCorners": "12",
+   "saves": "1",
+   "possessionPct": "75.9",
+   "totalShots": "15",
+   "shotsOnTarget": "5",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "1",
+   "accuratePasses": "510",
+   "totalPasses": "569",
+   "passPct": "0.9",
+   "accurateCrosses": "1",
+   "totalCrosses": "22",
+   "crossPct": "0.0",
+   "totalLongBalls": "39",
+   "accurateLongBalls": "23",
+   "longballPct": "0.6",
+   "blockedShots": "4",
+   "effectiveTackles": "7",
+   "totalTackles": "13",
+   "tacklePct": "0.5",
+   "interceptions": "10",
+   "effectiveClearance": "27",
+   "totalClearance": "27"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 70,
+   "participant": 2,
+   "name": "Kylian Mbappé"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "12",
+    "name": "Orlando Gill",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Gustavo Gómez",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Omar Alderete",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "2",
+    "name": "Gustavo Velázquez",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Júnior Alonso",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Juan Jose Cáceres",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Andrés Cubas",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Diego Gómez",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "23",
+    "name": "Matías Galarza",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Miguel Almirón",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "19",
+    "name": "Julio Enciso",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "17",
+    "name": "Alejandro Romero Gamarra",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Fabián Balbuena",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Alex Arce",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Maurício",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Gustavo Caballero",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Damián Bobadilla",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Antonio Sanabria",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "7",
+    "name": "Ramón Sosa",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Braian Ojeda",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Gastón Olveira",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Gatito Fernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "José Canale",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Alexandro Maidana",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Isidro Pitta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Gabriel Ávalos",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "16",
+    "name": "Mike Maignan",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "William Saliba",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Dayot Upamecano",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Lucas Digne",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Jules Koundé",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Michael Olise",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Adrien Rabiot",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Manu Koné",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Kylian Mbappé",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Bradley Barcola",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Ousmane Dembélé",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Aurélien Tchouaméni",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Désiré Doué",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "22",
+    "name": "Jean-Philippe Mateta",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Theo Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "N'Golo Kanté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Lucas Hernández",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Maghnes Akliouche",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "26",
+    "name": "Maxence Lacroix",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Ibrahima Konaté",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Robin Risser",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Marcus Thuram",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "1",
+    "name": "Brice Samba",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Rayan Cherki",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Warren Zaïre-Emery",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Malo Gusto",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "5-4-1",
+  "formation2": "4-2-3-1"
+ },
+ "venue": {
+  "name": "Lincoln Financial Field",
+  "city": "Philadelphia, Pennsylvania",
+  "attendance": 68324
+ },
+ "article": {
+  "headline": "Kylian Mbappé guides France to World Cup quarterfinals, Paraguay eliminated",
+  "description": "Kylian Mbappé scored his 19th career World Cup goal, and France survived stifling heat to beat Paraguay 1-0 on Saturday, sending Les Bleus into the quarterfinals for the fourth straight time.\n\n",
+  "story": "<p><a data-player-guid=\"61edbcca-c316-afde-575f-d9dd69176cc4\" href=\"http://espn.com/soccer/player/_/id/231388/kylian-mbappe\">Kylian Mbappé</a> scored his 19th career World Cup goal, and <a data-clubhouse-guid=\"81be996c-0f98-eec4-6284-c6be0d186360\" href=\"http://espn.com/soccer/team?id=478\">France</a> survived stifling heat to beat <a data-clubhouse-guid=\"67227b21-5b19-9dd2-b805-534045f412f9\" href=\"http://espn.com/soccer/team?id=210\">Paraguay</a> 1-0 on Saturday, sending Les Bleus into the quarterfinals for the fourth straight time.</p>\n<p>France advanced to play <a data-clubhouse-guid=\"a6945df8-27b1-9615-af13-7379154954b9\" href=\"http://espn.com/soccer/team?id=2869\">Morocco</a> on Thursday in Foxborough, Massachusetts.</p>\n<p>With an extreme heat warning in effect throughout the match as temperatures hovered around 38C, Mbappé finally broke through against a physical, defensive-minded Paraguay side when he converted a penalty kick in the 70th minute.</p>\n<p><photo1></p>\n<p>That was enough for Les Bleus, whose red, white and blue-clad fans looked plenty patriotic on July Fourth in Philadelphia, where the <a data-clubhouse-guid=\"e6b65d49-258c-b730-b7db-df75c6b1f714\" href=\"http://espn.com/soccer/team?id=660\">United States</a> was founded exactly 250 years earlier.</p>\n<p>Mbappé was awarded the penalty when <a data-player-guid=\"52aaf199-dc25-3366-bf53-99c8068d6d38\" href=\"http://espn.com/soccer/player/_/id/375567/diego-gomez\">Diego Gómez</a> was called for tripping after a video review.</p>\n<p>Then he stutter-stepped on his way to his 19th goal in 19 World Cup appearances, one behind career record holder <a data-player-guid=\"dc5f8d51-332b-0ab2-b4b0-c97efdc624e0\" href=\"http://espn.com/soccer/player/_/id/45843/lionel-messi\">Lionel Messi</a> of <a data-clubhouse-guid=\"892f805f-fef9-c22d-8f87-ba08b1b4d256\" href=\"http://espn.com/soccer/team?id=202\">Argentina</a>. Mbappé and Messi each have seven goals in this tournament to top the Golden Boot race.</p>\n<p>Mbappé won that award four years ago in <a data-clubhouse-guid=\"9e775b11-9fbd-ae9c-d590-9d3e892188f7\" href=\"http://espn.com/soccer/team?id=4398\">Qatar</a>, but Messi and Argentina beat France in the final.</p>\n<p>Mbappé botched a breakaway attempt in the second half, and <a data-player-guid=\"47a15b5e-fa9b-b70a-31b0-6c3db9bb139b\" href=\"http://espn.com/soccer/player/_/id/285226/manu-kone\">Manu Koné</a> had his top-corner"
+ },
+ "h2h": [
+  {
+   "date": "2017-06-02T19:00Z",
+   "score": "5-0",
+   "result": "L",
+   "opponent": "France",
+   "round": "International Friendly",
+   "competition": "2017 International Friendly",
+   "note": null
+  },
+  {
+   "date": "2014-06-01T19:00Z",
+   "score": "1-1",
+   "result": "D",
+   "opponent": "France",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "2008-05-31T19:00Z",
+   "score": "0-0",
+   "result": "D",
+   "opponent": "France",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "1998-06-28T07:00Z",
+   "score": "1-0",
+   "result": "L",
+   "opponent": "France",
+   "round": "Second Round",
+   "competition": "1998 FIFA World Cup",
+   "note": null
+  },
+  {
+   "date": "1958-06-08T07:00Z",
+   "score": "7-3",
+   "result": "L",
+   "opponent": "France",
+   "round": "Group Stage",
+   "competition": "World Cup - Sweden 1958",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-06-29T20:30Z",
+    "score": "1-1",
+    "result": "W",
+    "opponent": "Germany",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-26T02:00Z",
+    "score": "0-0",
+    "result": "D",
+    "opponent": "Australia",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-20T03:00Z",
+    "score": "1-0",
+    "result": "W",
+    "opponent": "Türkiye",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Paraguay advances."
+   },
+   {
+    "date": "2026-06-13T01:00Z",
+    "score": "4-1",
+    "result": "L",
+    "opponent": "United States",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "United States advances."
+   },
+   {
+    "date": "2026-06-05T22:45Z",
+    "score": "4-0",
+    "result": "W",
+    "opponent": "Nicaragua",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-06-30T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Sweden",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Norway",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-22T21:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Iraq",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-16T19:00Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-08T19:10Z",
+    "score": "3-1",
+    "result": "W",
+    "opponent": "Northern Ireland",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}

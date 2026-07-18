@@ -1,0 +1,667 @@
+{
+ "fixtureId": 18187298,
+ "espnEventId": 760504,
+ "stats": {
+  "participant1": {
+   "foulsCommitted": "7",
+   "yellowCards": "1",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "5",
+   "saves": "3",
+   "possessionPct": "33.6",
+   "totalShots": "14",
+   "shotsOnTarget": "4",
+   "shotPct": "0.3",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "2",
+   "accuratePasses": "279",
+   "totalPasses": "331",
+   "passPct": "0.8",
+   "accurateCrosses": "1",
+   "totalCrosses": "16",
+   "crossPct": "0.1",
+   "totalLongBalls": "39",
+   "accurateLongBalls": "17",
+   "longballPct": "0.4",
+   "blockedShots": "4",
+   "effectiveTackles": "10",
+   "totalTackles": "23",
+   "tacklePct": "0.4",
+   "interceptions": "11",
+   "effectiveClearance": "21",
+   "totalClearance": "21"
+  },
+  "participant2": {
+   "foulsCommitted": "6",
+   "yellowCards": "0",
+   "redCards": "0",
+   "offsides": "1",
+   "wonCorners": "5",
+   "saves": "4",
+   "possessionPct": "66.4",
+   "totalShots": "9",
+   "shotsOnTarget": "5",
+   "shotPct": "0.6",
+   "penaltyKickGoals": "0",
+   "penaltyKickShots": "0",
+   "accuratePasses": "618",
+   "totalPasses": "681",
+   "passPct": "0.9",
+   "accurateCrosses": "1",
+   "totalCrosses": "13",
+   "crossPct": "0.1",
+   "totalLongBalls": "54",
+   "accurateLongBalls": "29",
+   "longballPct": "0.5",
+   "blockedShots": "1",
+   "effectiveTackles": "11",
+   "totalTackles": "14",
+   "tacklePct": "0.8",
+   "interceptions": "6",
+   "effectiveClearance": "18",
+   "totalClearance": "18"
+  }
+ },
+ "scorers": [
+  {
+   "minute": 79,
+   "participant": 2,
+   "name": "Erling Haaland"
+  },
+  {
+   "minute": 90,
+   "participant": 2,
+   "name": "Erling Haaland"
+  },
+  {
+   "minute": 90,
+   "participant": 1,
+   "name": "Neymar"
+  }
+ ],
+ "rosters": {
+  "participant1": [
+   {
+    "jersey": "1",
+    "name": "Alisson Becker",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Gabriel Magalhães",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Marquinhos",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "16",
+    "name": "Douglas Santos",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Danilo",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "Casemiro",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "8",
+    "name": "Bruno Guimarães",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "22",
+    "name": "Gabriel Martinelli",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Rayan",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Vinícius Júnior",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Matheus Cunha",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "18",
+    "name": "Danilo Santos",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Weverton",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Ederson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Roger Ibañez",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Raphinha",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Bremer",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Éderson",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Neymar",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Luiz Henrique",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Igor Thiago",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Endrick",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Alex Sandro",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Léo Pereira",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Fabinho",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "participant2": [
+   {
+    "jersey": "1",
+    "name": "Ørjan Nyland",
+    "starter": true,
+    "formationPlace": "1",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "17",
+    "name": "Torbjørn Heggem",
+    "starter": true,
+    "formationPlace": "6",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "3",
+    "name": "Kristoffer Ajer",
+    "starter": true,
+    "formationPlace": "5",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "5",
+    "name": "David Møller Wolfe",
+    "starter": true,
+    "formationPlace": "3",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "26",
+    "name": "Julian Ryerson",
+    "starter": true,
+    "formationPlace": "2",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "8",
+    "name": "Sander Berge",
+    "starter": true,
+    "formationPlace": "4",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "6",
+    "name": "Patrick Berg",
+    "starter": true,
+    "formationPlace": "8",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "10",
+    "name": "Martin Ødegaard",
+    "starter": true,
+    "formationPlace": "7",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "9",
+    "name": "Erling Haaland",
+    "starter": true,
+    "formationPlace": "9",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "20",
+    "name": "Antonio Nusa",
+    "starter": true,
+    "formationPlace": "11",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "7",
+    "name": "Alexander Sørloth",
+    "starter": true,
+    "formationPlace": "10",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": true
+   },
+   {
+    "jersey": "22",
+    "name": "Oscar Bobb",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "11",
+    "name": "Jørgen Strand Larsen",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "25",
+    "name": "Henrik Falchener",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "18",
+    "name": "Kristian Thorstvedt",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "23",
+    "name": "Jens Petter Hauge",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "24",
+    "name": "Sondre Langas",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "21",
+    "name": "Andreas Schjelderup",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "19",
+    "name": "Thelo Aasgaard",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "12",
+    "name": "Sander Tangvik",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "14",
+    "name": "Fredrik Aursnes",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "2",
+    "name": "Morten Thorsby",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "13",
+    "name": "Egil Selvik",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   },
+   {
+    "jersey": "4",
+    "name": "Leo Østigard",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": true,
+    "subbedOut": false
+   },
+   {
+    "jersey": "15",
+    "name": "Fredrik André Bjørkan",
+    "starter": false,
+    "formationPlace": "0",
+    "position": null,
+    "subbedIn": false,
+    "subbedOut": false
+   }
+  ],
+  "formation1": "4-4-2",
+  "formation2": "4-3-3"
+ },
+ "venue": {
+  "name": "MetLife Stadium",
+  "city": "East Rutherford, New Jersey",
+  "attendance": 80663
+ },
+ "article": {
+  "headline": "Norway, Haaland stun Brazil to reach first-ever World Cup quarters",
+  "description": "Erling Haaland struck two late goals as Norway stunned Brazil on Sunday by winning 2-1 in East Rutherford, New Jersey, to reach the World Cup quarterfinals.",
+  "story": "<p><a data-player-guid=\"63b48f6c-a73d-78e7-71b9-21edae6b0e31\" href=\"http://espn.com/soccer/player/_/id/253989/erling-haaland\">Erling Haaland</a> struck two late goals as <a data-clubhouse-guid=\"2fceb68b-55e5-2028-6ca3-42869377b23e\" href=\"http://espn.com/soccer/team?id=464\">Norway</a> stunned <a data-clubhouse-guid=\"2a051c42-4444-8263-799a-6cdd866bd8f7\" href=\"http://espn.com/soccer/team?id=205\">Brazil</a> on Sunday by winning 2-1 in East Rutherford, New Jersey, to reach the World Cup quarterfinals.</p>\n<p>The <a data-clubhouse-guid=\"94fd5d7e-35b1-9d52-c9f2-4a37259bea36\" href=\"http://espn.com/soccer/team?id=382\">Manchester City</a> striker underlined his status as one of the world's leading goalscorers by notching his sixth and seventh goals of the tournament in the final 11 minutes at the MetLife Stadium.</p>\n<p>Neymar's stoppage-time penalty was little consolation for five-time winners Brazil, for whom <a data-player-guid=\"c33411df-3312-09c1-662b-0097aa3a7e72\" href=\"http://espn.com/soccer/player/_/id/218522/bruno-guimaraes\">Bruno Guimarães</a> saw an early penalty saved, as they crashed out in the round of 16.</p>\n<p>Stale Solbakken's side have progressed to the last eight for the first time in their first World Cup tournament in 28 years.</p>\n<p>The Scandinavians, who had not lost to Brazil in four previous encounters and beat them 2-1 in the group stage at the 1998 World Cup, thought they had taken an early lead, but midfielder Patrick Berg's effort was clearly offside.</p>\n<p>Brazil then spurned a golden chance to open the scoring in the 14th minute when Guimarães' poor spot kick was saved by Orjan Nyland after Kristoffer Ajer's challenge on Matheus Cunha.</p>\n<p>Moroccan-born American referee Ismail Elfath had initially waved play on, but correctly reversed his decision when asked to view the pitch-side monitor.</p>\n<p>Nyland rescued Norway again by deflecting Gabriel Martinelli's dangerous cross as Brazil carried the greater attacking threat.</p>\n<p><photo1></p>\n<p>Vinicius Junior's low shot was well saved by Nyland, while Norway's best first-half chance fell to Martin Odegaard, whose low goal-bound shot was also well saved by Alisson Becker.</p>\n<p>The pace slowed considerably in the second half as the temperature continued to climb, with Brazil content to let Norway dominate possession.</p>\n<p>Brazil substitute Endrick wasted a one-on-one chance after"
+ },
+ "h2h": [
+  {
+   "date": "2006-08-16T18:10Z",
+   "score": "1-1",
+   "result": "D",
+   "opponent": "Norway",
+   "round": null,
+   "competition": "International Friendly",
+   "note": null
+  },
+  {
+   "date": "1998-06-23T07:00Z",
+   "score": "2-1",
+   "result": "L",
+   "opponent": "Norway",
+   "round": "Group Stage",
+   "competition": "1998 FIFA World Cup",
+   "note": null
+  }
+ ],
+ "form": {
+  "participant1": [
+   {
+    "date": "2026-06-29T17:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Japan",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Brazil advances."
+   },
+   {
+    "date": "2026-06-24T22:00Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Scotland",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Brazil advances."
+   },
+   {
+    "date": "2026-06-20T00:30Z",
+    "score": "3-0",
+    "result": "W",
+    "opponent": "Haiti",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Brazil advances."
+   },
+   {
+    "date": "2026-06-13T22:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Morocco",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": null
+   },
+   {
+    "date": "2026-06-06T22:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Egypt",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ],
+  "participant2": [
+   {
+    "date": "2026-06-30T17:00Z",
+    "score": "2-1",
+    "result": "W",
+    "opponent": "Ivory Coast",
+    "round": "Round of 32",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-26T19:00Z",
+    "score": "4-1",
+    "result": "L",
+    "opponent": "France",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "France advances."
+   },
+   {
+    "date": "2026-06-23T00:00Z",
+    "score": "3-2",
+    "result": "W",
+    "opponent": "Senegal",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-16T22:00Z",
+    "score": "4-1",
+    "result": "W",
+    "opponent": "Iraq",
+    "round": "Group Stage",
+    "competition": "2026 FIFA World Cup",
+    "note": "Norway advances."
+   },
+   {
+    "date": "2026-06-07T19:00Z",
+    "score": "1-1",
+    "result": "D",
+    "opponent": "Morocco",
+    "round": null,
+    "competition": "2026 International Friendly",
+    "note": null
+   }
+  ]
+ }
+}
