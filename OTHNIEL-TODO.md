@@ -38,10 +38,12 @@ you come back. Items are ordered by urgency.
   repo is (or will be made) PUBLIC before submission — the form requires a public
   link.
 
-- [ ] **Deploy the app publicly** — submission needs a working deployed link.
-  Backend needs a host that supports long-lived processes (WS + SSE). Likely needs
-  your account auth on whatever platform we pick (Vercel/Railway/Fly). Flag your
-  preference when ready; I'll do the setup up to the login step.
+- [x] **Deploy** — done 2026-07-19 ~02:00: frontend on GitHub Pages
+  (https://siphoyawe.github.io/box-seat/), backend on this laptop behind a
+  Cloudflare tunnel (Railway free tier refused new provisions). CONSTRAINT:
+  keep this laptop plugged in, online, lid open (caffeinate is running)
+  through judging. If the tunnel URL ever rotates, tell me — rebuild+redeploy
+  is 3 minutes.
 
 - [ ] **Submit on Superteam Earn** — the actual submission form on the
   [Consumer and Fan Experiences listing](https://superteam.fun/earn/listing/consumer-and-fan-experiences),

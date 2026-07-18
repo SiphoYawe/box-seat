@@ -19,7 +19,7 @@ odds, no wallet needed to watch.
 
 - **Demo video (≤5 min):** [RECORD & PASTE — see checklist]
 - **Public repo:** https://github.com/SiphoYawe/box-seat
-- **Live app:** [PASTE DEPLOYED URL]
+- **Live app:** https://siphoyawe.github.io/box-seat/
 
 ## Brief technical documentation
 
