@@ -383,3 +383,35 @@ describe("action_discarded", () => {
     expect(state.keyMoments).toEqual(before.keyMoments);
   });
 });
+
+describe("penalty_outcome", () => {
+  it("records a scored penalty as a goal moment with momentum boost", () => {
+    const state = reduce(
+      initialMatchState(1),
+      event({
+        action: "penalty_outcome",
+        participant: 2,
+        id: 970,
+        seq: 1060,
+        ts: 1060000,
+        data: { Outcome: "Scored" },
+        score: { participant1: 3, participant2: 5 },
+      })
+    );
+    expect(state.keyMoments).toHaveLength(1);
+    expect(state.keyMoments[0]).toMatchObject({ type: "goal", participant: 2, id: 970 });
+    expect(state.score).toEqual({ participant1: 3, participant2: 5 });
+    expect(state.momentum).toBeLessThan(0);
+  });
+
+  it("ignores missed/retaken penalties and dedupes repeat frames", () => {
+    let state = reduce(
+      initialMatchState(1),
+      event({ action: "penalty_outcome", participant: 1, id: 11, seq: 5, ts: 5000, data: { Outcome: "Missed" } })
+    );
+    expect(state.keyMoments).toHaveLength(0);
+    state = reduce(state, event({ action: "penalty_outcome", participant: 1, id: 12, seq: 6, ts: 6000, data: { Outcome: "Scored" } }));
+    state = reduce(state, event({ action: "penalty_outcome", participant: 1, id: 12, seq: 7, ts: 7000, data: { Outcome: "Scored" } }));
+    expect(state.keyMoments).toHaveLength(1);
+  });
+});

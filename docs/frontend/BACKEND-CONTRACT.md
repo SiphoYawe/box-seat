@@ -151,6 +151,11 @@ timeline from the accumulated raw events and can scrub freely through it.
 > leaving a phantom beacon. **If the frontend ports the reducer for replay
 > reconstruction, re-copy `reducer.ts` now** — an old copy will show a goal takeover
 > in replays that the live view (correctly) never showed.
+>
+> **Second reducer update (2026-07-19, post-FT):** `penalty_outcome` with
+> `Data.Outcome === "Scored"` now records a **goal** key moment (England's fifth in
+> France-England was a penalty and previously produced no beacon). Re-copy
+> `reducer.ts` once more — final version for the demo.
 
 ---
 

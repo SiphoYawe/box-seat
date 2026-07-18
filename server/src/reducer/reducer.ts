@@ -226,6 +226,33 @@ export function reduce(state: MatchState, event: RawScoreEvent): MatchState {
       return next;
     }
 
+    case "penalty_outcome": {
+      // A scored penalty kick changes the scoreline (authoritative Score
+      // applied above) but arrives as its own action, not a `goal` — observed
+      // live: England's fifth in France-England (seq 1060) was a penalty and
+      // produced no goal moment. Treat a scored penalty as a goal moment.
+      const outcome = (event.data?.Outcome ?? event.data?.outcome) as
+        | string
+        | undefined;
+      if (!participant || outcome !== "Scored") return next;
+      if (alreadyRecorded(next.keyMoments, "goal", event.id)) {
+        return next;
+      }
+      const moment: KeyMoment = {
+        type: "goal",
+        participant,
+        ts: event.ts,
+        seq: event.seq,
+        id: event.id,
+      };
+      next = {
+        ...next,
+        momentum: applyMomentum(next, participant, 1.5),
+        keyMoments: [...next.keyMoments, moment],
+      };
+      return next;
+    }
+
     case "action_discarded": {
       // The feed retracting a previously-sent action (e.g. a goal disallowed
       // on review). event.id names the discarded action's id — remove any key
