@@ -6,3 +6,8 @@ server/dist/
 server/.env
 server/_keys/*.json
 server/*.db
+.gstack/
+frontend/node_modules/
+frontend/dist/
+server/*.db-shm
+server/*.db-wal
