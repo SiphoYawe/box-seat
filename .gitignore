@@ -11,3 +11,9 @@ frontend/node_modules/
 frontend/dist/
 server/*.db-shm
 server/*.db-wal
+
+.claude/
+_bmad/
+docs/
+/*.md
+!/README.md

@@ -36,8 +36,6 @@ TxLINE SSE (/scores)
 
 - `server/`: backend (Node 20+, TypeScript, strict ESM). `npm install && npm run dev`; needs a funded keypair at `server/_keys/service-wallet.json` and a `.env` from `.env.example`.
 - `frontend/`: React Three Fiber app. `npm install && npm run dev`.
-- `docs/frontend/BACKEND-CONTRACT.md`: the WebSocket contract the frontend consumes.
-- `docs/txline/`: local mirror of the TxLINE documentation and OpenAPI spec.
 
 ## Built with
 
