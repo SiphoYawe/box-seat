@@ -15,11 +15,21 @@ A live 3D World Cup match visualizer — watch the match's momentum and territor
 pressure unfold on a glowing pitch, live or as a scrubbable replay. No betting, no
 odds, no wallet needed to watch.
 
-## Links
+## Form field mapping (exact fields from the live form)
 
-- **Demo video (≤5 min):** [RECORD & PASTE — see checklist]
-- **Public repo:** https://github.com/SiphoYawe/box-seat
-- **Live app:** https://siphoyawe.github.io/box-seat/
+| Field | Value |
+|---|---|
+| Link to Your Submission | https://siphoyawe.github.io/box-seat/ |
+| Tweet Link | [POST THE LAUNCH TWEET FIRST — see below] |
+| Project Title | Box Seat |
+| Briefly explain your Project | (use the one-liner above + first paragraph of the tech doc) |
+| Live & working MVP | https://siphoyawe.github.io/box-seat/ |
+| Live Demo Video | [RECORD & PASTE] |
+| Public Repository | https://github.com/SiphoYawe/box-seat |
+| Technical Documentation | https://github.com/SiphoYawe/box-seat/blob/main/docs/frontend/BACKEND-CONTRACT.md (plus README) |
+| X Profile / tweet | https://x.com/SiphoYawe + the launch tweet |
+| TxLINE experience | (paste the Feedback section below verbatim) |
+| Anything Else? | Hero replay: https://siphoyawe.github.io/box-seat/match/18257865 — France 4-6 England, fully captured live, attested on Solana mainnet (tx visible via the app's On-chain chip / proof panel). Backend: Railway (wss://box-seat-production.up.railway.app). Built July 17-19 within the June 24 - July 19 window. |
 
 ## Brief technical documentation
 
