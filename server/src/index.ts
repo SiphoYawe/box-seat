@@ -110,6 +110,7 @@ function buildFixtureList(
       phase = "upcoming";
     }
 
+    const attested = getAttestation(db, f.fixtureId);
     return {
       fixtureId: f.fixtureId,
       participant1: f.participant1,
@@ -122,6 +123,11 @@ function buildFixtureList(
       score: state?.score ?? { participant1: 0, participant2: 0 },
       phase,
       hasData,
+      // Join the persisted on-chain attestation so list surfaces can mark
+      // proven fixtures without a per-fixture subscribe.
+      ...(attested
+        ? { attestation: { txSig: attested.txSig, cluster: attested.cluster as AttestationCluster } }
+        : {}),
     };
   });
 }

@@ -23,6 +23,12 @@ export interface FixtureListEntry {
   phase: "upcoming" | "live" | "finished";
   /** False when we hold no event data for the fixture (score unknown — hide it). */
   hasData: boolean;
+  /**
+   * The fixture's confirmed on-chain attestation, when one is persisted.
+   * Lets list surfaces show an "attested on Solana" marker without a
+   * per-fixture subscribe. Absent (undefined) when nothing is attested yet.
+   */
+  attestation?: { txSig: string; cluster: AttestationCluster };
 }
 
 /** One player row of the `fixture_players` message — see docs/frontend/BACKEND-CONTRACT.md. */

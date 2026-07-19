@@ -127,6 +127,11 @@ time — and of the match list for a "browse fixtures" screen.
 }
 ```
 
+Entries may also carry an optional `attestation` object —
+`{ "txSig": "<base58>", "cluster": "mainnet-beta" }` — when the fixture's final state
+has a confirmed on-chain attestation, letting the list render an "attested" marker
+without subscribing. Absent until a fixture is attested.
+
 `statusId`/`score` are joined in from the backend's in-memory match state when known;
 for a fixture with no live/replayed state yet, they default to `statusId: 1` (not
 started) and `score: { "participant1": 0, "participant2": 0 }`. `startTime` is epoch
