@@ -279,7 +279,7 @@ export function EventLog({ meta }: { meta: FixtureMeta }) {
                 </span>
                 {row.photo && (
                   <img
-                    src={`/${row.photo}`}
+                    src={import.meta.env.BASE_URL + row.photo}
                     alt=""
                     className="rounded-full object-cover shrink-0"
                     style={{ width: 18, height: 18, border: "1px solid rgba(255,255,255,0.35)" }}

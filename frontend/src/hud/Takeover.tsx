@@ -640,7 +640,7 @@ function TakeoverCard({ req, onDone }: { req: TakeoverRequest; onDone: () => voi
                   <span className="flex items-center justify-center gap-3 mt-2">
                     {PHOTOS[scorer] && (
                       <img
-                        src={`/${PHOTOS[scorer]}`}
+                        src={import.meta.env.BASE_URL + PHOTOS[scorer]}
                         alt={scorer}
                         className="rounded-full object-cover"
                         style={{

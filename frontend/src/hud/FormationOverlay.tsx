@@ -62,7 +62,7 @@ function PlayerChip({ player, primary }: { player: EnrichPlayer; primary: string
         }}
       >
         {photo ? (
-          <img src={`/${photo}`} alt="" width={34} height={34} className="w-full h-full object-cover" loading="lazy" />
+          <img src={import.meta.env.BASE_URL + photo} alt="" width={34} height={34} className="w-full h-full object-cover" loading="lazy" />
         ) : (
           (player.jersey ?? "-")
         )}

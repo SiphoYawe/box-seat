@@ -27,7 +27,7 @@ function NumberChip({
       style={{ width: 22, height: 22, background: primary, color: text, fontSize: 11 }}
     >
       {photo ? (
-        <img src={`/${photo}`} alt="" width={22} height={22} className="w-full h-full object-cover" loading="lazy" />
+        <img src={import.meta.env.BASE_URL + photo} alt="" width={22} height={22} className="w-full h-full object-cover" loading="lazy" />
       ) : (
         (jersey ?? "-")
       )}
