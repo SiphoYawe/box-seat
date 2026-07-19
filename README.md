@@ -4,7 +4,7 @@
 
 **App:** https://siphoyawe.github.io/box-seat/
 
-Built solo for the [TxODDS x Solana World Cup Hackathon](https://superteam.fun/earn/hackathon/world-cup), Consumer & Fan Experiences track, July 17-19, inside the June 24 - July 19 window.
+Built solo for the [TxODDS x Solana World Cup Hackathon](https://superteam.fun/earn/hackathon/world-cup), Consumer & Fan Experiences track.
 
 ## What it is
 
