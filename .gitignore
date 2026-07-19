@@ -1,0 +1,13 @@
+.firecrawl/
+_bmad/config.user.toml
+
+server/node_modules/
+server/dist/
+server/.env
+server/_keys/*.json
+server/*.db
+.gstack/
+frontend/node_modules/
+frontend/dist/
+server/*.db-shm
+server/*.db-wal
