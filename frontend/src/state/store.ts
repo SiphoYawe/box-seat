@@ -749,8 +749,10 @@ export const useAppStore = create<AppState>((set, get) => {
         // Goal-cam: after the goal's compressed takeover, rewind into the
         // buildup and roll at 1x through just past the goal. Skipped when the
         // window is entirely behind us (big overshoots at high speeds).
+        // Goal-cam disabled 2026-07-19: `false &&` guard keeps the whole
+        // rewind-and-roll window from ever arming; remove it to restore.
         const goal = crossedGoals[0];
-        if (goal && !match.instantReplay && !rewindTimer) {
+        if (false && goal && !match.instantReplay && !rewindTimer) {
           const replay = match.replay;
           const resumeSpeed = match.speed;
           rewindTimer = setTimeout(() => {
