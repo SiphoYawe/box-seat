@@ -31,7 +31,7 @@ TxLINE SSE (/scores)
    → SPL Memo attestation at full time
 ```
 
-**Resilience.** The system survived a live tournament weekend: SSE auto-reconnect with JWT renewal and a watchdog, automatic re-subscription after persistent auth failure, restart state-rebuild from the event log, malformed feed events and malformed WebSocket clients isolated rather than fatal, non-blocking attestation. Finish detection accepts both of TxLINE's documented finish signals (`game_finalised` and terminal StatusIds) because the two TxODDS schema sources disagree; we measured the live feed to settle it.
+**Resilience.** The system survived a live tournament weekend: SSE auto-reconnect with JWT renewal and a watchdog, automatic re-subscription after persistent auth failure, restart state-rebuild from the event log, malformed feed events and malformed WebSocket clients isolated rather than fatal, non-blocking attestation. Finish detection accepts both of TxLINE's documented finish signals (`game_finalised` and terminal StatusIds) because the two TxODDS schema sources disagree; I measured the live feed to settle it.
 
 **TxLINE endpoints used:** `POST /auth/guest/start`; on-chain `subscribe` (program `9ExbZ…cKaA`, service level 12, the real-time free World Cup tier); `POST /api/token/activate`; `GET /api/scores/stream` (SSE); `GET /api/scores/historical/{fixtureId}` for backfill.
 
