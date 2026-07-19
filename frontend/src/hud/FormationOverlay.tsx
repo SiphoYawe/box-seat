@@ -82,12 +82,14 @@ export function FormationOverlay({ meta }: { meta: FixtureMeta }) {
   const mode = useAppStore((s) => s.match.mode);
   const replay = useAppStore((s) => s.match.replay);
   const playheadTs = useAppStore((s) => s.match.playheadTs);
+  const legendOpen = useAppStore((s) => s.legendOpen);
   const [dismissed, setDismissed] = useState(false);
   const [pinned, setPinned] = useState(false);
 
   const enrich = getEnrichment(meta.fixtureId);
   const visible =
     !dismissed &&
+    !legendOpen &&
     mode === "replay" &&
     replay != null &&
     enrich != null &&

@@ -15,12 +15,17 @@ import { replayMinuteLabel } from "../scene/sceneUtils.js";
  * play/pause, left/right arrows = prev/next key moment. Drives the same
  * playhead as ribbon scrubbing.
  */
+// log-scale slider: position 0..1 maps to 1x..128x (2^0 .. 2^7)
+const posFromSpeed = (speed: number) => Math.log2(speed) / 7;
+const speedFromPos = (pos: number) => Math.round(Math.pow(2, pos * 7) * 10) / 10;
+const fmtSpeed = (speed: number) => `${speed >= 10 ? Math.round(speed) : speed}×`;
+
 export function Transport() {
   const playing = useAppStore((s) => s.match.playing);
   const speed = useAppStore((s) => s.match.speed);
   const instantReplay = useAppStore((s) => s.match.instantReplay);
   const setPlaying = useAppStore((s) => s.setPlaying);
-  const cycleSpeed = useAppStore((s) => s.cycleSpeed);
+  const setSpeed = useAppStore((s) => s.setSpeed);
   const setPlayhead = useAppStore((s) => s.setPlayhead);
   const stepMoment = useAppStore((s) => s.stepMoment);
 
@@ -94,14 +99,22 @@ export function Transport() {
       >
         <SkipForward size={17} weight="fill" />
       </button>
-      <button
-        className="h-9 px-2.5 rounded-full hover:bg-white/10 active:scale-95 transition-all cursor-pointer tnum font-condensed font-semibold text-sm"
-        onClick={cycleSpeed}
-        aria-label="Cycle playback speed"
-        title="Playback speed"
-      >
-        {speed}×
-      </button>
+      <span className="flex items-center gap-1.5 px-1">
+        <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.01}
+          value={posFromSpeed(speed)}
+          onChange={(e) => setSpeed(speedFromPos(Number(e.target.value)))}
+          className="w-20 h-1 accent-white/80 cursor-pointer"
+          aria-label="Playback speed"
+          title={`Playback speed: ${fmtSpeed(speed)}`}
+        />
+        <span className="tnum font-condensed font-semibold text-sm text-muted w-9 text-center">
+          {fmtSpeed(speed)}
+        </span>
+      </span>
       <span className="w-px h-5 bg-edge mx-1" />
       <span className="tnum font-condensed font-semibold text-base text-muted w-14 text-center">
         {minute}

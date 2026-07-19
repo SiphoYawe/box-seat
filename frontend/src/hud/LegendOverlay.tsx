@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { X } from "@phosphor-icons/react";
+import { useAppStore } from "../state/store.js";
 
 const SEEN_KEY = "boxseat-legend-seen";
 
@@ -51,6 +52,11 @@ export function LegendOverlay() {
       setVisible(true);
     }
   }, []);
+
+  // publish visibility so other overlays (formations) yield to the legend
+  useEffect(() => {
+    useAppStore.getState().setLegendOpen(visible);
+  }, [visible]);
 
   useEffect(() => {
     if (!visible) return;

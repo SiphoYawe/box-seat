@@ -8,9 +8,11 @@ import { CAMERA_PRESETS } from "../scene/CameraRig.js";
 import { Scorebug } from "./Scorebug.js";
 import { EventLog } from "./EventLog.js";
 import { NotebookPanel } from "./NotebookPanel.js";
+import { ChatterPanel } from "./ChatterPanel.js";
 import { Transport } from "./Transport.js";
 import { LineupPanel } from "./LineupPanel.js";
 import { StatsPanel } from "./StatsPanel.js";
+import { ProofPanel } from "./ProofPanel.js";
 import { StoryChips } from "./StoryChips.js";
 import { useViewState } from "./useViewState.js";
 import { getEnrichment } from "../lib/enrichment.js";
@@ -211,6 +213,9 @@ export function HudOverlay({ meta }: { meta: FixtureMeta }) {
           <Mount delay={0.1}>
             <NotebookPanel meta={meta} />
           </Mount>
+          <Mount delay={0.18}>
+            <ChatterPanel />
+          </Mount>
         </div>
         <div className="flex items-center gap-2">
           {demo && <DemoToggle />}
@@ -226,7 +231,7 @@ export function HudOverlay({ meta }: { meta: FixtureMeta }) {
         </div>
       </div>
 
-      {/* event log + lineups + stats, right edge */}
+      {/* event log + lineups + stats + on-chain proof, right edge */}
       <div className="absolute right-4 top-20 flex flex-col items-end gap-2">
         <Mount delay={0.16}>
           <EventLog meta={meta} />
@@ -236,6 +241,9 @@ export function HudOverlay({ meta }: { meta: FixtureMeta }) {
         </Mount>
         <Mount delay={0.32}>
           <StatsPanel meta={meta} />
+        </Mount>
+        <Mount delay={0.4}>
+          <ProofPanel />
         </Mount>
       </div>
 

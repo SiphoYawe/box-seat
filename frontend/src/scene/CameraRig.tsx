@@ -130,6 +130,11 @@ export function CameraRig() {
       if (t >= 1) tween.current = null;
     }
 
+    // keep the pan target inside the stadium so the pitch can't be lost
+    controls.target.x = THREE.MathUtils.clamp(controls.target.x, -70, 70);
+    controls.target.z = THREE.MathUtils.clamp(controls.target.z, -50, 50);
+    controls.target.y = THREE.MathUtils.clamp(controls.target.y, 0, 18);
+
     // takeover punch: 300ms FOV kick, eased back out (full takeovers only)
     let punch = 0;
     const takeover = match.activeTakeover;
@@ -149,11 +154,14 @@ export function CameraRig() {
     camera.fov = BASE_FOV - punch * 9;
     camera.updateProjectionMatrix();
 
-    // idle drift in live mode only (never during goal-cam)
+    // idle drift in live mode only (never during goal-cam); the final whistle
+    // earns a slow celebratory orbit while its card plays
+    const ftCelebration = takeover?.moment.type === "full_time";
     const idle = now - lastInputAt.current > DRIFT_DELAY_MS;
     controls.autoRotate =
-      match.mode === "live" && idle && !tween.current && punch === 0 && !goalCamHeld.current;
-    controls.autoRotateSpeed = DRIFT_SPEED;
+      (ftCelebration && !goalCamHeld.current) ||
+      (match.mode === "live" && idle && !tween.current && punch === 0 && !goalCamHeld.current);
+    controls.autoRotateSpeed = ftCelebration ? 0.5 : DRIFT_SPEED;
     controls.update();
   });
 
@@ -166,7 +174,9 @@ export function CameraRig() {
       minDistance={25}
       maxDistance={160}
       maxPolarAngle={THREE.MathUtils.degToRad(85)}
-      enablePan={false}
+      enablePan
+      panSpeed={0.8}
+      screenSpacePanning={false}
       target={CAMERA_PRESETS[0].target.toArray()}
     />
   );

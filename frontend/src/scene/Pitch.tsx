@@ -126,6 +126,21 @@ function GoalFrame({ side }: { side: 1 | -1 }) {
 
 function Floodlight({ position }: { position: [number, number, number] }) {
   const head = useRef<THREE.Mesh>(null);
+  useFrame(({ clock }) => {
+    const mesh = head.current;
+    if (!mesh) return;
+    const mat = mesh.material as THREE.MeshStandardMaterial;
+    // the final whistle: floodlights pulse with the stadium's celebration
+    const takeover = useAppStore.getState().match.activeTakeover;
+    if (takeover?.moment.type === "full_time" && takeover.fxStartedAt != null) {
+      const age = (performance.now() - takeover.fxStartedAt) / 1000;
+      if (age < 6) {
+        mat.emissiveIntensity = 1.6 * (1 + 0.55 * Math.sin(clock.elapsedTime * 9 + position[0] * 0.1));
+        return;
+      }
+    }
+    mat.emissiveIntensity = 1.6;
+  });
   return (
     <group position={position}>
       <mesh position={[0, 14, 0]}>

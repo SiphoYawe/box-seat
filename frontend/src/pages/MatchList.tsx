@@ -1,9 +1,12 @@
 import { useEffect, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { motion } from "motion/react";
+import { ShieldCheck } from "@phosphor-icons/react";
 import { useAppStore, type FixtureListEntry } from "../state/store.js";
 import { socket } from "../lib/ws.js";
 import { getTeam } from "../lib/teams.js";
 import { stageOf } from "../lib/meta.js";
+import { solscanTxUrl } from "../lib/solanaVerify.js";
 import { Badge } from "../hud/Badge.js";
 
 const SUBSCRIBE_WINDOW_MS = 6 * 60 * 60 * 1000;
@@ -16,7 +19,7 @@ function formatKickoff(ms: number | null): string {
   return `${day} · ${time}`;
 }
 
-function FixtureCard({ entry, query }: { entry: FixtureListEntry; query: string }) {
+function FixtureCard({ entry, query, index }: { entry: FixtureListEntry; query: string; index: number }) {
   const team1 = getTeam(entry.participant1);
   const team2 = getTeam(entry.participant2);
   const liveState = useAppStore((s) => s.listStates[entry.fixtureId]);
@@ -86,26 +89,52 @@ function FixtureCard({ entry, query }: { entry: FixtureListEntry; query: string 
     background: `linear-gradient(100deg, ${team1.primary}2E 0%, rgba(10,14,20,0.9) 42%, rgba(10,14,20,0.9) 58%, ${team2.primary}2E 100%)`,
   };
 
-  if (!clickable) {
-    return (
-      <div
-        className="rounded-xl flex items-center gap-4 px-5 py-4 border border-edge opacity-45 cursor-default select-none"
-        style={style}
-        title="No data coverage for this match"
-      >
-        {body}
-      </div>
-    );
-  }
+  const attestedDot = entry.attestation ? (
+    <a
+      href={solscanTxUrl(entry.attestation.txSig, entry.attestation.cluster)}
+      target="_blank"
+      rel="noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="absolute top-2.5 right-3 flex items-center gap-1 text-[#2ECC71] hover:text-[#7BE3A8] transition-colors"
+      title="Attested on Solana - view on Solscan"
+    >
+      <ShieldCheck size={13} weight="fill" />
+      <span className="font-condensed font-semibold text-[9px] uppercase tracking-widest">On-chain</span>
+    </a>
+  ) : null;
 
-  return (
-    <Link
-      to={`/match/${entry.fixtureId}${query}`}
-      className="rounded-xl flex items-center gap-4 px-5 py-4 border border-edge hover:border-white/25 active:scale-[0.99] transition-all overflow-hidden relative"
+  const content = !clickable ? (
+    <div
+      className="rounded-xl flex items-center gap-4 px-5 py-4 border border-edge opacity-45 cursor-default select-none relative"
       style={style}
+      title="No data coverage for this match"
     >
       {body}
+      {attestedDot}
+    </div>
+  ) : (
+    <Link
+      to={`/match/${entry.fixtureId}${query}`}
+      className="rounded-xl flex items-center gap-4 px-5 py-4 border hover:border-white/25 active:scale-[0.99] transition-all overflow-hidden relative"
+      style={{
+        ...style,
+        borderColor: live ? "rgba(227,6,19,0.45)" : undefined,
+        boxShadow: live ? "0 0 24px rgba(227,6,19,0.14), inset 0 0 18px rgba(227,6,19,0.05)" : undefined,
+      }}
+    >
+      {body}
+      {attestedDot}
     </Link>
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.6), ease: [0.16, 1, 0.3, 1] }}
+    >
+      {content}
+    </motion.div>
   );
 }
 
@@ -205,14 +234,14 @@ export function MatchList() {
                 Live now
               </h2>
               <div className="flex flex-col gap-3">
-                {live.map((entry) => (
-                  <FixtureCard key={entry.fixtureId} entry={entry} query={query} />
+                {live.map((entry, i) => (
+                  <FixtureCard key={entry.fixtureId} entry={entry} query={query} index={i} />
                 ))}
               </div>
             </section>
           )}
 
-          {ROUND_GROUPS.map((group) => {
+          {ROUND_GROUPS.map((group, gi) => {
             const entries = byRound.get(group);
             if (!entries || entries.length === 0) return null;
             return (
@@ -221,8 +250,8 @@ export function MatchList() {
                   {group}
                 </h2>
                 <div className="flex flex-col gap-3">
-                  {entries.map((entry) => (
-                    <FixtureCard key={entry.fixtureId} entry={entry} query={query} />
+                  {entries.map((entry, i) => (
+                    <FixtureCard key={entry.fixtureId} entry={entry} query={query} index={gi * 2 + i} />
                   ))}
                 </div>
               </section>

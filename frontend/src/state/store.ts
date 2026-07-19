@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { KeyMoment, MatchState, RawScoreEvent } from "../reducer/types.js";
+import { FINISHED_STATUS_IDS, type KeyMoment, type MatchState, type RawScoreEvent } from "../reducer/types.js";
 import { reconstruct, frameAt, type MomentumSample, type ReplayData } from "../lib/reconstruct.js";
 import { socket, type ConnStatus, type ServerMessage } from "../lib/ws.js";
 
@@ -18,12 +18,16 @@ export interface FixtureListEntry {
   phase: "upcoming" | "live" | "finished";
   /** false = backend holds no event data; score is meaningless, no replay. */
   hasData: boolean;
+  /** Confirmed on-chain attestation, when persisted (added by backend; optional). */
+  attestation?: { txSig: string; cluster: string };
 }
 
 export type MatchMode = "idle" | "live" | "replay-loading" | "replay";
-export type PlaySpeed = 1 | 2 | 4 | 8 | 16;
+/** Replay playback multiplier - continuous, slider-driven (1x .. 128x). */
+export type PlaySpeed = number;
 
-const SPEED_LADDER: PlaySpeed[] = [1, 2, 4, 8, 16];
+export const SPEED_MIN = 1;
+export const SPEED_MAX = 128;
 
 export interface TerrainRipple {
   id: number;
@@ -129,13 +133,17 @@ interface AppState {
   setPlayhead: (ts: number, opts?: { manual?: boolean }) => void;
   advancePlayhead: (dtMs: number) => void;
   setPlaying: (playing: boolean) => void;
-  cycleSpeed: () => void;
+  setSpeed: (speed: number) => void;
   stepMoment: (dir: 1 | -1) => void;
   dismissTakeover: () => void;
   startDemoReplay: () => void;
   cameraPreset: number;
   cycleCameraPreset: () => void;
   setCameraPreset: (index: number) => void;
+  leanBack: boolean;
+  toggleLeanBack: () => void;
+  legendOpen: boolean;
+  setLegendOpen: (open: boolean) => void;
 }
 
 const initialMatchSlice: MatchViewSlice = {
@@ -186,10 +194,22 @@ function momentKey(m: TakeoverMoment): string {
 }
 
 function variantOf(type: string): TakeoverVariant {
-  if (type === "goal" || type === "red_card" || type === "var_overturned" || type === "penalty") {
+  if (
+    type === "goal" ||
+    type === "red_card" ||
+    type === "var_overturned" ||
+    type === "penalty" ||
+    type === "full_time"
+  ) {
     return "full";
   }
-  if (type === "yellow_card" || type === "woodwork" || type === "pen_scored" || type === "pen_missed") {
+  if (
+    type === "yellow_card" ||
+    type === "woodwork" ||
+    type === "pen_scored" ||
+    type === "pen_missed" ||
+    type === "halftime"
+  ) {
     return "mini";
   }
   return "toast";
@@ -207,10 +227,13 @@ function eventMomentType(e: RawScoreEvent): string | null {
   if (e.action === "shot" && (e.data?.Outcome ?? e.data?.outcome) === "Woodwork") return "woodwork";
   if (e.action === "penalty") return "penalty";
   if (e.action === "penalty_outcome") {
-    return (e.data?.Outcome as string | undefined) === "Scored" ? "pen_scored" : "pen_missed";
+    // a scored penalty is a GOAL key moment (reducer) — the full takeover
+    // owns it; only misses fire the mini card here
+    return (e.data?.Outcome as string | undefined) === "Scored" ? null : "pen_missed";
   }
   if (e.action === "corner") return "corner";
   if (e.action === "substitution") return "substitution";
+  if (e.action === "kickoff") return e.statusId === 4 ? "kickoff2" : "kickoff";
   return null;
 }
 
@@ -218,7 +241,22 @@ export const useAppStore = create<AppState>((set, get) => {
   function queueTakeover(req: TakeoverRequest) {
     const { match } = get();
     if (match.activeTakeover) {
-      set({ match: { ...match, takeoverQueue: [...match.takeoverQueue, req] } });
+      // hygiene under speed: full moments always queue (cap 4); minis drop
+      // when the line is long; toasts are the first to go when busy
+      const queue = match.takeoverQueue;
+      if (req.variant === "toast" && queue.length >= 2) return;
+      if (req.variant === "mini" && queue.length >= 3) return;
+      if (req.variant === "full" && queue.length >= 4) return;
+      if (req.variant === "mini" && queue.length >= 2) {
+        const toastIdx = queue.findIndex((q) => q.variant === "toast");
+        if (toastIdx >= 0) {
+          const next = [...queue];
+          next.splice(toastIdx, 1, req);
+          set({ match: { ...match, takeoverQueue: next } });
+          return;
+        }
+      }
+      set({ match: { ...match, takeoverQueue: [...queue, req] } });
     } else {
       set({ match: { ...match, activeTakeover: { ...req, fxStartedAt: performance.now() } } });
     }
@@ -327,6 +365,43 @@ export const useAppStore = create<AppState>((set, get) => {
 
     addRipples(prev, state);
     if (get().match.mode === "live") detectNewMoments(state, prev === null);
+
+    // broadcast bookends: halftime whistle + the final whistle
+    if (prev && prev.statusId !== state.statusId && get().match.mode === "live") {
+      const seen = new Set(get().match.seenMomentKeys);
+      if (state.statusId === 3 && !seen.has("halftime:ht")) {
+        seen.add("halftime:ht");
+        set({ match: { ...get().match, seenMomentKeys: [...seen] } });
+        queueTakeover({
+          moment: { type: "halftime", participant: 1, ts: state.lastTs, seq: state.lastSeq },
+          variant: "mini",
+          compressed: false,
+          scoreAfter: { ...state.score },
+          fxStartedAt: null,
+        });
+      }
+      if (
+        FINISHED_STATUS_IDS.has(state.statusId) &&
+        !FINISHED_STATUS_IDS.has(prev.statusId) &&
+        !seen.has("full_time:ft")
+      ) {
+        seen.add("full_time:ft");
+        set({ match: { ...get().match, seenMomentKeys: [...seen] } });
+        const winner =
+          state.score.participant1 > state.score.participant2
+            ? 1
+            : state.score.participant2 > state.score.participant1
+              ? 2
+              : 1;
+        queueTakeover({
+          moment: { type: "full_time", participant: winner as 1 | 2, ts: state.lastTs, seq: state.lastSeq },
+          variant: "full",
+          compressed: false,
+          scoreAfter: { ...state.score },
+          fxStartedAt: null,
+        });
+      }
+    }
 
     // A live match just finalised: pull the full history to switch to replay.
     if (state.statusId === 100 && get().match.mode === "live") {
@@ -459,6 +534,11 @@ export const useAppStore = create<AppState>((set, get) => {
             },
           });
         }
+      } else if (msg.type === "chatter") {
+        const m = msg as unknown as { fixtureId: number; posts: ChatterPost[] };
+        if (typeof m.fixtureId === "number" && Array.isArray(m.posts)) {
+          set({ chatter: { ...get().chatter, [m.fixtureId]: m.posts.slice(0, 10) } });
+        }
       } else if (msg.type === "replay_chunk") {
         const chunk = msg as { fixtureId: number; events: RawScoreEvent[]; done: boolean };
         if (!Array.isArray(chunk.events)) return;
@@ -514,7 +594,8 @@ export const useAppStore = create<AppState>((set, get) => {
           const type = eventMomentType(e);
           if (!type) continue;
           const p = e.participant ?? (e.data?.Participant as 1 | 2 | undefined);
-          if (p !== 1 && p !== 2) continue;
+          // kickoff moments carry no participant - everything else needs one
+          if (p !== 1 && p !== 2 && type !== "kickoff" && type !== "kickoff2") continue;
           const variant = variantOf(type);
           if (variant === "toast" && toastsUsed >= 1) continue;
           const key = `${type}:${e.id ?? e.seq}`;
@@ -524,12 +605,55 @@ export const useAppStore = create<AppState>((set, get) => {
           if (variant === "toast") toastsUsed += 1;
           const frame = frameAt(frames, e.ts);
           queueTakeover({
-            moment: { type, participant: p, ts: e.ts, seq: e.seq, id: e.id },
+            moment: { type, participant: p ?? 1, ts: e.ts, seq: e.seq, id: e.id },
             variant,
             compressed: true,
             scoreAfter: frame ? { ...frame.state.score } : { participant1: 0, participant2: 0 },
             fxStartedAt: null,
           });
+        }
+
+        // landing on the halftime break: mini halftime card
+        const htTs = match.replay.halftimeTs;
+        if (htTs && clamped >= htTs && clamped <= htTs + SCRUB_TAKEOVER_WINDOW_MS) {
+          const key = "halftime:ht";
+          const last = scrubFiredAt.get(key);
+          if (last === undefined || now - last >= SCRUB_TAKEOVER_COOLDOWN_MS) {
+            scrubFiredAt.set(key, now);
+            const frame = frameAt(frames, htTs);
+            queueTakeover({
+              moment: { type: "halftime", participant: 1, ts: htTs, seq: frame?.seq ?? 0 },
+              variant: "mini",
+              compressed: true,
+              scoreAfter: frame ? { ...frame.state.score } : { participant1: 0, participant2: 0 },
+              fxStartedAt: null,
+            });
+          }
+        }
+
+        // landing on full time: the final whistle card (one goal-cam-era exception
+        // to "no takeovers while scrubbing" - FT is the end card)
+        if (clamped >= match.replay.endTs - 1) {
+          const finalFrame = frames[frames.length - 1];
+          const key = "full_time:ft";
+          const last = scrubFiredAt.get(key);
+          if (
+            finalFrame &&
+            FINISHED_STATUS_IDS.has(finalFrame.state.statusId) &&
+            (last === undefined || now - last >= SCRUB_TAKEOVER_COOLDOWN_MS)
+          ) {
+            scrubFiredAt.set(key, now);
+            const score = finalFrame.state.score;
+            const winner =
+              score.participant1 > score.participant2 ? 1 : score.participant2 > score.participant1 ? 2 : 1;
+            queueTakeover({
+              moment: { type: "full_time", participant: winner as 1 | 2, ts: match.replay.endTs, seq: finalFrame.seq },
+              variant: "full",
+              compressed: true,
+              scoreAfter: { ...score },
+              fxStartedAt: null,
+            });
+          }
         }
       }
     },
@@ -586,7 +710,8 @@ export const useAppStore = create<AppState>((set, get) => {
           const type = eventMomentType(e);
           if (!type) continue;
           const p = e.participant ?? (e.data?.Participant as 1 | 2 | undefined);
-          if (p !== 1 && p !== 2) continue;
+          // kickoff moments carry no participant - everything else needs one
+          if (p !== 1 && p !== 2 && type !== "kickoff" && type !== "kickoff2") continue;
           const key = `${type}:${e.id ?? e.seq}`;
           if (seen.has(key)) continue;
           const variant = variantOf(type);
@@ -595,8 +720,22 @@ export const useAppStore = create<AppState>((set, get) => {
           if (variant === "toast") toastsUsed += 1;
           const frame = frameAt(match.replay.frames, e.ts);
           queueTakeover({
-            moment: { type, participant: p, ts: e.ts, seq: e.seq, id: e.id },
+            moment: { type, participant: p ?? 1, ts: e.ts, seq: e.seq, id: e.id },
             variant,
+            compressed: true,
+            scoreAfter: frame ? { ...frame.state.score } : { participant1: 0, participant2: 0 },
+            fxStartedAt: null,
+          });
+        }
+
+        // halftime whistle (replay: crossing the break during auto-play)
+        const htTs = match.replay.halftimeTs;
+        if (htTs && prev < htTs && next >= htTs && !seen.has("halftime:ht")) {
+          seen.add("halftime:ht");
+          const frame = frameAt(match.replay.frames, htTs);
+          queueTakeover({
+            moment: { type: "halftime", participant: 1, ts: htTs, seq: frame?.seq ?? 0 },
+            variant: "mini",
             compressed: true,
             scoreAfter: frame ? { ...frame.state.score } : { participant1: 0, participant2: 0 },
             fxStartedAt: null,
@@ -607,8 +746,9 @@ export const useAppStore = create<AppState>((set, get) => {
           set({ match: { ...get().match, seenMomentKeys: [...seen] } });
         }
 
-        // Goal-buildup instant replay: after the goal's compressed takeover,
-        // rewind to 20s of match time before it and roll at 1x through +5s.
+        // Goal-cam: after the goal's compressed takeover, rewind into the
+        // buildup and roll at 1x through just past the goal. Skipped when the
+        // window is entirely behind us (big overshoots at high speeds).
         const goal = crossedGoals[0];
         if (goal && !match.instantReplay && !rewindTimer) {
           const replay = match.replay;
@@ -617,13 +757,14 @@ export const useAppStore = create<AppState>((set, get) => {
             rewindTimer = null;
             const m = useAppStore.getState().match;
             if (m.mode !== "replay" || !m.replay || !m.playing) return;
-            const from = Math.max(goal.ts - 20_000, replay.kickoffTs);
+            const untilTs = goal.ts + 4_000;
             const resumeTs = m.playheadTs ?? replay.endTs;
+            const from = Math.max(goal.ts - 12_000, replay.kickoffTs);
             set({
               match: {
                 ...useAppStore.getState().match,
                 playheadTs: from,
-                instantReplay: { untilTs: goal.ts + 5_000, resumeTs, resumeSpeed, goalEnd: goal.end },
+                instantReplay: { untilTs, resumeTs, resumeSpeed, goalEnd: goal.end },
               },
             });
           }, 1700);
@@ -631,25 +772,58 @@ export const useAppStore = create<AppState>((set, get) => {
       }
 
       const done = next >= match.replay.endTs;
-      set({ match: { ...get().match, playheadTs: next, playing: done ? false : match.playing } });
+      if (done) {
+        // the final whistle in replay: a real broadcast beat, once per session
+        const finalFrame = match.replay.frames[match.replay.frames.length - 1];
+        const seen = new Set(get().match.seenMomentKeys);
+        if (
+          finalFrame &&
+          FINISHED_STATUS_IDS.has(finalFrame.state.statusId) &&
+          !seen.has("full_time:ft")
+        ) {
+          seen.add("full_time:ft");
+          set({ match: { ...get().match, seenMomentKeys: [...seen] } });
+          const score = finalFrame.state.score;
+          const winner =
+            score.participant1 > score.participant2 ? 1 : score.participant2 > score.participant1 ? 2 : 1;
+          queueTakeover({
+            moment: { type: "full_time", participant: winner as 1 | 2, ts: match.replay.endTs, seq: finalFrame.seq },
+            variant: "full",
+            compressed: match.speed > 4,
+            scoreAfter: { ...score },
+            fxStartedAt: null,
+          });
+        }
+      }
+      set({
+        match: {
+          ...get().match,
+          playheadTs: next,
+          playing: done ? false : match.playing,
+          // never strand goal-cam state at full time (a late goal's window
+          // can outlive the match - playback must not crawl at 1x forever)
+          instantReplay: done ? null : get().match.instantReplay,
+        },
+      });
     },
 
     setPlaying: (playing) => {
       const { match } = get();
       if (match.mode !== "replay" || !match.replay) return;
       let playheadTs = match.playheadTs;
-      // pressing play at FT restarts the match
+      // pressing play at FT restarts the match (and drops any goal-cam state)
       if (playing && playheadTs !== null && playheadTs >= match.replay.endTs - 1) {
         playheadTs = match.replay.kickoffTs;
+        set({ match: { ...match, playing, playheadTs, instantReplay: null } });
+        return;
       }
       set({ match: { ...match, playing, playheadTs } });
     },
 
-    cycleSpeed: () => {
+    setSpeed: (speed) => {
       const { match } = get();
-      const idx = SPEED_LADDER.indexOf(match.speed);
-      const next = SPEED_LADDER[(idx + 1) % SPEED_LADDER.length];
-      set({ match: { ...match, speed: next } });
+      const clamped = Math.min(SPEED_MAX, Math.max(SPEED_MIN, speed));
+      set({ match: { ...match, speed: clamped } });
     },
 
     stepMoment: (dir) => {
@@ -705,6 +879,11 @@ export const useAppStore = create<AppState>((set, get) => {
     cameraPreset: 0,
     cycleCameraPreset: () => set({ cameraPreset: (get().cameraPreset + 1) % 3 }),
     setCameraPreset: (index) => set({ cameraPreset: index }),
+
+    leanBack: false,
+    toggleLeanBack: () => set({ leanBack: !get().leanBack }),
+    legendOpen: false,
+    setLegendOpen: (open) => set({ legendOpen: open }),
   };
 });
 

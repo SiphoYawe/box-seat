@@ -62,12 +62,16 @@ export function getEnrichment(fixtureId: number | null): Enrichment | undefined 
   return fixtureId == null ? undefined : BY_ID.get(fixtureId);
 }
 
-/** Resolve the scorer for a goal moment: same team, within `tol` minutes. */
+/**
+ * Resolve the scorer for a goal moment: same team, closest official minute
+ * within `tol` (the feed's cumulative clock can drift several minutes from
+ * the official one, so the tolerance is generous and the best match wins).
+ */
 export function scorerFor(
   enrich: Enrichment | undefined,
   participant: 1 | 2,
   minuteFloat: number | null,
-  tol = 3
+  tol = 9
 ): string | null {
   if (!enrich || minuteFloat == null) return null;
   let best: { name: string; dist: number } | null = null;

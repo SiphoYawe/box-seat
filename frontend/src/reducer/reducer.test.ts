@@ -168,4 +168,27 @@ describe("ported reducer", () => {
     expect(s1.keyMoments).toHaveLength(1);
     expect(s1.lastSeq).toBe(4);
   });
+
+  it("a scored penalty creates a goal moment; a missed one does not", () => {
+    let s = initialMatchState(1);
+    s = reduce(
+      s,
+      ev({ action: "penalty_outcome", participant: 2, data: { Outcome: "Scored" }, id: 77, seq: 5 })
+    );
+    expect(s.keyMoments).toHaveLength(1);
+    expect(s.keyMoments[0].type).toBe("goal");
+    expect(s.keyMoments[0].participant).toBe(2);
+    // same kick re-sent (confirm) is not double-counted
+    s = reduce(
+      s,
+      ev({ action: "penalty_outcome", participant: 2, data: { Outcome: "Scored" }, id: 77, seq: 6 })
+    );
+    expect(s.keyMoments).toHaveLength(1);
+    // a miss is not a goal
+    s = reduce(
+      s,
+      ev({ action: "penalty_outcome", participant: 1, data: { Outcome: "Missed" }, id: 78, seq: 7 })
+    );
+    expect(s.keyMoments).toHaveLength(1);
+  });
 });

@@ -61,26 +61,8 @@ body,
   animation: streaks 7s linear infinite;
 }
 
-@keyframes cardspin {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.cardspin {
-  animation: cardspin 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transform-style: preserve-3d;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .streaks::before,
-  .cardspin {
+  .streaks::before {
     animation: none;
   }
 }

@@ -8,6 +8,7 @@ import { HudOverlay } from "../hud/HudOverlay.js";
 import { TakeoverLayer } from "../hud/Takeover.js";
 import { LegendOverlay } from "../hud/LegendOverlay.js";
 import { FormationOverlay } from "../hud/FormationOverlay.js";
+import { LeanBack } from "../hud/LeanBack.js";
 
 /**
  * The match view: one 3D scene serving both live and replay, plus the 2D HUD
@@ -76,6 +77,7 @@ export function MatchView() {
       <LegendOverlay />
       <FormationOverlay meta={meta} />
       <TakeoverLayer />
+      <LeanBack meta={meta} />
     </div>
   );
 }
