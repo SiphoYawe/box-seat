@@ -30,6 +30,9 @@ interface CameraTween {
   toTarget: THREE.Vector3;
 }
 
+// Goal-cam disabled 2026-07-19: flip to true to restore the behind-the-goal swing.
+const GOAL_CAM_ENABLED = false;
+
 /** Low behind-the-goal-line spot for goal-cam replays. */
 function goalCamPose(end: 1 | -1): { pos: THREE.Vector3; target: THREE.Vector3 } {
   return {
@@ -66,6 +69,7 @@ export function CameraRig() {
   // out before the replay window ends (a lingering hold reads as stuck).
   // Any user orbit during it cancels the hold for that window only.
   useFrame(() => {
+    if (!GOAL_CAM_ENABLED) return;
     const { match } = useAppStore.getState();
     const ir = match.instantReplay;
     if (!ir) {
