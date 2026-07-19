@@ -302,6 +302,21 @@ async function main() {
     }
   );
 
+  // Cloud bootstrap: a fresh volume has an empty kv store — seed it from env
+  // so a cold instance reuses the existing TxLINE session (avoiding the
+  // already-subscribed trap) and serves the demo fixture's cached chatter.
+  if (!kvGet(db, API_TOKEN_KEY) && process.env.TXLINE_API_TOKEN) {
+    kvSet(db, API_TOKEN_KEY, process.env.TXLINE_API_TOKEN);
+    console.log("[Startup] Seeded TxLINE API token from env.");
+  }
+  if (process.env.CHATTER_SEED_FIXTURE && process.env.CHATTER_SEED_JSON) {
+    const seedKey = `chatter:${process.env.CHATTER_SEED_FIXTURE}`;
+    if (!kvGet(db, seedKey)) {
+      kvSet(db, seedKey, process.env.CHATTER_SEED_JSON);
+      console.log(`[Startup] Seeded chatter cache for fixture ${process.env.CHATTER_SEED_FIXTURE} from env.`);
+    }
+  }
+
   console.log("[Startup] Authenticating with TxLINE...");
   const persistedToken = kvGet(db, API_TOKEN_KEY);
   if (persistedToken) {
