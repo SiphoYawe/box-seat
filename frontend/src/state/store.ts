@@ -753,7 +753,8 @@ export const useAppStore = create<AppState>((set, get) => {
         // rewind-and-roll window from ever arming; remove it to restore.
         const goal = crossedGoals[0];
         if (false && goal && !match.instantReplay && !rewindTimer) {
-          const replay = match.replay;
+          // non-null assert: the `false &&` guard above defeats narrowing
+          const replay = match.replay!;
           const resumeSpeed = match.speed;
           rewindTimer = setTimeout(() => {
             rewindTimer = null;
