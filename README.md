@@ -10,7 +10,7 @@ Built solo for the [TxODDS x Solana World Cup Hackathon](https://superteam.fun/e
 
 Box Seat turns TxLINE's live World Cup scores feed into a 3D match story: a real pitch, pressure terrain rising over the zones each team threatens, and a momentum ribbon as the match timeline. Goals, red cards, and VAR overturns take over the full screen. A finished match becomes a scrubbable replay driven by the same engine: the same stored events fold through the same reducer, so the replay tells the story the live view told.
 
-No betting, no odds, no predictions. The backend reads TxLINE's `/scores` and `/fixtures` and never calls `/odds`. That is a values decision, and the code enforces it.
+No betting, no odds, no predictions. The backend reads only TxLINE's `/scores` and `/fixtures` data. That is a values decision, and the code enforces it.
 
 ## Solana (no wallet needed to watch)
 
@@ -20,7 +20,7 @@ No betting, no odds, no predictions. The backend reads TxLINE's `/scores` and `/
 ## Architecture
 
 ```
-TxLINE SSE (/scores, never /odds)
+TxLINE SSE (/scores)
    → service-wallet auth (on-chain subscribe → activation, persisted session)
    → pure match-state reducer (momentum, zone pressure, key moments)
    → SQLite event log (replays survive feed-access expiry)
