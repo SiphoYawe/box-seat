@@ -8,6 +8,7 @@ import { getTeam } from "../lib/teams.js";
 import { stageOf } from "../lib/meta.js";
 import { solscanTxUrl } from "../lib/solanaVerify.js";
 import { Badge } from "../hud/Badge.js";
+import logoUrl from "../assets/box-seat-logo.svg";
 
 const SUBSCRIBE_WINDOW_MS = 6 * 60 * 60 * 1000;
 
@@ -213,8 +214,13 @@ export function MatchList() {
     <div className="min-h-[100dvh] bg-ink text-text">
       <div className="max-w-3xl mx-auto px-4 py-10 md:py-16">
         <header className="mb-10">
-          <h1 className="font-condensed font-bold uppercase tracking-tight leading-none text-5xl md:text-6xl">
-            Box Seat
+          <h1 className="leading-none">
+            <img
+              src={logoUrl}
+              alt="Box Seat"
+              className="h-10 md:h-12 w-auto"
+              style={{ maxWidth: "100%" }}
+            />
           </h1>
           <p className="text-muted mt-2 text-sm">
             The 2026 World Cup, rendered as a living pitch. Pick a match.
