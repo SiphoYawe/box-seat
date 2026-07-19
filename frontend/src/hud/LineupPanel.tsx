@@ -4,10 +4,7 @@ import { useAppStore } from "../state/store.js";
 import { getTeam } from "../lib/teams.js";
 import type { FixtureMeta } from "../lib/meta.js";
 import { getEnrichment } from "../lib/enrichment.js";
-
-import photosJson from "../data/player-photos.json";
-
-const PHOTOS: Record<string, string> = photosJson as Record<string, string>;
+import { flipName, photoFor } from "../lib/photos.js";
 
 function NumberChip({
   jersey,
@@ -20,7 +17,7 @@ function NumberChip({
   text: string;
   name?: string;
 }) {
-  const photo = name ? PHOTOS[name] : undefined;
+  const photo = photoFor(name);
   return (
     <span
       className="tnum inline-flex items-center justify-center rounded-full shrink-0 font-condensed font-semibold overflow-hidden"
@@ -69,7 +66,7 @@ export function LineupPanel({ meta }: { meta: FixtureMeta }) {
         .map((pl) => ({
           key: String(pl.id),
           jersey: pl.number ?? null,
-          name: pl.name,
+          name: pl.name ? flipName(pl.name) : pl.name,
           starter: Boolean(pl.starter),
           goals: pl.goals ?? 0,
           subbedIn: false,

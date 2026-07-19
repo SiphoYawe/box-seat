@@ -4,10 +4,9 @@ import { X } from "@phosphor-icons/react";
 import { useAppStore } from "../state/store.js";
 import type { FixtureMeta } from "../lib/meta.js";
 import { getEnrichment, type EnrichPlayer } from "../lib/enrichment.js";
+import { photoFor } from "../lib/photos.js";
 import { getTeam } from "../lib/teams.js";
-import photosJson from "../data/player-photos.json";
 
-const PHOTOS: Record<string, string> = photosJson as Record<string, string>;
 
 function shortName(full: string): string {
   const parts = full.trim().split(/\s+/);
@@ -47,7 +46,7 @@ function formationLines(players: EnrichPlayer[], formation: string | null): Enri
 }
 
 function PlayerChip({ player, primary }: { player: EnrichPlayer; primary: string }) {
-  const photo = PHOTOS[player.name];
+  const photo = photoFor(player.name);
   return (
     <div className="flex flex-col items-center gap-1 w-14">
       <span

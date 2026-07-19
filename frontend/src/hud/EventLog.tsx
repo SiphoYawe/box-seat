@@ -14,11 +14,10 @@ import { clockAnchor } from "../scene/sceneUtils.js";
 import { frameAt } from "../lib/reconstruct.js";
 import { FINISHED_STATUS_IDS, type MatchState } from "../reducer/types.js";
 import { getEnrichment, scorerFor } from "../lib/enrichment.js";
+import { photoFor } from "../lib/photos.js";
 import { deriveClockDisplay } from "../lib/time.js";
 import { useNow, useViewState } from "./useViewState.js";
-import photosJson from "../data/player-photos.json";
 
-const PHOTOS: Record<string, string> = photosJson as Record<string, string>;
 
 interface LogRow {
   id: string;
@@ -129,7 +128,7 @@ export function EventLog({ meta }: { meta: FixtureMeta }) {
           "goal",
           `GOAL ${teamName}${scorer ? ` · ${scorer}` : ""}`,
           getTeamGlow(team),
-          scorer ? PHOTOS[scorer] : undefined
+          photoFor(scorer)
         );
       }
       else if (km.type === "red_card") push(`r${km.seq}`, minute, km.ts, "red_card", `RED CARD ${teamName}`, "#E30613");

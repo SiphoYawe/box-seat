@@ -4,12 +4,11 @@ import { useAppStore, type TakeoverRequest } from "../state/store.js";
 import { resolveFixtureMeta } from "../lib/meta.js";
 import { getTeam, type TeamMeta } from "../lib/teams.js";
 import { getEnrichment, scorerFor } from "../lib/enrichment.js";
+import { photoFor } from "../lib/photos.js";
 import { frameAt } from "../lib/reconstruct.js";
 import { deriveClockDisplay } from "../lib/time.js";
 import { Badge } from "./Badge.js";
-import photosJson from "../data/player-photos.json";
 
-const PHOTOS: Record<string, string> = photosJson as Record<string, string>;
 
 /**
  * The one sanctioned break from the ambient language: a full-viewport
@@ -638,9 +637,9 @@ function TakeoverCard({ req, onDone }: { req: TakeoverRequest; onDone: () => voi
                 {team.name}
                 {scorer && (
                   <span className="flex items-center justify-center gap-3 mt-2">
-                    {PHOTOS[scorer] && (
+                    {photoFor(scorer) && (
                       <img
-                        src={import.meta.env.BASE_URL + PHOTOS[scorer]}
+                        src={import.meta.env.BASE_URL + photoFor(scorer)}
                         alt={scorer}
                         className="rounded-full object-cover"
                         style={{
