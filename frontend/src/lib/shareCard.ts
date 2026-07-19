@@ -1,5 +1,6 @@
 import { getTeam, flagUrl } from "./teams.js";
 import { stageOf, type FixtureMeta } from "./meta.js";
+import logoUrl from "../assets/box-seat-logo.svg";
 
 /**
  * Share card: freeze the current scene into a postable 1600x900 PNG - the
@@ -109,10 +110,16 @@ export async function exportShareCard(data: ShareCardData): Promise<void> {
   );
 
   // footer: wordmark + data credit
-  ctx.textAlign = "left";
-  ctx.font = "700 40px 'Barlow Condensed', sans-serif";
-  ctx.fillStyle = "#E6EAF2";
-  ctx.fillText("BOX SEAT", 60, H - 62);
+  const logo = await loadImage(logoUrl).catch(() => null);
+  if (logo) {
+    const lw = 240;
+    ctx.drawImage(logo, 60, H - 92, lw, lw * (1223 / 7436));
+  } else {
+    ctx.textAlign = "left";
+    ctx.font = "700 40px 'Barlow Condensed', sans-serif";
+    ctx.fillStyle = "#E6EAF2";
+    ctx.fillText("BOX SEAT", 60, H - 62);
+  }
   ctx.textAlign = "right";
   ctx.font = "500 20px 'Barlow Condensed', sans-serif";
   ctx.fillStyle = "#8A93A6";
