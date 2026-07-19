@@ -98,7 +98,8 @@ export function Scorebug({ meta }: { meta: FixtureMeta }) {
   const s2 = state?.score.participant2 ?? 0;
 
   // shootout scoreline: penalty_outcome events at or before the playhead,
-  // deduped by action id (the feed re-sends kicks across confirm updates)
+  // deduped by action id. Only PE-phase (statusId 12) kicks count - an
+  // in-match penalty is a goal, not a shootout.
   const pens = useMemo(() => {
     if (mode !== "replay" || !replay) return null;
     const ph = playheadTs ?? replay.endTs;
@@ -106,7 +107,7 @@ export function Scorebug({ meta }: { meta: FixtureMeta }) {
     let p1 = 0;
     let p2 = 0;
     for (const e of replay.events) {
-      if (e.action !== "penalty_outcome" || e.ts > ph) continue;
+      if (e.action !== "penalty_outcome" || e.statusId !== 12 || e.ts > ph) continue;
       const key = e.id ?? e.seq;
       if (seen.has(key)) continue;
       seen.add(key);

@@ -757,9 +757,9 @@ export const useAppStore = create<AppState>((set, get) => {
             rewindTimer = null;
             const m = useAppStore.getState().match;
             if (m.mode !== "replay" || !m.replay || !m.playing) return;
-            const untilTs = goal.ts + 4_000;
+            const untilTs = goal.ts + 3_000;
             const resumeTs = m.playheadTs ?? replay.endTs;
-            const from = Math.max(goal.ts - 12_000, replay.kickoffTs);
+            const from = Math.max(goal.ts - 8_000, replay.kickoffTs);
             set({
               match: {
                 ...useAppStore.getState().match,

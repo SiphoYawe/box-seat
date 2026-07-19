@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "motion/react";
-import { House, ShareNetwork, ShieldCheck, VideoCamera } from "@phosphor-icons/react";
+import { Crosshair, House, ShareNetwork, ShieldCheck, VideoCamera } from "@phosphor-icons/react";
 import { useAppStore } from "../state/store.js";
 import { stageOf, type FixtureMeta } from "../lib/meta.js";
 import { CAMERA_PRESETS } from "../scene/CameraRig.js";
@@ -121,6 +121,20 @@ function ShareButton({ meta }: { meta: FixtureMeta }) {
       title="Export share card"
     >
       <ShareNetwork size={15} className="text-text" />
+    </button>
+  );
+}
+
+function CameraResetButton() {
+  const setCameraPreset = useAppStore((s) => s.setCameraPreset);
+  return (
+    <button
+      className="glass rounded-full h-9 w-9 flex items-center justify-center pointer-events-auto cursor-pointer hover:bg-white/10 active:scale-95 transition-all"
+      onClick={() => setCameraPreset(0)}
+      aria-label="Reset camera view"
+      title="Reset camera view"
+    >
+      <Crosshair size={15} className="text-text" />
     </button>
   );
 }
@@ -262,6 +276,7 @@ export function HudOverlay({ meta }: { meta: FixtureMeta }) {
         <div className="flex flex-col items-end gap-1.5">
           <div className="flex items-center gap-2">
             <AttestationChip />
+            <CameraResetButton />
             <CameraPresetButton />
           </div>
           <span className="text-[10px] text-muted/70 pr-1 select-none">

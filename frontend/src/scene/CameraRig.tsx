@@ -62,18 +62,30 @@ export function CameraRig() {
     };
   };
 
-  // goal-cam: swing behind the goal line while an instant replay rolls,
-  // swing back when it ends. Any user orbit during it cancels the hold.
+  // goal-cam: swing behind the goal line for the goal beat, then come back
+  // out before the replay window ends (a lingering hold reads as stuck).
+  // Any user orbit during it cancels the hold for that window only.
   useFrame(() => {
     const { match } = useAppStore.getState();
     const ir = match.instantReplay;
-    if (ir && !goalCamHeld.current && !goalCamCancelled.current) {
+    if (!ir) {
+      if (goalCamHeld.current) {
+        goalCamHeld.current = false;
+        const preset = CAMERA_PRESETS[presetIndex % CAMERA_PRESETS.length];
+        startTween(preset.pos.clone(), preset.target.clone());
+      }
+      // window ended - the next goal may grab the camera again
+      goalCamCancelled.current = false;
+      return;
+    }
+    if (!goalCamHeld.current && !goalCamCancelled.current) {
       const pose = goalCamPose(ir.goalEnd);
       startTween(pose.pos, pose.target);
       goalCamHeld.current = true;
-    } else if (!ir && goalCamHeld.current) {
+    } else if (goalCamHeld.current && (match.playheadTs ?? 0) >= ir.untilTs - 2_000) {
+      // ease back out during the final ~2s of the window
       goalCamHeld.current = false;
-      goalCamCancelled.current = false;
+      goalCamCancelled.current = true;
       const preset = CAMERA_PRESETS[presetIndex % CAMERA_PRESETS.length];
       startTween(preset.pos.clone(), preset.target.clone());
     }

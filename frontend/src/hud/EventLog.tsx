@@ -209,6 +209,8 @@ export function EventLog({ meta }: { meta: FixtureMeta }) {
             push(`p${e.seq}`, minute, e.ts, "var", `PENALTY ${t?.name ?? ""}`.trim(), "#FFB300");
             break;
           case "penalty_outcome": {
+            // shootout kicks only - in-match penalties are goals, not PENS rows
+            if (e.statusId !== 12) break;
             const scored = (e.data?.Outcome as string | undefined) === "Scored";
             push(
               `po${e.seq}`,

@@ -510,6 +510,7 @@ export function Ribbon() {
           .filter(
             (e, idx, arr) =>
               e.action === "penalty_outcome" &&
+              e.statusId === 12 && // shootout kicks only, not in-match penalties
               e.ts >= domain.kickoffTs &&
               e.ts <= domain.endTs &&
               arr.findIndex((o) => o.action === "penalty_outcome" && (o.id ?? o.seq) === (e.id ?? e.seq)) === idx

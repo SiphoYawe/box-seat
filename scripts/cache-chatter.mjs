@@ -17,7 +17,9 @@ const require2 = createRequire(join(ROOT, "server/package.json"));
 const Database = require2("better-sqlite3");
 
 const FIXTURE_ID = Number(process.argv[2] ?? 18257865);
-const QUERIES = process.argv.slice(3);
+const QUERIES = process.argv.slice(3).filter((a) => !a.startsWith("--"));
+const SINCE = process.argv.includes("--since") ? process.argv[process.argv.indexOf("--since") + 1] : null;
+const UNTIL = process.argv.includes("--until") ? process.argv[process.argv.indexOf("--until") + 1] : null;
 if (QUERIES.length === 0) {
   QUERIES.push("France England", "France vs England", "England France football");
 }
@@ -39,16 +41,24 @@ function moderate(post) {
   if (post.hasMedia) return false;
   if (post.lang !== "en") return false;
   for (const word of BLOCKLIST) if (lower.includes(word)) return false;
+  // demo optics (product is no-betting, ever): drop betting-adjacent HANDLES
+  // even when the post text itself is clean - this is a curation add-on for
+  // manual demo cache fills, stricter than the server's documented pipeline
+  if (/bet|odds|props|parlay|tipster/i.test(post.authorHandle ?? "") || /bet|odds|props|parlay|tipster/i.test(post.authorName ?? "")) {
+    return false;
+  }
   return true;
 }
 
 async function search(query) {
   try {
-    const { stdout } = await execFileP(
-      "twitter",
-      ["search", query, "-n", "25", "--lang", "en", "-t", "latest", "--json", "--exclude", "retweets"],
-      { timeout: 25000, maxBuffer: 8 * 1024 * 1024 }
-    );
+    const args = ["search", query, "-n", "25", "--lang", "en", "-t", "latest", "--json", "--exclude", "retweets"];
+    if (SINCE) args.push("--since", SINCE);
+    if (UNTIL) args.push("--until", UNTIL);
+    const { stdout } = await execFileP("twitter", args, {
+      timeout: 25000,
+      maxBuffer: 8 * 1024 * 1024,
+    });
     const parsed = JSON.parse(stdout);
     return parsed.data ?? [];
   } catch (err) {
@@ -79,11 +89,26 @@ async function main() {
     }
   }
 
-  const accepted = candidates
-    .filter(moderate)
-    .filter((p) => p.createdAtMs > 0)
-    .sort((a, b) => b.createdAtMs - a.createdAtMs)
-    .slice(0, 10);
+  const moderated = candidates.filter(moderate).filter((p) => p.createdAtMs > 0);
+  // Timeline spread for the replay stream: bucket the window and keep the
+  // most-liked post per bucket, so scrubbing reveals reactions progressively
+  // instead of all landing at one minute.
+  let accepted;
+  if (moderated.length > 10) {
+    const sorted = [...moderated].sort((a, b) => a.createdAtMs - b.createdAtMs);
+    const t0 = sorted[0].createdAtMs;
+    const t1 = sorted[sorted.length - 1].createdAtMs;
+    const span = Math.max(1, t1 - t0);
+    const buckets = new Map();
+    for (const p of sorted) {
+      const b = Math.min(9, Math.floor(((p.createdAtMs - t0) / span) * 10));
+      const cur = buckets.get(b);
+      if (!cur || p.likes > cur.likes) buckets.set(b, p);
+    }
+    accepted = [...buckets.values()].sort((a, b) => b.createdAtMs - a.createdAtMs);
+  } else {
+    accepted = [...moderated].sort((a, b) => b.createdAtMs - a.createdAtMs);
+  }
   console.log(`moderated: ${accepted.length} accepted of ${candidates.length} unique posts`);
   if (accepted.length === 0) {
     console.log("nothing passed moderation - cache left untouched");

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { CaretDown, CaretUp, Heart, XLogo } from "@phosphor-icons/react";
 import { useAppStore, type ChatterPost } from "../state/store.js";
@@ -15,15 +15,31 @@ function timeAgo(ts: number): string {
 
 /**
  * Match chatter: moderated X posts about the fixture, proxied and moderated
- * server-side. GRACEFUL ABSENCE: if no chatter message ever arrives, the
- * panel simply doesn't exist - no loading or error state.
+ * server-side. In replay, posts stream in as the playhead passes their
+ * timestamps (they were posted during the match - they belong to its
+ * moments). GRACEFUL ABSENCE: if no chatter message ever arrives, the panel
+ * simply doesn't exist - no loading or error state.
  */
 export function ChatterPanel() {
   const fixtureId = useAppStore((s) => s.match.fixtureId);
+  const mode = useAppStore((s) => s.match.mode);
+  const playheadTs = useAppStore((s) => s.match.playheadTs);
   const posts = useAppStore((s) => (fixtureId != null ? s.chatter[fixtureId] : undefined));
   const [open, setOpen] = useState(true);
 
-  if (!posts || posts.length === 0) return null;
+  const replayEnd = useAppStore((s) => s.match.replay?.endTs ?? null);
+  const visible = useMemo(() => {
+    if (!posts) return [];
+    if (mode === "replay" && playheadTs != null) {
+      // stream in as the playhead passes each post's moment; post-match
+      // reactions (ts after the final whistle) all land at full time
+      const atEnd = replayEnd != null && playheadTs >= replayEnd - 1;
+      return posts.filter((p) => p.ts <= playheadTs || (atEnd && replayEnd != null && p.ts > replayEnd));
+    }
+    return posts;
+  }, [posts, mode, playheadTs, replayEnd]);
+
+  if (visible.length === 0) return null;
 
   return (
     <div className="glass rounded-md overflow-hidden pointer-events-auto w-[21rem]">
@@ -38,14 +54,14 @@ export function ChatterPanel() {
           </span>
         </span>
         <span className="flex items-center gap-2">
-          <span className="tnum text-[10px] text-muted/70">{posts.length}</span>
+          <span className="tnum text-[10px] text-muted/70">{visible.length}</span>
           {open ? <CaretUp size={13} className="text-muted" /> : <CaretDown size={13} className="text-muted" />}
         </span>
       </button>
       {open && (
         <div className="px-3 pb-2 flex flex-col gap-2 max-h-64 overflow-y-auto">
           <AnimatePresence initial={false}>
-            {posts.map((post: ChatterPost) => (
+            {visible.map((post: ChatterPost) => (
               <motion.div
                 key={post.id}
                 className="border-t border-edge/50 pt-2 first:border-t-0 first:pt-0"
